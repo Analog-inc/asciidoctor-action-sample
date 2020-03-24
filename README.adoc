@@ -4,7 +4,8 @@ index.adocにインクルードされる想定で記載されています。
 === ドキュメントビルドのステータス
 
 image::https://github.com/Analog-inc/asciidoctor-action-sample/workflows/CI/badge.svg[StatusBatch] 
-上記バッチはGithubログイン状態のHTMLでは現在の状態を表します。 +
+上記バッチは「link:https://github.com/Analog-inc/asciidoctor-action-sample/actions?query=workflow%3ACI[Analog-inc/asciidoctor-action-sample]」で最後にPushした際にアクションの状態を表します。（HTMLでは現在の状態、PDFでは一つ前の状態になります。） +
+また、HTML出力ではプライベートリポジトリのステータスはログイン状態でしか取得できません。 +
 バッチは以下のフォーマットで表示することが可能です。
 
   image::https://github.com/{github_id}/{repository}/workflows/{workflow_name}/badge.svg?branch={branch_name}[StatusBatch]
