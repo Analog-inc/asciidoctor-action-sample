@@ -1,0 +1,52 @@
+AsciidocサンプルのREADMEです。 +
+index.adocにインクルードされる想定で記載されています。
+
+=== ドキュメントビルドのステータス
+
+image::https://github.com/Analog-inc/asciidoctor-action-sample/workflows/CI/badge.svg[StatusBatch] 
+上記バッチはGithubログイン状態のHTMLでは現在の状態を表します。 +
+バッチは以下のフォーマットで表示することが可能です。
+
+  image::https://github.com/{github_id}/{repository}/workflows/{workflow_name}/badge.svg?branch={branch_name}[StatusBatch]
+
+
+== 注意事項
+ドキュメントの記述方法のサンプルです。
+
+=== 記述方法
+本ドキュメントはasciidoc形式で記述します。 +
+記載方法の詳細は以下のリンクを参照して記載をお願いします。 +
+link:https://takumon.github.io/asciidoc-syntax-quick-reference-japanese-translation/[Asciidoctor 文法クイックリファレンス(日本語訳)]
+
+==== 記述時の注意事項
+
+===== セクションタイトルのレベルについて
+
+asciidocはヘッダー(見出し)の扱いが厳格な文書形式です。 +
+また多くの人が同時に修正しやすくGitでのマージ等が低コストで行えるように、
+レベル1のヘッダーごとにインクルードによるファイルの分割を行ってください。 +
+また、分割したファイルではレベル2以降のヘッダーを利用し文書の構造化に努めてください。
+
+
+.index.adoc
+====
+これはindex.adocのサンプルです。
+[listing]
+....
+  = サンプルドキュメント (レベル0)
+  [[README]]
+  == 本ドキュメントについて (レベル1)
+  include::README.adoc[]
+....
+====
+
+
+.README.adoc
+====
+これはREADME.adocのサンプルです。
+[listing]
+....
+=== 方針(レベル2)
+本ドキュメントはAsciidocのビルドサンプルとして利用します。
+....
+====
