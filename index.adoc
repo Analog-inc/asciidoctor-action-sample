@@ -86,11 +86,14 @@ toc::[]
 == Syntax
 include::syntax.adoc[]
 
+<<<
 
 //
 [[README]]
 == AsciidocサンプルのREADME
 include::README.adoc[]
+
+<<<
 
 //
 [[license]]
