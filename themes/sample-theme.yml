@@ -1,0 +1,106 @@
+extends: default
+
+font:
+  catalog:
+    Noto Serif:
+      normal: GenYoMinJP-Regular.ttf
+      bold: GenYoMinJP-Bold.ttf
+      italic: GenYoMinJP-Regular.ttf
+      bold_italic: GenYoMinJP-Bold.ttf
+    Serif:
+      normal: GenYoMinJP-Regular.ttf
+      bold: GenYoMinJP-Bold.ttf
+      italic: GenYoMinJP-Regular.ttf
+      bold_italic: GenYoMinJP-Bold.ttf
+    Sans Serif:
+      normal: GenShinGothic-P-Regular.ttf
+      bold: GenShinGothic-P-Bold.ttf
+      italic: GenShinGothic-P-Regular.ttf
+      bold_italic: GenShinGothic-P-Bold.ttf
+    GenShinGothic:
+      normal: GenShinGothic-P-Regular.ttf
+      bold: GenShinGothic-P-Bold.ttf
+      italic: GenShinGothic-P-Regular.ttf
+      bold_italic: GenShinGothic-P-Bold.ttf
+    M+ 1mn:
+      normal: GenShinGothic-P-Regular.ttf
+      bold: GenShinGothic-P-Bold.ttf
+      italic: GenShinGothic-P-Regular.ttf
+      bold_italic: GenShinGothic-P-Bold.ttf
+  fallbacks:
+    - Sans Serif
+base:
+  align: left
+  font_color: 222222
+  font_size: 10
+  line_height_length: 15
+  line_height: $base_line_height_length / $base_font_size
+  font_size_large: round($base_font_size * 1.25)
+  font_size_small: round($base_font_size * 0.85)
+  font_size_min: $base_font_size * 0.75
+  font_style: normal
+  border_color: eeeeee
+  border_radius: 4
+  border_width: 0.5
+  
+heading:
+  align: left
+  font_color: ba3925
+  font_family: Sans Serif
+  font_style: bold
+  # h1 is used for part titles (book doctype only)
+  h1_font_size: floor($base_font_size * 2.4)
+  h2_font_size: floor($base_font_size * 2.4)
+  h3_font_size: round($base_font_size * 1.7)
+  h4_font_size: round($base_font_size * 1.4) 
+  h5_font_size: $base_font_size
+  h6_font_size: $base_font_size_small
+  line_height: 1.4
+  margin_top: $vertical_rhythm * 0.9
+  margin_bottom: $vertical_rhythm * 0.9
+  
+title_page:
+  align: center
+  title:
+    top: 20%
+    font_family: Sans Serif
+    font_size: $heading_h1_font_size
+    font_style: bold
+    font_color: $heading_font_color
+    line_height: 1.6  # 0.9
+  subtitle:
+    font_size: $heading_h3_font_size  
+    font_family: $heading_font_family
+    line_height: 1
+    margin_bottom: 11cm
+  authors:
+    font_size:  $heading_h4_font_size
+    font_family: $heading_font_family
+    margin_top: $base_font_size * 1.25
+  revision:
+    margin_top: $base_font_size * 1.25
+    
+table:
+  font_family: $heading_font_family
+  background_color: $page_background_color
+  head_background_color: f1eee8
+  head_font_color: $base_font_color
+  head_font_style: bold
+  body_background_color: $page_background_color
+  body_stripe_background_color: fbfaf8
+  foot_background_color: f0f0f0
+  border_color: e0dccd
+  border_width: $base_border_width
+  cell_padding: 3
+  
+caption:
+  align: left
+  font_size: $base_font_size * 0.8
+  font_family: $heading_font_family
+  font_color: $heading_font_color
+  margin_outside: 0
+lead:
+  font_family: $heading_font_family
+  font_size: $base_font_size
+  line_height: 1.4
+  font_color: $heading_font_color

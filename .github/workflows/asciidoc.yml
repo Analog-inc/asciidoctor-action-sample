@@ -21,9 +21,9 @@ jobs:
     # Output command using asciidoctor-action
     - name: Build AsciiDoc step
       id: documents
-      uses: Analog-inc/asciidoctor-action@master
+      uses: Analog-inc/asciidoctor-action@v1
       with:
-        shellcommand: "asciidoctor README.adoc" 
+        shellcommand: "./.github/workflows/asciidoc.sh" 
     # Use the output from the documents step
     - name: Save AsciiDoc step
       uses: actions/upload-artifact@v1

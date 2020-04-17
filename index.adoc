@@ -1,0 +1,98 @@
+= Asciidoctor action sample
+
+:homepage: https://analog-inc.com/
+:asciidoctor:
+:backend: html5
+:docname: Asciidoctor action sample
+:doctype: Article
+:lang: ja
+:author: Analog Inc.
+:toc: left
+:toclevels: 4
+:icons: font
+:encoding: utf-8
+:docinfo:
+:sectanchors:
+:sectlinks:
+// 画像を埋め込み
+:data-uri:
+// 章番号を付けるか。属性を定義しておくだけで章番号が付けられる。
+:sectnums:
+// ソースコードをハイライトする。
+:source-highlighter: coderay
+// リソース周り(フルパス推奨なので実際はコマンドに記載)
+:imagesdir: ./images
+:pdf-fontsdir: ./fonts
+:pdf-styledir: ./themes
+:pdf-style: ./themes/sample-theme.yml
+// 各ラベルの日本語定義
+:toc-title: 目次
+:preface-title: はじめに
+:appendix-caption: 付録
+:caution-caption: 注意
+:example-caption: 例
+:figure-caption: 図
+:important-caption: 重要
+:last-update-label: 最終更新
+:manname-title: 名前
+:note-caption: 注記
+// まえがきが勝手に出るので入れない
+:preface-title:
+:table-caption: 表
+:tip-caption: ヒント
+:toc-title: 目次
+:untitled-label: 無題
+:version-label: Ver.
+:warning-caption: 警告
+:listing-caption:
+// 「Chapter.」を表示しないようにする。
+:chapter-label:
+
+
+
+// 画像サイズ
+ifdef::backend-html5[]
+:twoinches: width='144'
+:full-width: width='100%'
+:half-width: width='50%'
+:half-size:
+:thumbnail: width='60'
+endif::[]
+ifdef::backend-pdf[]
+:twoinches: pdfwidth='2in'
+:full-width: pdfwidth='100vw'
+:half-width: pdfwidth='50vw'
+:half-size: pdfwidth='50%'
+:thumbnail: pdfwidth='20mm'
+endif::[]
+ifdef::backend-docbook5[]
+:twoinches: width='50mm'
+:full-width: scaledwidth='100%'
+:half-width: scaledwidth='50%'
+:half-size: width='50%'
+:thumbnail: width='20mm'
+endif::[]
+
+:CC-BY-SA-4_0-png: https://i.creativecommons.org/l/by-sa/4.0/88x31.png
+:CC-BY-SA-4_0-url: http://creativecommons.org/licenses/by-sa/4.0/
+:CC-BY-SA-4_0: クリエイティブ・コモンズ 表示 - 継承 4.0 国際 ライセンス (CC BY-SA 4.0) 
+:CC-BY-SA-4_0_EN: Creative Commons Attribution-ShareAlike 4.0 International License (CC BY-SA 4.0) 
+
+toc::[]
+
+//
+[[SYNTAX]]
+== Syntax
+include::syntax.adoc[]
+
+
+
+//
+[[README]]
+== AsciidocサンプルのREADME
+include::README.adoc[]
+
+//
+[[license]]
+== ライセンスについて
+include::license.adoc[]
