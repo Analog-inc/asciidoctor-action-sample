@@ -1,4 +1,4 @@
-image:{CC-BY-SA-4_0-ping}[Creative Commons License , opts=inline]
+image:{CC-BY-SA-4_0-png}[Creative Commons License , opts=inline]
 
 
 本書『Asciidoctor action sample』はlink:{Analog-inc-url}[{Analog-inc}] を初版の著作者としその後は複数の著者の貢献により作成されています。本書『Asciidoctor action sample』は link:{CC-BY-SA-4_0-url}[{CC-BY-SA-4_0}] の下に提供されています。 このライセンスで許諾される範囲を超えた利用の可能性については以下のアドレスもご覧下さい。 link:{github-repository}
