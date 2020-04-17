@@ -1,6 +1,7 @@
 ドキュメントの記述方法のサンプルです。
 
 === 記述方法
+
 本ドキュメントはasciidoc形式で記述します。 +
 記載方法の詳細は以下のリンクを参照して記載をお願いします。 +
 link:https://takumon.github.io/asciidoc-syntax-quick-reference-japanese-translation/[Asciidoctor 文法クイックリファレンス(日本語訳)]

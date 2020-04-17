@@ -1,12 +1,12 @@
 # This is a AsciiDoctor workflow to help you get started with Actions
 name: CI
 
-# Controls when the action will run. Triggers the workflow on push 
+# Controls when the action will run. Triggers the workflow on push
 # events but only for the master branch
 on:
   push:
     branches: [ master ]
-    
+
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   # This workflow contains a single job called "asciidoctor_job"
@@ -23,11 +23,10 @@ jobs:
       id: documents
       uses: Analog-inc/asciidoctor-action@v1
       with:
-        shellcommand: "./.github/workflows/asciidoc.sh" 
+        shellcommand: "./.github/workflows/asciidoc.sh"
     # Use the output from the documents step
     - name: Save AsciiDoc step
       uses: actions/upload-artifact@v1
       with:
         name: Output-document
-        path: ./README.html
-
+        path: ./outputs/
