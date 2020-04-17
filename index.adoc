@@ -6,9 +6,10 @@
 :docname: Asciidoctor action sample
 :doctype: Article
 :lang: ja
-:author: Analog Inc.
+:author: Analog inc.
+:organization: Analog inc.
 :toc: left
-:toclevels: 4
+:toclevels: 3
 :icons: font
 :encoding: utf-8
 :docinfo:
@@ -23,7 +24,7 @@
 // リソース周り(フルパス推奨なので実際はコマンドに記載)
 :imagesdir: ./images
 :pdf-fontsdir: ./fonts
-:pdf-styledir: ./themes
+// :pdf-styledir: ./themes
 :pdf-style: ./themes/sample-theme.yml
 // 各ラベルの日本語定義
 :toc-title: 目次
