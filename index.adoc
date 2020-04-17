@@ -1,10 +1,10 @@
 = Asciidoctor action sample
-
+v1.0, 2020-04-18
 :homepage: https://analog-inc.com/
 :asciidoctor:
 :backend: html5
 :docname: Asciidoctor action sample
-:doctype: Article
+:doctype: book
 :lang: ja
 :author: Analog inc.
 :organization: Analog inc.
@@ -24,7 +24,7 @@
 // リソース周り(フルパス推奨なので実際はコマンドに記載)
 :imagesdir: ./images
 :pdf-fontsdir: ./fonts
-// :pdf-styledir: ./themes
+:pdf-styledir: ./themes
 :pdf-style: ./themes/sample-theme.yml
 // 各ラベルの日本語定義
 :toc-title: 目次
