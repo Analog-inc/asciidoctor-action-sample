@@ -33,7 +33,7 @@ font:
       bold: GenShinGothic-P-Bold.ttf
       italic: GenShinGothic-P-Regular.ttf
       bold_italic: GenShinGothic-P-Bold.ttf
-  fallbacks:　[M+ 1p Fallback, Noto Emoji]
+  fallbacks: [M+ 1p Fallback, Noto Emoji]
 
 base:
   align: left
