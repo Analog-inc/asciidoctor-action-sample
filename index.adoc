@@ -74,6 +74,9 @@ ifdef::backend-docbook5[]
 :thumbnail: width='20mm'
 endif::[]
 
+:Analog-inc: Analog inc.
+:Analog-inc-url: https://analog-inc.com/
+:github-repository: https://github.com/Analog-inc/asciidoctor-action-sample
 :CC-BY-SA-4_0-png: https://i.creativecommons.org/l/by-sa/4.0/88x31.png
 :CC-BY-SA-4_0-url: http://creativecommons.org/licenses/by-sa/4.0/
 :CC-BY-SA-4_0: クリエイティブ・コモンズ 表示 - 継承 4.0 国際 ライセンス (CC BY-SA 4.0)
