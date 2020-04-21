@@ -34,9 +34,9 @@ font:
       bold: GenShinGothic/GenShinGothic-P-Bold.ttf
       italic: GenShinGothic/GenShinGothic-P-ExtraLight.ttf
       bold_italic: GenShinGothic/GenShinGothic-P-Medium.ttf
-    Noto Emoji: NotoEmoji/NotoEmoji-Regular.ttf
-    Noto Color Emoji: NotoColorEmoji/NotoColorEmoji.ttf
-  fallbacks: [Noto Color Emoji, Noto Emoji]
+#    Noto Emoji: NotoEmoji/NotoEmoji-Regular.ttf
+#    Noto Color Emoji: NotoColorEmoji/NotoColorEmoji.ttf
+#  fallbacks: [Noto Color Emoji, Noto Emoji]
 
 base:
   align: left
