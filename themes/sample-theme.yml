@@ -3,30 +3,30 @@ extends: default
 font:
   catalog:
     Noto Serif:
-      normal: GenYoMinJP/GenYoMinJP-Regular.ttc
-      bold: GenYoMinJP/GenYoMinJP-Bold.ttc
-      italic: GenYoMinJP/GenYoMinJP-Light.ttc
-      bold_italic: GenYoMinJP/GenYoMinJP-SemiBold.ttc
+      normal: GenYoMinJP/GenYoMinJP-Regular.ttf
+      bold: GenYoMinJP/GenYoMinJP-Bold.ttf
+      italic: GenYoMinJP/GenYoMinJP-Light.ttf
+      bold_italic: GenYoMinJP/GenYoMinJP-SemiBold.ttf
     M+ 1mn:
       normal: GenShinGothic/GenShinGothic-P-Regular.ttf
       bold: GenShinGothic/GenShinGothic-P-Bold.ttf
       italic: GenShinGothic/GenShinGothic-P-ExtraLight.ttf
       bold_italic: GenShinGothic/GenShinGothic-P-Medium.ttf
-    GenYoMinJP:
-      normal: GenYoMinJP/GenYoMinJP-Regular.ttc
-      bold: GenYoMinJP/GenYoMinJP-Bold.ttc
-      italic: GenYoMinJP/GenYoMinJP-Light.ttc
-      bold_italic: GenYoMinJP/GenYoMinJP-SemiBold.ttc
+    GenYoMin:
+      normal: GenYoMinJP/GenYoMinJP-Regular.ttf
+      bold: GenYoMinJP/GenYoMinJP-Bold.ttf
+      italic: GenYoMinJP/GenYoMinJP-Light.ttf
+      bold_italic: GenYoMinJP/GenYoMinJP-SemiBold.ttf
     GenShinGothic:
       normal: GenShinGothic/GenShinGothic-P-Regular.ttf
       bold: GenShinGothic/GenShinGothic-P-Bold.ttf
       italic: GenShinGothic/GenShinGothic-P-ExtraLight.ttf
       bold_italic: GenShinGothic/GenShinGothic-P-Medium.ttf
     Serif:
-      normal: GenYoMinJP/GenYoMinJP-Regular.ttc
-      bold: GenYoMinJP/GenYoMinJP-Bold.ttc
-      italic: GenYoMinJP/GenYoMinJP-Light.ttc
-      bold_italic: GenYoMinJP/GenYoMinJP-SemiBold.ttc
+      normal: GenYoMinJP/GenYoMinJP-Regular.ttf
+      bold: GenYoMinJP/GenYoMinJP-Bold.ttf
+      italic: GenYoMinJP/GenYoMinJP-Light.ttf
+      bold_italic: GenYoMinJP/GenYoMinJP-SemiBold.ttf
     Sans Serif:
       normal: GenShinGothic/GenShinGothic-P-Regular.ttf
       bold: GenShinGothic/GenShinGothic-P-Bold.ttf
@@ -42,12 +42,13 @@ font:
 base:
   align: left
   font_color: 222222
+  font_family: GenYoMin
   line_height_length: 15
 
 
 heading:
   font_color: ba3925
-  font_family: Sans Serif
+  font_family: GenShinGothic
   # h1 is used for part titles (book doctype only)
   h1_font_size: floor($base_font_size * 2.4)
   h2_font_size: floor($base_font_size * 2.4)
