@@ -23,9 +23,9 @@ v1.0, 2020-04-18
 :source-highlighter: coderay
 // リソース周り(フルパス推奨なので実際はコマンドに記載)
 :imagesdir: ./images
-// :pdf-fontsdir: ./fonts
-// :pdf-styledir: ./data/themes
-:pdf-style: default-with-fallback-font-theme.yml
+:pdf-fontsdir: ./fonts
+// :pdf-styledir: ./themes
+:pdf-style: ./themes/sample-theme.yml
 // 各ラベルの日本語定義
 :toc-title: 目次
 :preface-title: はじめに
