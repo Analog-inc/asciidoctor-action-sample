@@ -15,15 +15,13 @@ font:
     GenYoMinJP:
       normal: GenYoMin/GenYoMin-R.ttc
       bold: GenYoMin/GenYoMin-B.ttc
-      extralight: GenYoMin/GenYoMin-L.ttc
-      light: GenYoMin/GenYoMin-L.ttc
-      medium: GenYoMin/GenYoMin-SB.ttc
+      italic: GenYoMin/GenYoMin-L.ttc
+      bold_italic: GenYoMin/GenYoMin-SB.ttc
     GenShinGothic:
       normal: GenShinGothic/GenShinGothic-P-Regular.ttf
       bold: GenShinGothic/GenShinGothic-P-Bold.ttf
-      ExtraLight: GenShinGothic/GenShinGothic-P-ExtraLight.ttf
-      light: GenShinGothic/GenShinGothic-P-Light.ttf
-      medium: GenShinGothic/GenShinGothic-P-Medium.ttf
+      italic: GenShinGothic/GenShinGothic-P-ExtraLight.ttf
+      bold_italic: GenShinGothic/GenShinGothic-P-Medium.ttf
     Serif:
       normal: GenYoMin/GenYoMin-R.ttc
       bold: GenYoMin/GenYoMin-B.ttc
@@ -34,8 +32,16 @@ font:
       bold: GenShinGothic/GenShinGothic-P-Bold.ttf
       italic: GenShinGothic/GenShinGothic-P-ExtraLight.ttf
       bold_italic: GenShinGothic/GenShinGothic-P-Medium.ttf
-    Noto Emoji: NotoEmoji/NotoEmoji-Regular.ttf
-    Noto Color Emoji: NotoColorEmoji/NotoColorEmoji.ttf
+    Noto Emoji:
+      normal: NotoEmoji/NotoEmoji-Regular.ttf
+      bold: NotoEmoji/NotoEmoji-Regular.ttf
+      italic: NotoEmoji/NotoEmoji-Regular.ttf
+      bold_italic: NotoEmoji/NotoEmoji-Regular.ttf
+    Noto Color Emoji:
+      normal: NotoColorEmoji/NotoColorEmoji.ttf
+      bold: NotoColorEmoji/NotoColorEmoji.ttf
+      italic: NotoColorEmoji/NotoColorEmoji.ttf
+      bold_italic: NotoColorEmoji/NotoColorEmoji.ttf
   fallbacks: [Noto Color Emoji, Noto Emoji]
 
 base:
