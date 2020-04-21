@@ -24,8 +24,9 @@ v1.0, 2020-04-18
 // リソース周り(フルパス推奨なので実際はコマンドに記載)
 :imagesdir: ./images
 :pdf-fontsdir: ./fonts
-// :pdf-styledir: ./themes
 :pdf-style: ./themes/sample-theme.yml
+// 親テーマをasciidoctor-pdfの物を使うためコメントアウト
+// :pdf-styledir: ./themes
 // 各ラベルの日本語定義
 :toc-title: 目次
 :preface-title: はじめに
