@@ -73,14 +73,14 @@ title_page:
     font_size: $heading_h3_font_size
     font_family: $heading_font_family
     line_height: 1
-    margin_bottom: 11cm
+    margin_bottom: 10cm
   authors:
     font_size:  $heading_h4_font_size
     font_family: $heading_font_family
     margin_top: $base_font_size * 1.25
   revision:
     margin_top: $base_font_size * 1.25
-  logo-image: image:../images/analog-logo.svg[width=512,align=center]
+  logo-image: image:../images/analog-logo.svg[width=128,align=center]
 
 table:
   font_family: $heading_font_family
