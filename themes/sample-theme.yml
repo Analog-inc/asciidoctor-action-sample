@@ -37,12 +37,7 @@ font:
       bold: NotoEmoji/NotoEmoji-Regular.ttf
       italic: NotoEmoji/NotoEmoji-Regular.ttf
       bold_italic: NotoEmoji/NotoEmoji-Regular.ttf
-    Noto Color Emoji:
-      normal: NotoColorEmoji/NotoColorEmoji.ttf
-      bold: NotoColorEmoji/NotoColorEmoji.ttf
-      italic: NotoColorEmoji/NotoColorEmoji.ttf
-      bold_italic: NotoColorEmoji/NotoColorEmoji.ttf
-  fallbacks: [Noto Color Emoji, Noto Emoji]
+  fallbacks: [Noto Emoji]
 
 base:
   align: left
