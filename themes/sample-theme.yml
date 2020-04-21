@@ -3,39 +3,39 @@ extends: default
 font:
   catalog:
     Noto Serif:
-      normal: GenYoMin/GenYoMin-R.ttf
-      bold: GenYoMin/GenYoMin-B.ttf
-      italic: GenYoMin/GenYoMin-L.ttf
-      bold_italic: GenYoMin/GenYoMin-SB.ttf
+      normal: ./GenYoMin/GenYoMin-R.ttf
+      bold: ./GenYoMin/GenYoMin-B.ttf
+      italic: ./GenYoMin/GenYoMin-L.ttf
+      bold_italic: ./GenYoMin/GenYoMin-SB.ttf
     M+ 1mn:
-      normal: GenShinGothic/GenShinGothic-P-Regular.ttf
-      bold: GenShinGothic/GenShinGothic-P-Bold.ttf
-      italic: GenShinGothic/GenShinGothic-P-ExtraLight.ttf
-      bold_italic: GenShinGothic/GenShinGothic-P-Medium.ttf
+      normal: ./GenShinGothic/GenShinGothic-P-Regular.ttf
+      bold: ./GenShinGothic/GenShinGothic-P-Bold.ttf
+      italic: ./GenShinGothic/GenShinGothic-P-ExtraLight.ttf
+      bold_italic: ./GenShinGothic/GenShinGothic-P-Medium.ttf
     GenYoMinJP:
-      normal: GenYoMin/GenYoMin-R.ttf
-      bold: GenYoMin/GenYoMin-B.ttf
-      extralight: GenYoMin/GenYoMin-L.ttf
-      light: GenYoMin/GenYoMin-L.ttf
-      medium: GenYoMin/GenYoMin-SB.ttf
+      normal: ./GenYoMin/GenYoMin-R.ttf
+      bold: ./GenYoMin/GenYoMin-B.ttf
+      extralight: ./GenYoMin/GenYoMin-L.ttf
+      light: ./GenYoMin/GenYoMin-L.ttf
+      medium: ./GenYoMin/GenYoMin-SB.ttf
     GenShinGothic:
-      normal: GenShinGothic/GenShinGothic-P-Regular.ttf
-      bold: GenShinGothic/GenShinGothic-P-Bold.ttf
-      ExtraLight: GenShinGothic/GenShinGothic-P-ExtraLight.ttf
-      light: GenShinGothic/GenShinGothic-P-Light.ttf
-      medium: GenShinGothic/GenShinGothic-P-Medium.ttf
+      normal: ./GenShinGothic/GenShinGothic-P-Regular.ttf
+      bold: ./GenShinGothic/GenShinGothic-P-Bold.ttf
+      ExtraLight: ./GenShinGothic/GenShinGothic-P-ExtraLight.ttf
+      light: ./GenShinGothic/GenShinGothic-P-Light.ttf
+      medium: ./GenShinGothic/GenShinGothic-P-Medium.ttf
     Serif:
-      normal: GenYoMin/GenYoMin-R.ttf
-      bold: GenYoMin/GenYoMin-B.ttf
-      italic: GenYoMin/GenYoMin-L.ttf
-      bold_italic: GenYoMin/GenYoMin-SB.ttf
+      normal: ./GenYoMin/GenYoMin-R.ttf
+      bold: ./GenYoMin/GenYoMin-B.ttf
+      italic: ./GenYoMin/GenYoMin-L.ttf
+      bold_italic: ./GenYoMin/GenYoMin-SB.ttf
     Sans Serif:
-      normal: GenShinGothic/GenShinGothic-P-Regular.ttf
-      bold: GenShinGothic/GenShinGothic-P-Bold.ttf
-      italic: GenShinGothic/GenShinGothic-P-ExtraLight.ttf
-      bold_italic: GenShinGothic/GenShinGothic-P-Medium.ttf
-    Noto Emoji: NotoEmoji/NotoEmoji-Regular.ttf
-    Noto Color Emoji: NotoColorEmoji/NotoColorEmoji.ttf
+      normal: ./GenShinGothic/GenShinGothic-P-Regular.ttf
+      bold: ./GenShinGothic/GenShinGothic-P-Bold.ttf
+      italic: ./GenShinGothic/GenShinGothic-P-ExtraLight.ttf
+      bold_italic: ./GenShinGothic/GenShinGothic-P-Medium.ttf
+    Noto Emoji: ./NotoEmoji/NotoEmoji-Regular.ttf
+    Noto Color Emoji: ./NotoColorEmoji/NotoColorEmoji.ttf
   fallbacks: [Noto Emoji, Noto Color Emoji]
 
 base:
