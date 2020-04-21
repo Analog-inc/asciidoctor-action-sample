@@ -45,7 +45,7 @@ config.rb:: Rubyでしか設定できない事を記述しています。ダイ�
 
 源真ゴシック:: link:http://jikasei.me/font/genshin/[自家製フォント工房]で配布されているフォントでフリーの OpenType フォントである「源ノ角ゴシック」を TrueType 形式に変換したフォントです。
 源様明朝:: link:https://github.com/ButTaiwan/genyo-font/[GitHubのButTaiwan/genyo-font]で配布されているフォントでフリーの OpenType フォントである「源ノ明朝」を TrueType 形式に変換したフォントです。
-IPAexフォント:: link:https://ipafont.ipa.go.jp/index.html[IPAが提供する]で配布されているオープンソースのフォントです。
+Noto Emojiフォント:: link:https://www.google.com/get/noto/#emoji-zsye[Google Noto Fontsで提供]されているオープンソースの絵文字フォントです。
 
 ==== /images ディレクトリ
 
