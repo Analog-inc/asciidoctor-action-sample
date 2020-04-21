@@ -36,7 +36,7 @@ font:
       bold_italic: GenShinGothic/GenShinGothic-P-Medium.ttf
     Noto Emoji: NotoEmoji/NotoEmoji-Regular.ttf
     Noto Color Emoji: NotoColorEmoji/NotoColorEmoji.ttf
-#  fallbacks: [Noto Color Emoji, Noto Emoji]
+  fallbacks: [Noto Color Emoji, Noto Emoji]
 
 base:
   align: left
