@@ -1,39 +1,42 @@
-extends: default-with-fallback-font
+extends: default
 
 font:
   catalog:
-    merge: true
     Noto Serif:
-      normal: GenYoMinJP-Regular.ttf
-      bold: GenYoMinJP-Bold.ttf
-      italic: GenYoMinJP-Regular.ttf
-      bold_italic: GenYoMinJP-Bold.ttf
+      normal: GenYoMin/GenYoMin-R.ttf
+      bold: GenYoMin/GenYoMin-B.ttf
+      italic: GenYoMin/GenYoMin-L.ttf
+      bold_italic: GenYoMin/GenYoMin-SB.ttf
     M+ 1mn:
-      normal: GenShinGothic-P-Regular.ttf
-      bold: GenShinGothic-P-Bold.ttf
-      italic: GenShinGothic-P-Regular.ttf
-      bold_italic: GenShinGothic-P-Bold.ttf
+      normal: GenShinGothic/GenShinGothic-P-Regular.ttf
+      bold: GenShinGothic/GenShinGothic-P-Bold.ttf
+      italic: GenShinGothic/GenShinGothic-P-ExtraLight.ttf
+      bold_italic: GenShinGothic/GenShinGothic-P-Medium.ttf
     GenYoMinJP:
-      normal: GenYoMinJP-Regular.ttf
-      bold: GenYoMinJP-Bold.ttf
-      italic: GenYoMinJP-Regular.ttf
-      bold_italic: GenYoMinJP-Bold.ttf
+      normal: GenYoMin/GenYoMin-R.ttf
+      bold: GenYoMin/GenYoMin-B.ttf
+      extralight: GenYoMin/GenYoMin-L.ttf
+      light: GenYoMin/GenYoMin-L.ttf
+      medium: GenYoMin/GenYoMin-SB.ttf
     GenShinGothic:
-      normal: GenShinGothic-P-Regular.ttf
-      bold: GenShinGothic-P-Bold.ttf
-      italic: GenShinGothic-P-Regular.ttf
-      bold_italic: GenShinGothic-P-Bold.ttf
+      normal: GenShinGothic/GenShinGothic-P-Regular.ttf
+      bold: GenShinGothic/GenShinGothic-P-Bold.ttf
+      ExtraLight: GenShinGothic/GenShinGothic-P-ExtraLight.ttf
+      light: GenShinGothic/GenShinGothic-P-Light.ttf
+      medium: GenShinGothic/GenShinGothic-P-Medium.ttf
     Serif:
-      normal: GenYoMinJP-Regular.ttf
-      bold: GenYoMinJP-Bold.ttf
-      italic: GenYoMinJP-Regular.ttf
-      bold_italic: GenYoMinJP-Bold.ttf
+      normal: GenYoMin/GenYoMin-R.ttf
+      bold: GenYoMin/GenYoMin-B.ttf
+      italic: GenYoMin/GenYoMin-L.ttf
+      bold_italic: GenYoMin/GenYoMin-SB.ttf
     Sans Serif:
-      normal: GenShinGothic-P-Regular.ttf
-      bold: GenShinGothic-P-Bold.ttf
-      italic: GenShinGothic-P-Regular.ttf
-      bold_italic: GenShinGothic-P-Bold.ttf
-  fallbacks: [M+ 1p Fallback, Noto Emoji]
+      normal: GenShinGothic/GenShinGothic-P-Regular.ttf
+      bold: GenShinGothic/GenShinGothic-P-Bold.ttf
+      italic: GenShinGothic/GenShinGothic-P-ExtraLight.ttf
+      bold_italic: GenShinGothic/GenShinGothic-P-Medium.ttf
+    Noto Emoji: NotoEmoji/NotoEmoji-Regular.ttf
+    Noto Color Emoji: NotoColorEmoji/NotoColorEmoji.ttf
+  fallbacks: [Noto Emoji, Noto Color Emoji]
 
 base:
   align: left
