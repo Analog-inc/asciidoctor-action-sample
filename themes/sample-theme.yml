@@ -82,14 +82,14 @@ table:
   border_color: e0dccd
   border_width: $base_border_width
   cell_padding: 3
-  head：
+  head:
     background_color: f1eee8
     font_color: $base_font_color
     font_style: bold
-  body：
+  body:
     background_color: $page_background_color
     stripe_background_color: fbfaf8
-  foot：
+  foot:
     background_color: f0f0f0
 
 
