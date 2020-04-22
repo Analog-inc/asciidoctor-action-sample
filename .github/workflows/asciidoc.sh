@@ -26,4 +26,4 @@ asciidoctor -B ${CURRENT_PATH}/ -D ${CURRENT_PATH}/outputs/html/ -o index.html  
 
 asciidoctor-pdf -B ${CURRENT_PATH}/ -D ${CURRENT_PATH}/outputs/pdf/ -o sample.pdf -a imagesdir=${CURRENT_PATH}/images -r asciidoctor-diagram -r ${CURRENT_PATH}/configs/config.rb -a scripts@=cjk -a pdf-styledir=${ASCIIDOCTOR_PDF_DIR}/data/themes -a pdf-style=${CURRENT_PATH}/themes/sample-theme.yml -a pdf-fontsdir=${CURRENT_PATH}/fonts -a allow-uri-read index.adoc
 
-asciidoctor-epub3 -B ${CURRENT_PATH}/ -D ${CURRENT_PATH}/outputs/ebub/ -o sample.epub imagesdir=${CURRENT_PATH}/images -r asciidoctor-diagram -a index.adoc
+asciidoctor-epub3 -B ${CURRENT_PATH}/ -D ${CURRENT_PATH}/outputs/ebub/ -o sample.epub -a imagesdir=${CURRENT_PATH}/images -r asciidoctor-diagram index.adoc
