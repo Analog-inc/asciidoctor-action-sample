@@ -111,7 +111,7 @@ CAUTION: 注意
 
 === ダイアグラム
 
-[ditaa]
+[ditaa, diagram-sample, png]
 ....
                    +-------------+
                    | Asciidoctor |-------+
@@ -131,7 +131,7 @@ CAUTION: 注意
      +-----------------------------------+
 ....
 
-[ditaa]
+[ditaa, diagram-format, svg]
 ....
 
           +-----+
@@ -184,7 +184,7 @@ DiagramBlock <|-- DitaaBlock
 DiagramBlock <|-- PlantUmlBlock
 ....
 
-[plantuml, diagram-classes, svg]
+[plantuml, diagram-sequence, svg]
 ....
 actor Bob #red
 ' The only difference between actor
