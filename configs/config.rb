@@ -1,3 +1,3 @@
 Prawn::Svg::Font::GENERIC_CSS_FONT_MAPPING.merge!(
-  'sans-serif' => 'Sans Serif'
+  'sans-serif' => 'GenShinGothic'
 )
