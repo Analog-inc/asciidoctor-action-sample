@@ -107,3 +107,97 @@ CAUTION: 注意
 |カラム 2, 行 2 のセル
 |カラム 3, 行 2 のセル
 |===
+
+
+=== ダイアグラム
+
+[ditaa]
+....
+                   +-------------+
+                   | Asciidoctor |-------+
+                   |   diagram   |       |
+                   +-------------+       | PNG out
+                       ^                 |
+                       | ditaa in        |
+                       |                 v
+ +--------+   +--------+----+    /---------------\
+ |        | --+ Asciidoctor +--> |               |
+ |  Text  |   +-------------+    |   Beautiful   |
+ |Document|   |   !magic!   |    |    Output     |
+ |     {d}|   |             |    |               |
+ +---+----+   +-------------+    \---------------/
+     :                                   ^
+     |          Lots of work             |
+     +-----------------------------------+
+....
+
+[ditaa]
+....
+
+          +-----+
+          |{d}  |
+          |     |
+          |     |
+          +-----+
+
+          +-----+
+          |{s}  |
+          |     |
+          |     |
+          +-----+
+
+          +-----+
+          |{io} |
+          |     |
+          |     |
+          +-----+
+
+          Color codes
+      /------------+-----------\
+      |cRED 赤     |cBLU 青    |
+      +------------+-----------+
+      |cGRE 緑     |cPNK ピンク |
+      +------------+-----------+
+      |cBLK 黒     |cYEL 黄色   |
+      \------------+-----------/
+
+      /-----------------\
+      | Things to do    |
+      | cGRE            |
+      | o Cut the grass |
+      | o Buy jam       |
+      | o Fix car       |
+      | o Make website  |
+      \-----------------/
+
+....
+
+[plantuml, diagram-classes, png]
+....
+class BlockProcessor
+class DiagramBlock
+class DitaaBlock
+class PlantUmlBlock
+
+BlockProcessor <|-- DiagramBlock
+DiagramBlock <|-- DitaaBlock
+DiagramBlock <|-- PlantUmlBlock
+....
+
+[plantuml, diagram-classes, svg]
+....
+actor Bob #red
+' The only difference between actor
+'and participant is the drawing
+participant Alice
+participant "I have a really\nlong name" as L #99FF99
+/' You can also declare:
+   participant L as "I have a really\nlong name"  #99FF99
+  '/
+
+Alice->Bob: Authentication Request
+Bob->Alice: Authentication Response
+note over Alice, Bob #FFAAAA: This is displayed\n over Bob and Alice.
+Bob->L: Log transaction
+Alice->Alice: This is a signal to self.\nIt also demonstrates\nmultiline \ntext
+....
