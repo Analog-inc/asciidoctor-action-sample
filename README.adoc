@@ -4,12 +4,13 @@
 
 === ドキュメントビルドのステータス
 
-image::https://github.com/Analog-inc/asciidoctor-action-sample/workflows/CI/badge.svg[StatusBatch]
-上記バッチは「link:https://github.com/Analog-inc/asciidoctor-action-sample/actions?query=workflow%3ACI[Analog-inc/asciidoctor-action-sample]」で最後にPushした際にアクションの状態を表します。（HTMLでは現在の状態、PDFでは一つ前の状態になります。） +
+image:https://github.com/Analog-inc/asciidoctor-action-sample/workflows/CI/badge.svg[StatusBatch,role="right"] +
+
+上記右側のバッチは「link:https://github.com/Analog-inc/asciidoctor-action-sample/actions?query=workflow%3ACI[Analog-inc/asciidoctor-action-sample]」で最後にPushした際のアクションの状態を表します。（HTMLでは現在の状態、PDFでは作成したPushの一つ前のPushの結果になります。） +
 また、HTML出力ではプライベートリポジトリのステータスはログイン状態でしか取得できません。 +
 バッチは以下のフォーマットで表示することが可能です。
 
-  image::https://github.com/{github_id}/{repository}/workflows/{workflow_name}/badge.svg?branch={branch_name}[StatusBatch]
+  image:https://github.com/{github_id}/{repository}/workflows/{workflow_name}/badge.svg?branch={branch_name}[StatusBatch]
 
 === 本サンプルの使い方
 本サンプルのリポジトリにあるファイルをコピーしご自身のリポジトリに適用していただければ、気軽にAsciiDocを出力することができます。
@@ -29,14 +30,15 @@ syntax.adoc:: 簡単な記載方法を確認するサンプルです。
 
 このディレクトリはワークフローの処理を配置するディレクトリです。
 
-asciidoc.sh:: HTML・PDF・ePubを同時に出力するためのシェルスクリプトです。
-asciidoc.yml:: ワークフローを記述したファイルです。
+asciidoc.sh:: HTML・PDF・ePubを同時に出力するためのシェルスクリプトです。 +
+このファイルには実行権限が必要です。コピーして利用される際はパーミッションの設定を行なった上でリポジトリにPushしてください。
+asciidoc.yml:: Github Actionsで実行するワークフローを記述したファイルです。
 
 ==== /configs ディレクトリ
 
 このディレクトリは一部標準的な設定ではできない設定を行うファイルを配置するディレクトリです。
 
-config.rb:: Rubyでしか設定できない事を記述しています。ダイアグラムに含めるフォントがPDFに埋め込めない問題を解決しています。
+config.rb:: ダイアグラムに含めるフォントがPDFに埋め込めない問題を解決
 
 ==== /fonts ディレクトリ
 
@@ -45,7 +47,7 @@ config.rb:: Rubyでしか設定できない事を記述しています。ダイ�
 
 源真ゴシック:: link:http://jikasei.me/font/genshin/[自家製フォント工房]で配布されているフォントでフリーの OpenType フォントである「源ノ角ゴシック」を TrueType 形式に変換したフォントです。
 源様明朝:: link:https://github.com/ButTaiwan/genyo-font/[GitHubのButTaiwan/genyo-font]で配布されているフォントでフリーの OpenType フォントである「源ノ明朝」を TrueType 形式に変換したフォントです。 +
-ttcで配布された最新のフォントは句読点の制御が上手く行かないので、少し古いバージョンの物を利用しています。
+ttcで配布された link:https://github.com/ButTaiwan/genyo-font/tree/d63d3c62836a63093b043437b09b370a5fb808d9[最新のフォント]は句読点の制御が上手く行かないので、link:https://github.com/ButTaiwan/genyo-font/tree/bc2fa246196fefc1ef9e9843bc8cdba22523a39d[少し古いバージョン]の物を利用しています。
 Noto Emojiフォント:: link:https://www.google.com/get/noto/#emoji-zsye[Google Noto Fontsで提供]されているオープンソースの絵文字フォントです。なお同じ配布元に携帯電話で使えるカラー絵文字もありますがエラーになるため使えません。
 
 ==== /images ディレクトリ
