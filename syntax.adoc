@@ -153,13 +153,13 @@ CAUTION: 注意
           +-----+
 
           Color codes
-      /-------------+------------\
-      |cRED  赤      |cBLU  青      |
-      +-------------+------------+
-      |cGRE  緑      |cPNK  ピンク    |
-      +-------------+------------+
-      |cBLK  黒      |cYEL  黄色     |
-      \-------------+------------/
+      /----------+----------\
+      |cRED 赤    |cBLU 青    |
+      +----------+----------+
+      |cGRE 緑    |cPNK ピンク  |
+      +----------+----------+
+      |cBLK 黒    |cYEL 黄色   |
+      \----------+----------/
 
       /-----------------\
       | Things to do    |
@@ -198,6 +198,7 @@ participant "I have a really\nlong name" as L #99FF99
 Alice->Bob: Authentication Request
 Bob->Alice: Authentication Response
 note over Alice, Bob #FFAAAA: This is displayed\n over Bob and Alice.
+note over Alice: ノートだよ
 Bob->L: Log transaction
 Alice->Alice: This is a signal to self.\nIt also demonstrates\nmultiline \ntext
 ....
