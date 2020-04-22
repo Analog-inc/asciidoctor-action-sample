@@ -36,7 +36,7 @@ asciidoc.yml:: ワークフローを記述したファイルです。
 
 このディレクトリは一部標準的な設定ではできない設定を行うファイルを配置するディレクトリです。
 
-config.rb:: Rubyでしか設定できない事を記述しています。ダイアグラムに含めるフォントの問題を解決しています。
+config.rb:: Rubyでしか設定できない事を記述しています。ダイアグラムに含めるフォントがPDFに埋め込めない問題を解決しています。
 
 ==== /fonts ディレクトリ
 
@@ -44,8 +44,9 @@ config.rb:: Rubyでしか設定できない事を記述しています。ダイ�
 このディレクトリには以下のフォントが配置されています。
 
 源真ゴシック:: link:http://jikasei.me/font/genshin/[自家製フォント工房]で配布されているフォントでフリーの OpenType フォントである「源ノ角ゴシック」を TrueType 形式に変換したフォントです。
-源様明朝:: link:https://github.com/ButTaiwan/genyo-font/[GitHubのButTaiwan/genyo-font]で配布されているフォントでフリーの OpenType フォントである「源ノ明朝」を TrueType 形式に変換したフォントです。
-Noto Emojiフォント:: link:https://www.google.com/get/noto/#emoji-zsye[Google Noto Fontsで提供]されているオープンソースの絵文字フォントです。
+源様明朝:: link:https://github.com/ButTaiwan/genyo-font/[GitHubのButTaiwan/genyo-font]で配布されているフォントでフリーの OpenType フォントである「源ノ明朝」を TrueType 形式に変換したフォントです。 +
+ttcで配布された最新のフォントは句読点の制御が上手く行かないので、少し古いバージョンの物を利用しています。
+Noto Emojiフォント:: link:https://www.google.com/get/noto/#emoji-zsye[Google Noto Fontsで提供]されているオープンソースの絵文字フォントです。なお同じ配布元に携帯電話で使えるカラー絵文字もありますがエラーになるため使えません。
 
 ==== /images ディレクトリ
 
