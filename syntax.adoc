@@ -230,6 +230,8 @@ indentstack(10,
 
 ==== Vegaで記述するダイアグラム
 
+なんでもかけちゃうけど、ちょっと大変。
+
 [syntrax, diagram-vega, svg]
 ....
 {
@@ -441,4 +443,92 @@ indentstack(10,
     }
   ]
 }
+....
+
+==== Vega-Liteで記述するダイアグラム
+
+Vegaの軽量版、グラフとかに使うといい
+
+[vegalite, diagram-vegalitemap, svg]
+....
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+  "width": 500,
+  "height": 300,
+  "data": {
+    "url": "data/us-10m.json",
+    "format": {
+      "type": "topojson",
+      "feature": "counties"
+    }
+  },
+  "transform": [{
+    "lookup": "id",
+    "from": {
+      "data": {
+        "url": "data/unemployment.tsv"
+      },
+      "key": "id",
+      "fields": ["rate"]
+    }
+  }],
+  "projection": {
+    "type": "albersUsa"
+  },
+  "mark": "geoshape",
+  "encoding": {
+    "color": {
+      "field": "rate",
+      "type": "quantitative"
+    }
+  }
+}
+
+....
+
+[vegalite, diagram-vegaliteStripPlot, svg]
+....
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+  "description": "Shows the relationship between horsepower and the number of cylinders using tick marks.",
+  "data": {"url": "data/cars.json"},
+  "mark": "tick",
+  "encoding": {
+    "x": {"field": "Horsepower", "type": "quantitative"},
+    "y": {"field": "Cylinders", "type": "ordinal"}
+  }
+}
+
+....
+
+
+[vegalite, diagram-vegaliteStackedBarChart, svg]
+....
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+  "data": {"url": "data/seattle-weather.csv"},
+  "mark": "bar",
+  "encoding": {
+    "x": {
+      "timeUnit": "month",
+      "field": "date",
+      "type": "ordinal",
+      "axis": {"title": "Month of the year"}
+    },
+    "y": {
+      "aggregate": "count",
+      "type": "quantitative"
+    },
+    "color": {
+      "field": "weather",
+      "type": "nominal",
+      "scale": {
+        "domain": ["sun", "fog", "drizzle", "rain", "snow"],
+        "range": ["#e7ba52", "#c7c7c7", "#aec7e8", "#1f77b4", "#9467bd"]
+      },
+      "legend": {"title": "Weather type"}
+    }
+  }
+}
+
 ....
