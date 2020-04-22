@@ -532,7 +532,3 @@ Vegaの軽量版、グラフとかに使うといい
 }
 
 ....
-
-==== Meme Extension
-
-meme::YUNO.jpg[Doc writers,Y U NO \\ AsciiDoc]
