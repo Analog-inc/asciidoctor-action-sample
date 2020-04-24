@@ -1,11 +1,12 @@
 #!/bin/bash
 set -e
 
+# make directory for Output Types
 mkdir -p ./outputs/pdf
 mkdir -p ./outputs/html
 mkdir -p ./outputs/ebub
 
-
+# Get file path
 CURRENT_PATH=`pwd`
 ASCIIDOCTOR_PDF_DIR=`gem contents asciidoctor-pdf --show-install-dir`
 
@@ -22,8 +23,9 @@ ASCIIDOCTOR_PDF_DIR=`gem contents asciidoctor-pdf --show-install-dir`
 
 set -x
 
+# Output HTML
 asciidoctor -B ${CURRENT_PATH}/ -D ${CURRENT_PATH}/outputs/html/ -o index.html  -a imagesdir=${CURRENT_PATH}/images -r asciidoctor-diagram index.adoc
-
+# Output PDF
 asciidoctor-pdf -B ${CURRENT_PATH}/ -D ${CURRENT_PATH}/outputs/pdf/ -o sample.pdf -a imagesdir=${CURRENT_PATH}/images -r asciidoctor-diagram -r ${CURRENT_PATH}/configs/config.rb -a scripts@=cjk -a pdf-styledir=${ASCIIDOCTOR_PDF_DIR}/data/themes -a pdf-style=${CURRENT_PATH}/themes/sample-theme.yml -a pdf-fontsdir=${CURRENT_PATH}/fonts -a allow-uri-read index.adoc
-
+# Output ePub
 asciidoctor-epub3 -B ${CURRENT_PATH}/ -D ${CURRENT_PATH}/outputs/ebub/ -o sample.epub -a imagesdir=${CURRENT_PATH}/images -r asciidoctor-diagram index.adoc
