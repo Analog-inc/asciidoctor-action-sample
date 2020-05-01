@@ -11,6 +11,7 @@ v1.0, 2020-04-18
 :lang: ja
 :icons: font
 :encoding: utf-8
+:backend: html5
 :docinfo:
 :data-uri:
 
