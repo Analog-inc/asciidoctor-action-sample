@@ -1,10 +1,9 @@
 = Asciidoctor action sample
 v1.0, 2020-04-18
-:homepage: https://analog-inc.com/
 :docname: Asciidoctor action sample
 :author: Analog inc.
 :organization: Analog inc.
-
+:homepage: https://analog-inc.com/
 // ドキュメント仕様
 :asciidoctor:
 :doctype: book
@@ -13,31 +12,26 @@ v1.0, 2020-04-18
 :encoding: utf-8
 :backend: html5
 :docinfo:
+// 画像を埋め込み
 :data-uri:
-
 // 目次
 :toclevels: 3
 :toc: left
-
 // セクションにアンカーを作成
 :sectanchors:
 // セクションにリンクを作成
 :sectlinks:
 // 章番号を付けるか。属性を定義しておくだけで章番号が付けられる。
 :sectnums:
-
 // ソースコードをハイライトする。
 :source-highlighter: coderay
 // 画像やビデオリソース(videoは個別に出力先にコピーが必要)
 :imagesdir: ./images
-
-
 // PDF周り(コマンドで指定するためコメントアウト)
 // :pdf-fontsdir: ./fonts
 // :pdf-style: ./themes/sample-theme.yml
 // 親テーマをasciidoctor-pdfの物を使う
 // :pdf-styledir: ./themes
-
 
 // 各ラベルの日本語定義
 :toc-title: 目次
@@ -61,9 +55,6 @@ v1.0, 2020-04-18
 :listing-caption:
 // 「Chapter.」を表示しないようにする。
 :chapter-label:
-
-
-
 
 // 画像サイズ
 ifdef::backend-html5[]
@@ -95,10 +86,6 @@ endif::[]
 :CC-BY-SA-4_0-url: http://creativecommons.org/licenses/by-sa/4.0/
 :CC-BY-SA-4_0: クリエイティブ・コモンズ 表示 - 継承 4.0 国際 ライセンス (CC BY-SA 4.0)
 :CC-BY-SA-4_0_EN: Creative Commons Attribution-ShareAlike 4.0 International License (CC BY-SA 4.0)
-
-//
-// ここからドキュメント
-//
 
 toc::[]
 
