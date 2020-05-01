@@ -2,7 +2,6 @@
 v1.0, 2020-04-18
 :homepage: https://analog-inc.com/
 :asciidoctor:
-:backend: html5
 :docname: Asciidoctor action sample
 :doctype: book
 :lang: ja
@@ -16,7 +15,7 @@ v1.0, 2020-04-18
 :sectanchors:
 :sectlinks:
 // 画像を埋め込み
-:data-uri:
+// :data-uri:
 // 章番号を付けるか。属性を定義しておくだけで章番号が付けられる。
 :sectnums:
 // ソースコードをハイライトする。
