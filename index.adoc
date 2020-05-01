@@ -11,33 +11,30 @@ v1.0, 2020-04-18
 :lang: ja
 :icons: font
 :encoding: utf-8
-
-// 目次レベルの決定
-:toclevels: 3
 :docinfo:
+:data-uri:
+
+// 目次
+:toclevels: 3
+:toc: left
+
 // セクションにアンカーを作成
 :sectanchors:
 // セクションにリンクを作成
 :sectlinks:
 // 章番号を付けるか。属性を定義しておくだけで章番号が付けられる。
 :sectnums:
+
 // ソースコードをハイライトする。
 :source-highlighter: coderay
 // 画像やビデオリソース(videoは個別に出力先にコピーが必要)
 :imagesdir: ./images
 
 
-// HTML関連
-// 画像を埋め込み
-:data-uri:
-// 目次の位置
-:toc: left
-
-
-// PDF周り
-:pdf-fontsdir: ./fonts
-:pdf-style: ./themes/sample-theme.yml
-// 親テーマをasciidoctor-pdfの物を使うためコメントアウト
+// PDF周り(コマンドで指定するためコメントアウト)
+// :pdf-fontsdir: ./fonts
+// :pdf-style: ./themes/sample-theme.yml
+// 親テーマをasciidoctor-pdfの物を使う
 // :pdf-styledir: ./themes
 
 
