@@ -26,6 +26,6 @@ set -x
 # Output HTML
 asciidoctor -B ${CURRENT_PATH}/ -D ${CURRENT_PATH}/outputs/html/ -o index.html   -r asciidoctor-diagram index.adoc
 # Output PDF
-asciidoctor-pdf -B ${CURRENT_PATH}/ -D ${CURRENT_PATH}/outputs/pdf/ -o sample.pdf  -r asciidoctor-diagram -r ${CURRENT_PATH}/configs/config.rb  -a pdf-styledir=${ASCIIDOCTOR_PDF_DIR}/data/themes index.adoc
+asciidoctor-pdf -B ${CURRENT_PATH}/ -D ${CURRENT_PATH}/outputs/pdf/ -o sample.pdf  -r asciidoctor-diagram -r ${CURRENT_PATH}/configs/config.rb -a pdf-styledir=${ASCIIDOCTOR_PDF_DIR}/data/themes -a scripts=cjk -a allow-uri-read index.adoc
 # Output ePub
 asciidoctor-epub3 -B ${CURRENT_PATH}/ -D ${CURRENT_PATH}/outputs/ebub/ -o sample.epub  -r asciidoctor-diagram index.adoc

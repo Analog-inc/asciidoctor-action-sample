@@ -37,8 +37,6 @@ v1.0, 2020-04-18
 // PDF周り
 :pdf-fontsdir: ./fonts
 :pdf-style: ./themes/sample-theme.yml
-:scripts: cjk
-:allow-uri-read:
 // 親テーマをasciidoctor-pdfの物を使うためコメントアウト
 // :pdf-styledir: ./themes
 
