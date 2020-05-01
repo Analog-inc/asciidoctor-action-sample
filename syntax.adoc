@@ -130,7 +130,7 @@ image::analog-logo.svg[ロゴ]
 
 === VIDEO
 
-video::video/sample.mp4[ビデオ,600pt]
+video::video/sample.mp4[600pt]
 
 === ダイアグラム
 
