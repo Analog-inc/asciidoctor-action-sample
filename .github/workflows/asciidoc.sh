@@ -24,8 +24,8 @@ ASCIIDOCTOR_PDF_DIR=`gem contents asciidoctor-pdf --show-install-dir`
 set -x
 
 # Output HTML
-asciidoctor -B ${CURRENT_PATH}/ -D ${CURRENT_PATH}/outputs/html/ -o index.html   -r asciidoctor-diagram index.adoc
+asciidoctor -B ${CURRENT_PATH}/ -D ${CURRENT_PATH}/outputs/html/ -o index.html   -r asciidoctor-diagram -a imagesoutdir=${CURRENT_PATH}/images index.adoc
 # Output PDF
-asciidoctor-pdf -B ${CURRENT_PATH}/ -D ${CURRENT_PATH}/outputs/pdf/ -o sample.pdf  -r asciidoctor-diagram -r ${CURRENT_PATH}/configs/config.rb -a pdf-styledir=${ASCIIDOCTOR_PDF_DIR}/data/themes -a pdf-style=${CURRENT_PATH}/themes/sample-theme.yml -a pdf-fontsdir=${CURRENT_PATH}/fonts -a scripts=cjk -a allow-uri-read index.adoc
+asciidoctor-pdf -B ${CURRENT_PATH}/ -D ${CURRENT_PATH}/outputs/pdf/ -o sample.pdf  -r asciidoctor-diagram -a imagesoutdir=${CURRENT_PATH}/images -r ${CURRENT_PATH}/configs/config.rb -a pdf-styledir=${ASCIIDOCTOR_PDF_DIR}/data/themes -a pdf-style=${CURRENT_PATH}/themes/sample-theme.yml -a pdf-fontsdir=${CURRENT_PATH}/fonts -a scripts=cjk -a allow-uri-read index.adoc
 # Output ePub
-asciidoctor-epub3 -B ${CURRENT_PATH}/ -D ${CURRENT_PATH}/outputs/ebub/ -o sample.epub  -r asciidoctor-diagram index.adoc
+asciidoctor-epub3 -B ${CURRENT_PATH}/ -D ${CURRENT_PATH}/outputs/ebub/ -o sample.epub  -r asciidoctor-diagram -a imagesoutdir=${CURRENT_PATH}/images index.adoc
