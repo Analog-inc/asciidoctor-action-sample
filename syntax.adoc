@@ -119,6 +119,19 @@ CAUTION: 注意
 |===
 
 
+
+=== 画像
+
+* ブロック
+
+image::analog-logo.svg[ロゴ]
+
+* インライン image:analog-logo.svg で表示
+
+=== VIDEO
+
+video::sample.mp4[]
+
 === ダイアグラム
 
 ==== ditaaで記述するダイアグラム
