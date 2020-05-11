@@ -132,7 +132,7 @@ ifdef::backend-html5[]
 === VIDEO
 HTMLのみ表示
 
-video::video/sample.mp4[600pt]
+video::video/sample.mp4[{half-size}]
 
 endif::[]
 
