@@ -61,7 +61,7 @@ ifdef::backend-html5[]
 :twoinches: width='144'
 :full-width: width='100%'
 :half-width: width='50%'
-:half-size:
+:half-size: width='50%'
 :thumbnail: width='60'
 endif::[]
 ifdef::backend-pdf[]
