@@ -128,9 +128,14 @@ image::analog-logo.svg[ロゴ]
 
 * インライン image:analog-logo.svg[夕日, 60pt] で表示
 
+ifdef::backend-html5[]
 === VIDEO
+HTMLのみ表示
 
 video::video/sample.mp4[600pt]
+
+endif::[]
+
 
 === ダイアグラム
 
