@@ -2,6 +2,16 @@ extends: default
 
 font:
   catalog:
+    Serif:
+      normal: GenYoMinJP/GenYoMinJP-Regular.ttf
+      bold: GenYoMinJP/GenYoMinJP-Bold.ttf
+      italic: GenYoMinJP/GenYoMinJP-Light.ttf
+      bold_italic: GenYoMinJP/GenYoMinJP-SemiBold.ttf
+    Sans Serif:
+      normal: GenShinGothic/GenShinGothic-P-Regular.ttf
+      bold: GenShinGothic/GenShinGothic-P-Bold.ttf
+      italic: GenShinGothic/GenShinGothic-P-ExtraLight.ttf
+      bold_italic: GenShinGothic/GenShinGothic-P-Medium.ttf
     Noto Serif:
       normal: GenYoMinJP/GenYoMinJP-Regular.ttf
       bold: GenYoMinJP/GenYoMinJP-Bold.ttf
@@ -18,16 +28,6 @@ font:
       italic: GenYoMinJP/GenYoMinJP-Light.ttf
       bold_italic: GenYoMinJP/GenYoMinJP-SemiBold.ttf
     GenShinGothic:
-      normal: GenShinGothic/GenShinGothic-P-Regular.ttf
-      bold: GenShinGothic/GenShinGothic-P-Bold.ttf
-      italic: GenShinGothic/GenShinGothic-P-ExtraLight.ttf
-      bold_italic: GenShinGothic/GenShinGothic-P-Medium.ttf
-    Serif:
-      normal: GenYoMinJP/GenYoMinJP-Regular.ttf
-      bold: GenYoMinJP/GenYoMinJP-Bold.ttf
-      italic: GenYoMinJP/GenYoMinJP-Light.ttf
-      bold_italic: GenYoMinJP/GenYoMinJP-SemiBold.ttf
-    Sans Serif:
       normal: GenShinGothic/GenShinGothic-P-Regular.ttf
       bold: GenShinGothic/GenShinGothic-P-Bold.ttf
       italic: GenShinGothic/GenShinGothic-P-ExtraLight.ttf
