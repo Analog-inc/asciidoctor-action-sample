@@ -1,0 +1,31 @@
+// ドキュメント仕様
+:asciidoctor:
+:doctype: book
+:lang: ja
+:icons: font
+:encoding: utf-8
+:backend: html5
+:docinfo: shared
+// 画像を埋め込み
+:data-uri:
+// セクションにアンカーを作成
+:sectanchors:
+// セクションにリンクを作成
+:sectlinks:
+// 章番号を付けるか。属性を定義しておくだけで章番号が付けられる。
+:sectnums:
+// セクションのナンバリングレベルを設定
+:sectnumlevels: 5
+// ソースコードをハイライトする。
+:source-highlighter: coderay
+
+ifndef::target-release[]
+include::../define-literal.adoc[]
+endif::[]
+
+
+= configsディレクトリの内容について
+
+このディレクトリは一部標準的な設定ではできない設定を行うファイルを配置するディレクトリです。
+
+config.rb:: ダイアグラムに含めるフォントがPDFに埋め込めない問題を解決するためのRubyでしか設定できない事を記述しています。

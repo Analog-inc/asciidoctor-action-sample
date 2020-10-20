@@ -1,0 +1,34 @@
+// ドキュメント仕様
+:asciidoctor:
+:doctype: book
+:lang: ja
+:icons: font
+:encoding: utf-8
+:backend: html5
+:docinfo: shared
+// 画像を埋め込み
+:data-uri:
+// セクションにアンカーを作成
+:sectanchors:
+// セクションにリンクを作成
+:sectlinks:
+// 章番号を付けるか。属性を定義しておくだけで章番号が付けられる。
+:sectnums:
+// セクションのナンバリングレベルを設定
+:sectnumlevels: 5
+// ソースコードをハイライトする。
+:source-highlighter: coderay
+
+ifndef::target-release[]
+include::.../define-literal.adoc[]
+endif::[]
+
+
+= titleディレクトリの内容について
+
+このディレクトリは表紙の画像や文字を設定するSVGを配置しています。いくつかの画像をレイヤーにして仕様しています。
+
+
+title-all.svg:: 全ての画像を重ねたときのイメージを1ファイルで表しています。この画像は実際には利用しませんが、他のデータを作成する元のファイルとなります。
+title-background.svg:: 「title-all.svg」のうち、共通で利用する背景を定義しています。
+title-user-\{ロール}.svg:: 「title-all.svg」のうち、ロールごとに変更が必要な内容を定義しています。

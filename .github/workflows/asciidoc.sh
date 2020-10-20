@@ -4,12 +4,14 @@ set -e
 # make directory for Output Types
 mkdir -p ./outputs/pdf
 mkdir -p ./outputs/html
-mkdir -p ./outputs/ebub
 
 # Get file path
 CURRENT_PATH=`pwd`
 ASCIIDOCTOR_PDF_DIR=`gem contents asciidoctor-pdf --show-install-dir`
 
+
+echo ${GITHUB_EVENT_NAME}
+echo ${GITHUB_REF}
 
 # asciidoctor command arguments
 # -a, --attribute = ATTRIBUTE
@@ -21,13 +23,18 @@ ASCIIDOCTOR_PDF_DIR=`gem contents asciidoctor-pdf --show-install-dir`
 # -d, --doctype = DOCTYPE
 # -r, --require = LIBRARY
 
+COMMON_PARAMETERS=" -B ${CURRENT_PATH}/  -a target-release  -r asciidoctor-diagram -v "
+HTML_PARAMETERS=" -D ${CURRENT_PATH}/outputs/html/ -a docinfodir=${CURRENT_PATH}/docinfo -a toc-title=目次 "
+PDF_PARAMETERS="  -D ${CURRENT_PATH}/outputs/pdf/  -a chapter-label=  -r ${CURRENT_PATH}/configs/config.rb -a pdf-styledir=${CURRENT_PATH}/themes -a pdf-fontsdir=${CURRENT_PATH}/fonts -a scripts=cjk -a allow-uri-read "
+
 set -x
 
+
 # Output HTML
-asciidoctor -B ${CURRENT_PATH}/ -D ${CURRENT_PATH}/outputs/html/ -o index.html   -r asciidoctor-diagram -a imagesoutdir=${CURRENT_PATH}/images index.adoc
+asciidoctor ${COMMON_PARAMETERS}  ${HTML_PARAMETERS} -o "index.html"  -a target-sample  index.adoc
+asciidoctor ${COMMON_PARAMETERS}  ${HTML_PARAMETERS} -o "README.html" README.adoc
 mkdir -p ./outputs/html/images
 cp -f -r  ${CURRENT_PATH}/images/video ./outputs/html/images
 # Output PDF
-asciidoctor-pdf -B ${CURRENT_PATH}/ -D ${CURRENT_PATH}/outputs/pdf/ -o sample.pdf  -r asciidoctor-diagram -a imagesoutdir=${CURRENT_PATH}/images -r ${CURRENT_PATH}/configs/config.rb -a pdf-styledir=${ASCIIDOCTOR_PDF_DIR}/data/themes -a pdf-style=${CURRENT_PATH}/themes/sample-theme.yml -a pdf-fontsdir=${CURRENT_PATH}/fonts -a scripts=cjk -a allow-uri-read index.adoc
-# Output ePub
-asciidoctor-epub3 -B ${CURRENT_PATH}/ -D ${CURRENT_PATH}/outputs/ebub/ -o sample.epub  -r asciidoctor-diagram -a imagesoutdir=${CURRENT_PATH}/images index.adoc
+asciidoctor-pdf ${COMMON_PARAMETERS}  ${PDF_PARAMETERS} -o "サンプル.pdf"   -a target-sample   -a pdf-style=${CURRENT_PATH}/themes/user-sample-theme.yml   index.adoc
+asciidoctor-pdf ${COMMON_PARAMETERS}  ${PDF_PARAMETERS} -o "README.pdf"   -a pdf-style=${CURRENT_PATH}/themes/common-theme.yml README.adoc

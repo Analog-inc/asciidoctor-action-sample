@@ -1,0 +1,47 @@
+ifndef::target-release[]
+:sectnums:
+:target-sample:
+:full-width: width='100%',align="center"
+:half-width: width='50%'
+:half-size: width='50%'
+:thumbnail: width='60'
+:full-page: width='80%'
+:half-page: width='40%'
+:dialog-page: width='30%'
+:list-menu: width='20%'
+endif::[]
+
+
+:Analog-inc: Analog inc.
+:Analog-inc-url: https://analog-inc.com/
+:github-repository: https://github.com/Analog-inc/asciidoctor-action-sample
+:CC-BY-SA-4_0-url: http://creativecommons.org/licenses/by-sa/4.0/
+:CC-BY-SA-4_0: クリエイティブ・コモンズ 表示 - 継承 4.0 国際 ライセンス (CC BY-SA 4.0)
+:CC-BY-SA-4_0_EN: Creative Commons Attribution-ShareAlike 4.0 International License (CC BY-SA 4.0)
+
+:Analog-inc-url-link: link:{Analog-inc-url}[{Analog-inc}]
+:github-repository-link: link:{github-repository}[Github repository]
+:CC-BY-SA-4_0-url-link: link:{CC-BY-SA-4_0-url}[{CC-BY-SA-4_0}]
+:CC-BY-SA-4_0-url-link-en: link:{CC-BY-SA-4_0-url}[{CC-BY-SA-4_0_EN}]
+
+:CC-BY-SA-4_0-png: image:https://i.creativecommons.org/l/by-sa/4.0/88x31.png[Creative Commons License , opts=inline]
+
+// 権限アイコン
+:icon-sample-check: image:images/SvgBadges/badge-user-sample-check.svg[]
+:icon-analog-check: image:images/SvgBadges/badge-user-analog-check.svg[]
+:icon-sample-user: image:images/SvgBadges/badge-user-sample-user.svg[]
+:icon-analog-user: image:images/SvgBadges/badge-user-analog-user.svg[]
+:icon-sample-write: image:images/SvgBadges/badge-user-sample-pen.svg[]
+:icon-analog-write: image:images/SvgBadges/badge-user-analog-pen.svg[]
+:icon-sample-read: image:images/SvgBadges/badge-user-sample-eye.svg[]
+:icon-analog-read: image:images/SvgBadges/badge-user-analog-eye.svg[]
+:icon-sample-smartphone: image:images/SvgBadges/badge-user-sample-smartphone.svg[]
+:icon-analog-featurephone: image:images/SvgBadges/badge-user-analog-featurephone.svg[]
+
+// ロール名称
+:name-role-sample: サンプルロール
+:name-role-analog: Aalogロール
+
+// 固有名詞と指示詞
+:name-role-sample-user: {name-role-h}のユーザー
+:name-role-analog-user: {name-role-p}のメンバー

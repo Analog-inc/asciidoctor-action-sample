@@ -43,23 +43,52 @@ base:
   align: left
   font_color: 222222
   font_family: GenYoMin
-  line_height_length: 15
-
+  line_height: 1.4
+  border_color: 888888
 
 heading:
-  font_color: ba3925
+  font_color: 00448A
   font_family: GenShinGothic
   # h1 is used for part titles (book doctype only)
   h1_font_size: floor($base_font_size * 2.4)
   h2_font_size: floor($base_font_size * 2.4)
-  h3_font_size: round($base_font_size * 1.7)
-  h4_font_size: round($base_font_size * 1.4)
-  h5_font_size: $base_font_size
-  h6_font_size: $base_font_size_small
-  line_height: 1.4
+  h3_font_size: round($base_font_size * 1.8)
+  h4_font_size: round($base_font_size * 1.5)
+  h5_font_size: round($base_font_size * 1.2)
+  h6_font_size: $base_font_size
+  line_height: 1.3
   margin_top: $vertical_rhythm * 0.9
   margin_bottom: $vertical_rhythm * 0.9
 
+role:
+  # Custom roles only apply to inline phrases.
+  red:
+    font_color: ff0000
+  blue:
+    font_color: 0000cd
+  gray:
+    font_color: 696969
+  green:
+    font_color: 008000
+  orange:
+    font_color: ff8c00
+  navy:
+    font_color: 000080
+  pink:
+    font_color: ff1493
+  gold:
+    font_color: FFD700
+  crimson:
+    font_color: dc143c
+  cellsfont:
+    font_family: $heading_font_family
+
+prose:
+  margin-bottom: 10
+
+key:
+  font-style: normal
+  font_family: inherit
 
 title_page:
   align: center
@@ -69,35 +98,105 @@ title_page:
     font_style: bold
     font_color: $heading_font_color
     line_height: 1.6
+    display: none
   subtitle:
     font_size: $heading_h3_font_size
     font_family: $heading_font_family
     line_height: 1
     margin_bottom: 10cm
+    display: none
   authors:
     font_size:  $heading_h4_font_size
     font_family: $heading_font_family
     margin_top: $base_font_size * 1.25
+    display: none
   revision:
-    margin_top: $base_font_size * 1.25
-  logo-image: image:../images/analog-logo.svg[width=128,align=center]
+    font_size: $base_font_size
+    font_family: $base_font_family
+    font_color: $base_font_color
+    display: none
+  logo:
+    top: 0%
+  logo-image: image:../images/title/title-user-template.svg[align=center]
+  background-image: image:../images/title/title-background.svg[align=center]
+
+toc:
+  line_height: 1.7
+
+header:
+  height: 0.75in
+  line-height: 1.4
+  recto:
+    left:
+      content:
+    center:
+      content: '{section-or-chapter-title}'
+    right:
+      content:
+  verso:
+    left:
+      content: $header_recto_right_content
+    center:
+      content: $header_recto_center_content
+    right:
+      content: $header_recto_left_content
+
+footer:
+  recto:
+    left:
+      content:
+    center:
+      content: '{page-number}'
+    right:
+      content:
+  verso:
+    left:
+      content: $footer_recto_right_content
+    center:
+      content: $footer_recto_center_content
+    right:
+      content: $footer_recto_left_content
 
 table:
   font_family: $heading_font_family
-  background_color: $page_background_color
+  line_height: 1.2
   border_color: e0dccd
   border_width: $base_border_width
-  cell_padding: 3
   head:
-    background_color: f1eee8
-    font_color: $base_font_color
+    background_color: 005CA2
+    font_color: FFFFFF
     font_style: bold
   body:
     background_color: $page_background_color
     stripe_background_color: fbfaf8
   foot:
     background_color: f0f0f0
+  cell:
+    padding: 1.5
+  asciidoc-cell:
+    style: inherit
 
+
+ulist-marker:
+  line-height: 1.2
+
+admonition:
+  font_color: 333333
+  font_family: $heading_font_family
+  icon:
+    tip:
+      stroke-color: $role_gold_font_color
+    caution:
+      stroke-color: $role_crimson_font_color
+    important:
+      stroke-color: $role_red_font_color
+    note:
+      stroke-color: $role_navy_font_color
+    warning:
+      stroke-color: $role_orange_font_color
+
+example:
+  background_color: f0f8ff
 
 caption:
   align: left

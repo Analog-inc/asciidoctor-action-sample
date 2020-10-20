@@ -1,5 +1,6 @@
 = Asciidoctor action sample
 v1.0, 2020-04-18
+:toc: left
 :docname: Asciidoctor action sample
 :author: Analog inc.
 :organization: Analog inc.
@@ -11,12 +12,11 @@ v1.0, 2020-04-18
 :icons: font
 :encoding: utf-8
 :backend: html5
-:docinfo:
+:docinfo: shared
 // 画像を埋め込み
 :data-uri:
 // 目次
 :toclevels: 3
-:toc: left
 // セクションにアンカーを作成
 :sectanchors:
 // セクションにリンクを作成
@@ -26,84 +26,38 @@ v1.0, 2020-04-18
 // ソースコードをハイライトする。
 :source-highlighter: coderay
 // 画像やビデオリソース(videoは個別に出力先にコピーが必要)
-:imagesdir: ./images
+// 直リンクの方が編集時に扱いやすいため、コメントアウト
+// :imagesdir: ./images
 // PDF周り(コマンドで指定するためコメントアウト)
 // :pdf-fontsdir: ./fonts
 // :pdf-style: ./themes/sample-theme.yml
 // 親テーマをasciidoctor-pdfの物を使う
 // :pdf-styledir: ./themes
 
-// 各ラベルの日本語定義
-:toc-title: 目次
-:preface-title: はじめに
-:appendix-caption: 付録
-:caution-caption: 注意
-:example-caption: 例
-:figure-caption: 図
-:important-caption: 重要
-:last-update-label: 最終更新
-:manname-title: 名前
-:note-caption: 注記
-// まえがきが勝手に出るので入れない
-:preface-title:
-:table-caption: 表
-:tip-caption: ヒント
-:toc-title: 目次
-:untitled-label: 無題
-:version-label: Ver.
-:warning-caption: 警告
-:listing-caption:
-// 「Chapter.」を表示しないようにする。
-:chapter-label:
+include::define-common.adoc[]
+include::define-literal.adoc[]
 
-// 画像サイズ
-ifdef::backend-html5[]
-:twoinches: width='144'
-:full-width: width='100%'
-:half-width: width='50%'
-:half-size: width='50%'
-:thumbnail: width='60'
-endif::[]
-ifdef::backend-pdf[]
-:twoinches: pdfwidth='2in'
-:full-width: pdfwidth='100vw'
-:half-width: pdfwidth='50vw'
-:half-size: pdfwidth='50%'
-:thumbnail: pdfwidth='20mm'
-endif::[]
-ifdef::backend-docbook5[]
-:twoinches: width='50mm'
-:full-width: scaledwidth='100%'
-:half-width: scaledwidth='50%'
-:half-size: width='50%'
-:thumbnail: width='20mm'
-endif::[]
-
-:Analog-inc: Analog inc.
-:Analog-inc-url: https://analog-inc.com/
-:github-repository: https://github.com/Analog-inc/asciidoctor-action-sample
-:CC-BY-SA-4_0-png: https://i.creativecommons.org/l/by-sa/4.0/88x31.png
-:CC-BY-SA-4_0-url: http://creativecommons.org/licenses/by-sa/4.0/
-:CC-BY-SA-4_0: クリエイティブ・コモンズ 表示 - 継承 4.0 国際 ライセンス (CC BY-SA 4.0)
-:CC-BY-SA-4_0_EN: Creative Commons Attribution-ShareAlike 4.0 International License (CC BY-SA 4.0)
 
 toc::[]
 
-//
-[[SYNTAX]]
-== Syntax
-include::syntax.adoc[]
-
-<<<
 
 //
 [[README]]
 == AsciidocサンプルのREADME
-include::README.adoc[]
+include::README.adoc[leveloffset=+1]
 
 <<<
+
+
+ifdef::target-sample[]
+[[GLOSSARY]]
+== 用語集
+include::glossary.adoc[]
+
+<<<
+endif::[]
 
 //
 [[license]]
 == ライセンスについて
-include::LICENSE.adoc[]
+include::LICENSE.adoc[leveloffset=+1]
