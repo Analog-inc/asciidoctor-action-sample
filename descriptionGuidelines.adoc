@@ -164,12 +164,12 @@ ifdef::backend-html5[]
 ビデオも利用できますが、PDFに埋め込むことはできません。
 
 .ビデオサンプル
-video::images/video/sample.mp4[{full-page}]
+video::images/video/sample.mp4[Video,{full-page}]
 
 [.accordion.source]
 ----
 .ビデオサンプル
-video::images/video/sample.mp4[{full-page}]
+video::images/video/sample.mp4[Video,{full-page}]
 ----
 
 endif::[]
