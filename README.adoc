@@ -48,6 +48,7 @@ endif::[]
 
 
 == 本サンプル（ドキュメント）の目的
+本ドキュメントは気軽にAsciiDoc<<WHAT-ASCIIDOC>>を使えるように、公開しています。
 本サンプルのリポジトリにあるファイルをコピーしご自身のリポジトリに適用していただければ、気軽にAsciiDocを出力することができます。
 
 
@@ -121,14 +122,20 @@ Asciidoc形式は出力を行うとPDFやHTMLにて出力されるため、そ�
 また、HTMLについてもスクリーンショット等にマークアップすることが多くのブラウザやOSで可能になっているため、 +
 編集者以外の校閲や添削に問題はありません。
 
+[[WHAT-ASCIIDOC]]
 == AsciiDocについて
 
-=== AsciiDocとは
-
 AsciiDocは軽量マークアップ言語の一つで可読文書記述形式です。 +
-出力もHTML, PDF, ePubなどが行えるため個人での出版活動から開発環境でのナレッジの共有まで様々な用途で利用する事が可能です。
+出力もHTML, PDF, ePubなどが行えるため出版や開発環境でのナレッジの共有まで様々な用途で利用する事が可能です。
 
 * link:https://asciidoc.org/[AsciiDoc 公式サイト]
+
+* AsciiDocをマニュアルに利用している例
+** link:https://www.science.co.jp/case/yamaha/github_asciidoc/[YAMAHA様事例]
+* AsciiDocを執筆に利用している例
+** O’Reilly Mediaの書籍の一部(Welcome kitとして公開していました)
+* AsciiDocをナレッジに利用している例
+** link:https://github.com/github/markup[GitHub](READMEやWikiに利用するオープンソースマークアップライブラリに採用されています)
 
 === AsciiDocの記述方法
 
