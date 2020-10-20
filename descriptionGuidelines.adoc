@@ -125,10 +125,12 @@ endif::[]
 
 ==== ブロック
 
+.ブロック画像
 image::images/Logo/analog-logo.svg[pageTop,{full-page}]
 
 [.accordion.source]
 ----
+.ブロック画像
 image::images/Logo/analog-logo.svg[Logo,{half-size}]
 ----
 
@@ -161,10 +163,12 @@ ifdef::backend-html5[]
 ==== VIDEO
 ビデオも利用できますが、PDFに埋め込むことはできません。
 
+.ビデオサンプル
 video::images/video/sample.mp4[{full-page}]
 
 [.accordion.source]
 ----
+.ビデオサンプル
 video::images/video/sample.mp4[{full-page}]
 ----
 
@@ -263,6 +267,20 @@ h|hで個別のヘッダ
 |===
 ----
 
+.外部CSVファイルを利用したテーブル
+[format="csv", options="header,footer" cols=",,"]
+|===
+include::table.csv[]
+|===
+
+[.accordion.source]
+----
+.外部CSVファイルを利用したテーブル
+[format="csv", options="header,footer" cols=",,"]
+|===
+\include::table.csv[]
+|===
+----
 === ロール指定による文字のスタイル指定
 
 以下のようにロールを利用してスタイルを適用することができます。
