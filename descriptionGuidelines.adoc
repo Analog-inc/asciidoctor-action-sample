@@ -158,7 +158,8 @@ image::images/Logo/analog-logo.svg[Logo,{half-size}]
 
 ifdef::backend-html5[]
 ==== VIDEO
-ビデオも利用できますが、PDFに埋め込むことはできません。
+ビデオも利用できますが、PDFに埋め込むことはできません。 +
+また、ビデオはHTMLファイル中にファイルを埋め込むことができないため1HTMLファイルでの提供はできなくなります。
 
 .ビデオサンプル
 video::images/video/sample.mp4[Video,{half-width}]
