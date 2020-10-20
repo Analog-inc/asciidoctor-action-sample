@@ -5,7 +5,10 @@ endif::[]
 {CC-BY-SA-4_0-png}
 
 
-本書『Asciidoctor action sample』は{Analog-inc-url-link}を初版の著作者としその後は複数の著者の貢献により作成されています。本書『Asciidoctor action sample』は {CC-BY-SA-4_0-url-link} の下に提供されています。 このライセンスで許諾される範囲を超えた利用の可能性については以下のアドレスもご覧下さい。{github-repository}
+本書『Asciidoctor action sample』は{Analog-inc-url-link}を初版の著作者としその後は複数の著者の貢献により作成されています。
+本書『Asciidoctor action sample』は {CC-BY-SA-4_0-url-link} の下に提供されています。
+このライセンスで許諾される範囲を超えた利用の可能性については以下のアドレスもご覧下さい。
+{github-repository-link}
 
 
 Asciidoctor action sample by {Analog-inc-url-link} is licensed under a {CC-BY-SA-4_0-url-link-en}.
@@ -21,8 +24,7 @@ Permissions beyond the scope of this license may be available at {github-reposit
 再利用は元のコンテンツと同じ{CC-BY-SA-4_0-url-link-en}で公開する必要があります。
 
 
-
 == ロゴ、商標、サービスマーク、ワードマーク
-{Analog-inc-url-link}の商標、ロゴ、サービスマークおよびWebサイトやPDFのルックアンドフィールの権利はクリエイティブコモンズライセンスの下ではライセンスされていません。
-また著作権のある著作物（ロゴやグラフィックなど）デザイン）、それらはそれらの条件の下でライセンスされている作品に含まれていません。
+{Analog-inc-url-link}の商標、ロゴ、サービスマークおよびWebサイトやPDFのルックアンドフィールの権利はクリエイティブコモンズライセンスの下ではライセンスされていません。 +
+また著作権のある著作物（ロゴやグラフィックなど）デザイン）、それらはそれらの条件の下でライセンスされている作品に含まれていません。 +
 文書のテキストを使用しこれらの権利のいずれかを使用したい場合、またはこのコレクションのライセンス条件を遵守することに関して他に質問がある場合はAnalogにお問い合わせください。
