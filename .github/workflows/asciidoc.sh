@@ -32,9 +32,9 @@ fi
 DATA_URI=""
 
 if "${is_release}"; then
-  cp --parents -rf  ${CURRENT_PATH}/images ./outputs/html
+  cp -rf  ${CURRENT_PATH}/images ./outputs/html
   cp -rf  ${CURRENT_PATH}/azureFunctions/routes.json ./outputs/html
-  cp --parents -rf  ${CURRENT_PATH}/azureFunctions/api ./outputs/html
+  cp -rf  ${CURRENT_PATH}/azureFunctions/api ./outputs/html
 else
   mkdir -p ./outputs/html/images
   cp -rf ${CURRENT_PATH}/images/video ./outputs/html/images
