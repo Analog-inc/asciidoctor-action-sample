@@ -22,6 +22,10 @@
       "serve": "/.auth/logout"
     },
     {
+      "route": "/README.html",
+      "allowedRoles": ["Global administrator", "administrator"]
+    },
+    {
       "route": "/*",
       "allowedRoles": ["authenticated"]
     }
