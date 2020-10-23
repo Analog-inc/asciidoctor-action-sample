@@ -22,10 +22,6 @@
       "serve": "/.auth/logout"
     },
     {
-      "route": "/images/*",
-      "allowedRoles": ["authenticated"]
-    },
-    {
       "route": "/README.html",
       "allowedRoles": ["reader"]
     },
