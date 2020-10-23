@@ -22,12 +22,13 @@
       "serve": "/.auth/logout"
     },
     {
-      "route": "/README.html",
-      "allowedRoles": ["administrator"]
+      "route": "/images/*",
+      "allowedRoles": ["authenticated"]
     },
     {
       "route": "/*",
       "allowedRoles": ["authenticated"]
+      "serve": "/api/user"
     }
   ],
   "platformErrorOverrides": [
