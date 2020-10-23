@@ -27,7 +27,7 @@
     },
     {
       "route": "/README.html",
-      "allowedRoles": ["authenticated"]
+      "allowedRoles": ["authenticated"],
       "serve": "/api/user"
     },
     {
