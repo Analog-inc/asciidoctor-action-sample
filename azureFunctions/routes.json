@@ -26,9 +26,13 @@
       "allowedRoles": ["authenticated"]
     },
     {
-      "route": "/*",
+      "route": "/README.html",
       "allowedRoles": ["authenticated"]
       "serve": "/api/user"
+    },
+    {
+      "route": "/*",
+      "allowedRoles": ["authenticated"]
     }
   ],
   "platformErrorOverrides": [
