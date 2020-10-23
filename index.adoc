@@ -14,7 +14,7 @@ v1.0, 2020-04-18
 :backend: html5
 :docinfo: shared
 // 画像を埋め込み
-:data-uri:
+//:data-uri:
 // 目次
 :toclevels: 3
 // セクションにアンカーを作成
