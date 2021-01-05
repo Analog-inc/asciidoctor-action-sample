@@ -1,20 +1,11 @@
+<div id="footer">
+	<div class="details">
+			<span id="author" class="author">{author}</span><br>
+			<span id="revnumber">{version-label}{revnumber}</span><br>
+			<span id="localdatetime">{last-update-label} {localdatetime}</span><br>
+			<span id="revremark">{revremark}</span>
+	</div>
+</div>
 
-<script type="text/javascript">
-  function insert_accordion_buttons() {
-    let accordions = document.getElementsByClassName('accordion');
-    let i = 0;
-    for (let accordion_block of accordions) {
-      i++;
-      let classnames = '';
-      for (let blockClass of accordion_block.classList) {
-      	if(blockClass!='accordion'){
-      		classnames = classnames + ' ' + blockClass;
-      	}
-      }
-      accordion_block.insertAdjacentHTML('beforebegin','<input type="checkbox" class="accordion-check" id="accordion-check-' + i + '" /><label class="accordion-label ' + classnames +'" for="accordion-check-' + i + '"></label>');
-    }
-  }
-  window.onload = function(){
-    insert_accordion_buttons();
-  }
-</script>
+
+<script type="text/javascript" src="js/docinfo.js"></script>
