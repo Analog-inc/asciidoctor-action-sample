@@ -103,7 +103,7 @@ asciidoctor ${COMMON_PARAMETERS}  ${HTML_PARAMETERS} -o "README.html" README.ado
 if "${is_pdf}" || "${is_master}"; then
   asciidoctor-pdf ${COMMON_PARAMETERS}  ${PDF_PARAMETERS} -o "sample.pdf"   -a target-sample   -a pdf-style=${CURRENT_PATH}/themes/user-sample-theme.yml   index.adoc
 fi
-asciidoctor-pdf ${COMMON_PARAMETERS}  ${PDF_PARAMETERS} -o "README.pdf"   -a pdf-style=${CURRENT_PATH}/themes/common-theme.yml README.adoc
+asciidoctor-pdf ${COMMON_PARAMETERS}  ${PDF_PARAMETERS} -o "README.pdf"   -a pdf-style=${CURRENT_PATH}/themes/user-sample-analog.yml README.adoc
 
 if "${is_web}"; then
   asciidoctor ${COMMON_PARAMETERS} ${DEPLOY_INDEX_PARAMETERS} -o "index.html" -a target-helpdesk index-preview.adoc

@@ -45,7 +45,6 @@ toc::[]
 
 //
 [[README]]
-== AsciidocサンプルのREADME
 include::README.adoc[leveloffset=+1]
 
 <<<
