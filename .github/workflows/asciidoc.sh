@@ -24,6 +24,31 @@ echo ${GITHUB_BASE_REF}
 # -d, --doctype = DOCTYPE
 # -r, --require = LIBRARY
 
+if [[ ${GITHUB_REF} =~ .*/html/.* ]]; then
+  is_html=true
+else
+  is_html=false
+fi
+
+if [[ ${GITHUB_REF} =~ .*/pdf/.* ]]; then
+  is_pdf=true
+else
+  is_pdf=false
+fi
+
+if [[ ${GITHUB_REF} =~ .*/web/.* ]]; then
+  is_web=true
+else
+  is_web=false
+fi
+
+if [[ ${GITHUB_REF} =~ .*/master ]]; then
+  is_master=true
+  is_web=true
+else
+  is_master=false
+fi
+
 if [[ ${GITHUB_EVENT_NAME} =~ .*pull_request.* ]]; then
   if [[ ${GITHUB_BASE_REF} =~ .*master ]]; then
     is_master=true
@@ -68,10 +93,16 @@ set -x
 
 
 # Output HTML
-asciidoctor ${COMMON_PARAMETERS}  ${HTML_PARAMETERS} -o "index.html"  -a target-sample  index.adoc
+if "${is_html}" || "${is_master}"; then
+  asciidoctor ${COMMON_PARAMETERS}  ${HTML_PARAMETERS} -o "index.html"  -a target-sample  index.adoc
+fi
 asciidoctor ${COMMON_PARAMETERS}  ${HTML_PARAMETERS} -o "README.html" README.adoc
+
+
 # Output PDF
-asciidoctor-pdf ${COMMON_PARAMETERS}  ${PDF_PARAMETERS} -o "sample.pdf"   -a target-sample   -a pdf-style=${CURRENT_PATH}/themes/user-sample-theme.yml   index.adoc
+if "${is_pdf}" || "${is_master}"; then
+  asciidoctor-pdf ${COMMON_PARAMETERS}  ${PDF_PARAMETERS} -o "sample.pdf"   -a target-sample   -a pdf-style=${CURRENT_PATH}/themes/user-sample-theme.yml   index.adoc
+fi
 asciidoctor-pdf ${COMMON_PARAMETERS}  ${PDF_PARAMETERS} -o "README.pdf"   -a pdf-style=${CURRENT_PATH}/themes/common-theme.yml README.adoc
 
 if "${is_web}"; then
