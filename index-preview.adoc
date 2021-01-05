@@ -1,0 +1,62 @@
+= Analog-inc/asciidoctor-action-sampleについて
+// ドキュメント仕様
+:asciidoctor:
+:docname: Analog-inc/asciidoctor-action-sampleについて
+:author: Analog inc.
+:revnumber: 1.0
+:organization: Analog inc.
+:homepage: https://analog-inc.com/
+:revremark:
+:version-label:
+:last-update-label:
+:doctype: book
+:lang: ja
+:icons: font
+:encoding: utf-8
+:backend: html5
+:docinfo: shared
+// セクションにアンカーを作成
+:sectanchors:
+// セクションにリンクを作成
+:sectlinks:
+// 章番号を付けるか。属性を定義しておくだけで章番号が付けられる。
+:sectnums:
+// ソースコードをハイライトする。
+:source-highlighter: coderay
+// ダイアグラム生成のフォントを指定
+:plantumlconfig: configs/plantuml.cfg
+
+include::define-common.adoc[]
+include::define-literal.adoc[]
+
+## 本ドキュメントのリポジトリ
+
+* **link:https://github.com/Analog-inc/asciidoctor-action-sample[Github リポジトリ]**
+
+* **link:https://github.com/Analog-inc/asciidoctor-action-sample/issues[誤記・仕様間違いなど報告するIssue]**
+
+* **link:https://github.com/Analog-inc/asciidoctor-action-sample/projects[進行中のプロジェクト(タスクボード)]**
+
+## 出力結果
+
+### HTML版
+
+* **link:./html/index.html[メイン]**
+
+* **link:./html/README.html[README]**
+
+### PDF版
+
+開けない場合は右クリックでダウンロードお願いします。
+
+* **link:./pdf/sample.pdf[メイン]**
+
+* **link:./pdf/README.pdf[README]**
+
+## 本サイトについて
+
+本サイトはAzure static web appsを利用しています。 +
+これらのリソースや管理等については
+link:https://github.com/Analog-inc/asciidoctor-action-sample/blob/master/README.adoc[Github内のREADME]
+をお読みください。 +
+(ビルドしたREADMEには出力されていません。)
