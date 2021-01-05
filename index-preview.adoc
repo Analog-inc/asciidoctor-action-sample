@@ -1,5 +1,10 @@
 = Analog-inc/asciidoctor-action-sampleについて
-:revnumber: 1.0
+// このバージョンはPDFでも利用しています。
+:revnumber: 1.3
+:revremark:
+// PDFと共通化するためdocinfo内のCSSで定義
+:version-label:
+:last-update-label:
 :docname: Asciidoctor action sample
 :author: Analog inc.
 :organization: Analog inc.
