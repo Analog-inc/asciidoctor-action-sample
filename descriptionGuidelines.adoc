@@ -826,7 +826,7 @@ Asciidoctorではダイアグラムを記載することができますが、生
       \-----------------/
 
 ....
-====
+
 
 [.accordion]
 ==== PlantUMLで記述するダイアグラム
@@ -835,7 +835,7 @@ UMLを記述する場合はPlantUMLがおすすめ。 +
 多彩なUMLを気軽に記述できる。
 
 
-====
+
 [plantuml, diagram-classes, svg]
 ....
 class BlockProcessor
@@ -866,7 +866,7 @@ note over Alice: ノートだよ
 Bob->L: Log transaction
 Alice->Alice: This is a signal to self.\nIt also demonstrates\nmultiline \ntext
 ....
-====
+
 
 
 === 細かな記載ルール
