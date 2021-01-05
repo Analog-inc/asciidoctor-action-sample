@@ -1,0 +1,241 @@
+#header>h1:first-child,
+#content h1>a.link,
+h2>a.link,
+h3>a.link,
+#toctitle>a.link,
+.sidebarblock>.content>.title>a.link,
+h4>a.link,
+h5>a.link,
+h6>a.link,
+#content h1>a.link:hover,
+h2>a.link:hover,
+h3>a.link:hover,
+#toctitle>a.link:hover,
+.sidebarblock>.content>.title>a.link:hover,
+h4>a.link:hover,
+h5>a.link:hover,
+h6>a.link:hover,
+.subheader,
+.admonitionblock td.content>.title,
+.audioblock>.title,
+.exampleblock>.title,
+.imageblock>.title,
+.listingblock>.title,
+.literalblock>.title,
+.stemblock>.title,
+.openblock>.title,
+.paragraph>.title,
+.quoteblock>.title,
+table.tableblock>.title,
+.verseblock>.title,
+.videoblock>.title,
+.dlist>.title,
+.olist>.title,
+.ulist>.title,
+.qlist>.title,
+.hdlist>.title,
+#toctitle {
+	color: #00448A
+}
+
+h1 {
+	font-size: 2.6em;
+	font-weight: bold
+}
+
+h2 {
+	font-size: 2.4em;
+	font-weight: bold
+}
+
+h3 {
+	font-size: 1.8em;
+	font-weight: bold
+}
+
+h4 {
+	font-size: 1.5em;
+	font-weight: bold
+}
+
+h5 {
+	font-size: 1.2em;
+	font-weight: bold
+}
+
+h6 {
+	font-size: 1.1em;
+	font-weight: bold
+}
+
+table thead tr th,
+table thead tr td,
+table tfoot tr th,
+table tfoot tr td,
+table tr td p,
+.cellsfont {
+	font-family: "Open Sans", "DejaVu Sans", sans-serif
+}
+
+table thead tr th {
+	background: #005CA2;
+	color: #FFFFFF
+}
+
+table tfoot tr th {
+	background: #f0f0f0
+}
+
+table.tableblock {
+	border-collapse: collapse;
+}
+
+table.frame-all {
+	border-width: 2px;
+}
+
+table.grid-all>thead>tr>.tableblock,
+table.grid-all>tbody>tr>.tableblock {
+	border-width: 1px 1px 1px 1px;
+}
+
+.red {
+	color: #ff0000
+}
+
+.blue {
+	color: #0000cd
+}
+
+.gray {
+	color: #696969
+}
+
+.green {
+	color: #008000
+}
+
+.orange {
+	color: #ff8c00
+}
+
+.navy {
+	color: #000080
+}
+
+.pink {
+	color: #ff1493
+}
+
+.gold {
+	color: #FFD700
+}
+
+.crimson {
+	color: #dc143c
+}
+
+a>em {
+	font-style: normal
+}
+
+.admonitionblock>table td.content {
+	color: #333333
+}
+
+.admonitionblock>table td.content,
+.admonitionblock td.content>.title {
+	font-family: "Open Sans", "DejaVu Sans", sans-serif;
+	font-style: normal
+}
+
+.admonitionblock td.icon .icon-tip::before {
+	color: #FFD700
+}
+
+.admonitionblock td.icon .icon-caution::before {
+	color: #dc143c
+}
+
+.admonitionblock td.icon .icon-important::before {
+	color: #ff0000
+}
+
+.admonitionblock td.icon .icon-note::before {
+	color: #000080
+}
+
+.admonitionblock td.icon .icon-warning::before {
+	color: #ff8c00
+}
+
+.exampleblock>.content {
+	background: #f0f8ff;
+}
+
+.accordion-label {
+	cursor: pointer;
+	display: inline-block;
+	padding: 5px;
+	margin: 1em 0;
+	border: 1px solid #434343;
+	border-radius: 2px;
+	background-color: #778899;
+	color: #FFFFFF;
+	font-family: "Open Sans", "DejaVu Sans", sans-serif;
+	font-style: normal
+}
+
+.accordion-check {
+	display: none;
+}
+
+.accordion-label::after {
+	content: "開く　▶︎";
+}
+
+.accordion {
+	visibility: hidden;
+	height: 10px;
+}
+
+.accordion-check:checked+.accordion-label::after {
+	content: "閉じる▼";
+}
+
+.accordion-check:checked+.accordion-label+.accordion {
+	visibility: visible;
+	height: inherit;
+}
+
+.accordion-label::before {
+	content: "詳細を";
+}
+
+.accordion-label.source::before {
+	content: "記述方法を";
+}
+
+#header .details br,
+#footer .details br {
+	display: none;
+}
+
+#header .details #revnumber::before,
+#footer .details #revnumber::before {
+	content: "\00a0\2013\00a0第";
+}
+
+#header .details #revnumber::after,
+#footer .details #revnumber::after {
+	content: "版\00a0";
+}
+
+#header .details #localdatetime::before,
+#footer .details #localdatetime::before {
+	content: "\00a0\2013\00a0 Update";
+}
+
+#footer .details  {
+	color: #DDDDDD
+}
