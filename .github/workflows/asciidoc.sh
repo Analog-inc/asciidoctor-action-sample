@@ -12,6 +12,7 @@ ASCIIDOCTOR_PDF_DIR=`gem contents asciidoctor-pdf --show-install-dir`
 
 echo ${GITHUB_EVENT_NAME}
 echo ${GITHUB_REF}
+echo ${GITHUB_BASE_REF}
 
 # asciidoctor command arguments
 # -a, --attribute = ATTRIBUTE
@@ -23,27 +24,45 @@ echo ${GITHUB_REF}
 # -d, --doctype = DOCTYPE
 # -r, --require = LIBRARY
 
-if [[ ${GITHUB_EVENT_NAME} =~ .*release.* ]]; then
-  is_release=true
-else
-  is_release=false
+if [[ ${GITHUB_EVENT_NAME} =~ .*pull_request.* ]]; then
+  if [[ ${GITHUB_BASE_REF} =~ .*master ]]; then
+    is_master=true
+    is_web=true
+  fi
 fi
+
+# バッジを最新化
+bash ${CURRENT_PATH}/images/SvgBadges/maketool/make.sh
+# バージョンをindexに揃える
+bash ${CURRENT_PATH}/images/title/maketool/revnumber.sh
 
 DATA_URI=""
 
-if "${is_release}"; then
-  cp -rf  ${CURRENT_PATH}/images ./outputs/html
-  cp -rf  ${CURRENT_PATH}/azureFunctions/routes.json ./outputs/html
-  cp -rf  ${CURRENT_PATH}/azureFunctions/api ./outputs/html
+if "${is_web}"; then
+  mkdir -p ./outputs/html/images/pages/
+  mkdir -p ./outputs/html/images/SvgBadges
+＝  cp -rf ${CURRENT_PATH}/images/SvgBadges/badges ./outputs/html/images/SvgBadges
+  cp -rf ${CURRENT_PATH}/images/video ./outputs/html/images
+  cp -rf ${CURRENT_PATH}/js ./outputs/html
+  cp -rf ${CURRENT_PATH}/css ./outputs/html
+  cp -rf ${CURRENT_PATH}/js ./outputs
+  cp -rf ${CURRENT_PATH}/css ./outputs
+  # 不要ファイルを削除
+  find ./outputs/html/images -name "*.adoc" -exec rm -rf {} \;
+  DATA_URI="-a allow-uri-read "
 else
   mkdir -p ./outputs/html/images
   cp -rf ${CURRENT_PATH}/images/video ./outputs/html/images
-  DATA_URI="-a data-uri"
+  cp -rf ${CURRENT_PATH}/js ./outputs/html
+  cp -rf ${CURRENT_PATH}/css ./outputs/html
+  DATA_URI="-a data-uri -a allow-uri-read "
 fi
 
-COMMON_PARAMETERS=" -B ${CURRENT_PATH}/  -a target-release  -r asciidoctor-diagram -v "
-HTML_PARAMETERS=" -D ${CURRENT_PATH}/outputs/html/ -a docinfodir=${CURRENT_PATH}/docinfo -a toc-title=目次 ${DATA_URI}"
-PDF_PARAMETERS="  -D ${CURRENT_PATH}/outputs/pdf/  -a chapter-label=  -r ${CURRENT_PATH}/configs/config.rb -a pdf-styledir=${CURRENT_PATH}/themes -a pdf-fontsdir=${CURRENT_PATH}/fonts -a scripts=cjk -a allow-uri-read "
+
+COMMON_PARAMETERS=" -B ${CURRENT_PATH}/ -a target-release -r asciidoctor-diagram -v --failure-level=ERROR "
+HTML_PARAMETERS=" -D ${CURRENT_PATH}/outputs/html/ -a docinfodir=${CURRENT_PATH}/docinfo -a toc-title=目次 ${DATA_URI} -a nofooter "
+DEPLOY_INDEX_PARAMETERS=" -D ${CURRENT_PATH}/outputs/ -a docinfodir=${CURRENT_PATH}/docinfo -a toc-title=目次 ${DATA_URI} -a nofooter "
+PDF_PARAMETERS=" -D ${CURRENT_PATH}/outputs/pdf/ -a chapter-label= -r ${CURRENT_PATH}/diagram-configs/config.rb -a pdf-styledir=${CURRENT_PATH}/themes -a pdf-fontsdir=${CURRENT_PATH}/fonts -a scripts=cjk -a allow-uri-read "
 
 set -x
 
@@ -52,5 +71,9 @@ set -x
 asciidoctor ${COMMON_PARAMETERS}  ${HTML_PARAMETERS} -o "index.html"  -a target-sample  index.adoc
 asciidoctor ${COMMON_PARAMETERS}  ${HTML_PARAMETERS} -o "README.html" README.adoc
 # Output PDF
-asciidoctor-pdf ${COMMON_PARAMETERS}  ${PDF_PARAMETERS} -o "サンプル.pdf"   -a target-sample   -a pdf-style=${CURRENT_PATH}/themes/user-sample-theme.yml   index.adoc
+asciidoctor-pdf ${COMMON_PARAMETERS}  ${PDF_PARAMETERS} -o "sample.pdf"   -a target-sample   -a pdf-style=${CURRENT_PATH}/themes/user-sample-theme.yml   index.adoc
 asciidoctor-pdf ${COMMON_PARAMETERS}  ${PDF_PARAMETERS} -o "README.pdf"   -a pdf-style=${CURRENT_PATH}/themes/common-theme.yml README.adoc
+
+if "${is_web}"; then
+  asciidoctor ${COMMON_PARAMETERS} ${DEPLOY_INDEX_PARAMETERS} -o "index.html" -a target-helpdesk index-preview.adoc
+fi
