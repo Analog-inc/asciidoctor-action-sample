@@ -1,0 +1,34 @@
+// ドキュメント仕様
+:asciidoctor:
+:doctype: book
+:lang: ja
+:icons: font
+:encoding: utf-8
+:backend: html5
+:docinfo: shared
+// 画像を埋め込み
+// :data-uri:
+// セクションにアンカーを作成
+:sectanchors:
+// セクションにリンクを作成
+:sectlinks:
+// 章番号を付けるか。属性を定義しておくだけで章番号が付けられる。
+:sectnums:
+// セクションのナンバリングレベルを設定
+:sectnumlevels: 5
+// ソースコードをハイライトする。
+:source-highlighter: coderay
+
+ifndef::target-release[]
+include::/define-literal.adoc[]
+endif::[]
+
+
+= azureFunctionsディレクトリの内容について
+
+このディレクトリはAzure static web appsで認証などを行うファイルを配置するディレクトリです。 +
+Azure static web appsについて
+link:https://docs.microsoft.com/ja-jp/azure/static-web-apps/[詳しくはこちら]
+
+routes.json:: ディレクトリごとの権限や設定を保持しています。
+api/:: azureFunctionsを利用したい場合のapi置き場です。

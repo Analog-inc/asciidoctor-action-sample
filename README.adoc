@@ -1,5 +1,10 @@
+= Asciidoctor action sample README
+:revnumber: 1.0
+:docname: Asciidoctor action sample
+:author: Analog inc.
+:organization: Analog inc.
+:homepage: https://analog-inc.com/
 // ドキュメント仕様
-:toc: left
 :asciidoctor:
 :doctype: book
 :lang: ja
@@ -7,8 +12,8 @@
 :encoding: utf-8
 :backend: html5
 :docinfo: shared
-// 画像を埋め込み
-:data-uri:
+// 画像を埋め込み コマンドから指定
+// :data-uri:
 // 目次
 :toclevels: 3
 // セクションにアンカーを作成
@@ -17,44 +22,79 @@
 :sectlinks:
 // 章番号を付けるか。属性を定義しておくだけで章番号が付けられる。
 :sectnums:
-// セクションのナンバリングレベルを設定
-:sectnumlevels: 6
 // ソースコードをハイライトする。
 :source-highlighter: coderay
+// 画像やビデオリソース(videoは個別に出力先にコピーが必要)
+// 直リンクの方が編集時に扱いやすいため、コメントアウト
+// :imagesdir: ./images
+// PDF周り(コマンドで指定するためコメントアウト)
+// :pdf-fontsdir: ./fonts
+// :pdf-style: ./themes/sample-theme.yml
+// 親テーマをasciidoctor-pdfの物を使う
+// :pdf-styledir: ./themes
+// ダイアグラム生成のフォントを指定
+:plantumlconfig: configs/plantuml.cfg
 
+include::define-common.adoc[]
 include::define-literal.adoc[]
 
 
 
 ifndef::target-release[]
-本リポジトリは link:https://github.com/Analog-inc/asciidoctor-action[Analog-inc/asciidoctor-action]
-を利用するためのサンプルです。 +
-本README.adocは本サンプルのindex.adocにインクルードされる想定で記載されています。
 
-=== ドキュメントビルドのステータス
+== 現在のステータス
 
-image:https://github.com/Analog-inc/asciidoctor-action-sample/workflows/CI/badge.svg[StatusBatch,role="right"] +
+link:https://github.com/Analog-inc/asciidoctor-action-sample/actions?query=workflow%3A%22Azure+Static+Web+Apps+CI%2FCD%22[image:https://github.com/Analog-inc/asciidoctor-action-sample/workflows/Azure%20Static%20Web%20Apps%20CI/CD/badge.svg[StatusBatch,role="right"]] +
 
-上記右側のバッチは「link:https://github.com/Analog-inc/asciidoctor-action-sample/actions?query=workflow%3ACI[Analog-inc/asciidoctor-action-sample]」で最後にPushした際のアクションの状態を表します。 +
 
-バッチは以下のフォーマットで表示することが可能です。
+== Azure static web appsの利用
 
-----
-image:https://github.com/{github_id}/{repository}/workflows/{workflow_name}/badge.svg?branch={branch_name}[StatusBatch]
-----
+本ナレッジはGithub ActionsのワークフローとAzure static web appsを利用して招待されたメンバーのみがweb上で閲覧できるような仕組みを整えています。
+
+=== 本ナレッジのデプロイ
+
+「/master」のブランチにpushすると +
+link:https://sample.asciidoc.analog-inc.com[リリース後のマニュアルが閲覧できるAzure static web appsサイト] にデプロイされます。
+
+=== PullRequest時のレビューについて
+
+「/master」をベースブランチとしてPullRequestをすると、
+上記それぞれに対応するステージング環境にレビュー用のサイトとしてデプロイされます。 +
+レビュー用のサイトはPullRequestをクローズすると、クローズされ閲覧できなくなります。
+
+レビュー用のデプロイ先は当該PullRequestにbotがコメントしますが、表示されない場合は
+Actionsのログを確認し、「Build and Deploy Job」内部のログ「Build and Deploy」の下部に、「Visit your site at:」として記載されていますので、
+そこからアクセスしてください。
+
+=== 本ナレッジを閲覧するには
+デプロイされた本ナレッジを閲覧するにはAzure portalのAzure static web appsの当該リソースで権限付与(ロール指定なし)が必要です。 +
+Azure static web appsのロール画面で対象者のメールアドレスを入力し一人づつ招待リンクを生成してください。
+
+=== Azure static web appsについて
+link:https://docs.microsoft.com/ja-jp/azure/static-web-apps/[詳しくはこちら]
+を参照して下さい。
+
+=== 利用しているAzureのリソースグループについては
+link:https://portal.azure.com/[こちら]
+になります。
 
 endif::[]
 
 
 
-== 本サンプル（ドキュメント）の目的
-本ドキュメントは気軽にAsciiDoc (参照: <<WHAT-ASCIIDOC>>)を使えるように、公開しています。
-本サンプルのリポジトリにあるファイルをコピーしご自身のリポジトリに適用していただければ、気軽にAsciiDocを出力することができます。
 
+== 本ナレッジ(ドキュメント)作成の目的
+ここでは本ナレッジの目的を説明します。
+これらの目的を達成するために、Gitでのバージョン管理を行える、Asciidoc形式でドキュメント作成を行います。(参照: <<WHAT-ASCIIDOC>>)
 
-=== バージョン管理が可能
-ドキュメントは更新され共存する必要があります。 +
-また、マニュアルなどのドキュメントはお客様の不明点や、問題解決に必要なTipsの記載も欠かせません。 +
+=== 全体を見渡せるマニュアルの必要性
+現在、全ての仕様を網羅し的確な説明がなされたマニュアルはありません。 +
+{name-role-helpdesk}にて各権限事の仕様の違いについて、簡単に見分けがつき、 +
+的確な案内をすぐに行うと共に、今後の仕様変更に追従が容易なナレッジの作成を目指します。
+
+=== バージョン管理の必要性
+マニュアルはシステムの更新と共に、更新され共存する必要があります。 +
+また、お客様の不明点や、問題解決に必要なTipsの記載も欠かせません。 +
 このため、いつ何のためにどんな修正が行われたか、Gitによるバージョン管理で追跡し、 +
 必要であれば過去のバージョンを取り消すことも必要です。
 
@@ -104,7 +144,7 @@ Issueの管理による議論や、それに紐付けた更新など、多彩な
 
 === 記載中にイメージがわかない
 Asciidoc形式はテキスト形式のため、従来のドキュメントエディタと異なり、記載中はスタイルが適用されません。 +
-しかし、現在は無料のテキストエディタや統合開発環境に（Atom, VS Code, IntelliJ IDEA, Android studio）等にプラグインをインストールすることで、 +
+しかし、現在は無料のテキストエディタや統合開発環境に(Atom, VS Code, IntelliJ IDEA, Android studio)等にプラグインをインストールすることで、 +
 簡単にプレビューを表示しながら編集を行うことが可能です。
 
 === 特殊な記述ができない
@@ -126,7 +166,7 @@ Asciidoc形式は出力を行うとPDFやHTMLにて出力されるため、そ�
 == AsciiDocについて
 
 AsciiDocは軽量マークアップ言語の一つで可読文書記述形式です。 +
-出力もHTML, PDF, ePubなどが行えるため出版や開発環境でのナレッジの共有まで様々な用途で利用する事が可能です。
+出力もHTML, PDF, ePubなどが行えるため出版や開発環境でのナレッジの共有まで様々な用途で利用することが可能です。
 
 * link:https://asciidoc.org/[AsciiDoc 公式サイト]
 
@@ -140,7 +180,7 @@ AsciiDocは軽量マークアップ言語の一つで可読文書記述形式で
 === AsciiDocの記述方法
 
 AsciiDocは軽量マークアップ言語でメジャーなフォーマットであるmarkdownと比較し、
-同様の記述容易性を供えつつもより高度な文書の論理構造を構築する事が可能です。 +
+同様の記述容易性を供えつつもより高度な文書の論理構造を構築することが可能です。 +
 記載方法の簡単な説明は以下のリンクをご参照ください。
 
 * link:https://takumon.github.io/asciidoc-syntax-quick-reference-japanese-translation/[Asciidoctor 文法クイックリファレンス(日本語訳)]
@@ -229,8 +269,20 @@ PDF出力に必要なフォントファイルを配置するディレクトリ�
 include::./fonts/README.adoc[leveloffset=+3]
 
 
-=== /configs ディレクトリ
+=== /diagram-configs ディレクトリ
 
 一部の標準で回避できない設定を行うファイルを配置するディレクトリです。
 
-include::./configs/README.adoc[leveloffset=+3]
+include::./diagram-configs/README.adoc[leveloffset=+3]
+
+=== /azureFunctions ディレクトリ
+
+Azure static web appsを利用するのに必要なディレクトリです。
+
+include::./azureFunctions/README.adoc[leveloffset=+3]
+
+=== /deletetool ディレクトリ
+
+リンクされないpngやadocファイルを削除するシェルスクリプトを配置するディレクトリです。
+
+include::./deletetool/README.adoc[leveloffset=+3]

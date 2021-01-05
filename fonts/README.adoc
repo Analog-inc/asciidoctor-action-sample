@@ -7,7 +7,7 @@
 :backend: html5
 :docinfo: shared
 // 画像を埋め込み
-:data-uri:
+// :data-uri:
 // セクションにアンカーを作成
 :sectanchors:
 // セクションにリンクを作成
@@ -20,7 +20,7 @@
 :source-highlighter: coderay
 
 ifndef::target-release[]
-include::define-literal.adoc[]
+include::/define-literal.adoc[]
 endif::[]
 
 

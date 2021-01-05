@@ -20,7 +20,7 @@
 :source-highlighter: coderay
 
 ifndef::target-release[]
-include::define-literal.adoc[]
+include::/define-literal.adoc[]
 endif::[]
 
 
