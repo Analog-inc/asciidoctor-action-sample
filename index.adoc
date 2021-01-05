@@ -34,7 +34,7 @@
 // 親テーマをasciidoctor-pdfの物を使う
 // :pdf-styledir: ./themes
 // ダイアグラム生成のフォントを指定
-:plantumlconfig: configs/plantuml.cfg
+:plantumlconfig: diagram-configs/plantuml.cfg
 
 include::define-common.adoc[]
 include::define-literal.adoc[]
