@@ -7,7 +7,7 @@
 :backend: html5
 :docinfo: shared
 // 画像を埋め込み
-:data-uri:
+// :data-uri:
 // セクションにアンカーを作成
 :sectanchors:
 // セクションにリンクを作成
@@ -59,14 +59,14 @@ asciidocはヘッダー(見出し)の扱いが厳格な文書形式です。 +
 ----
 [[include]]
 === 参照先の章の名称
-include::include.adoc[]
+\include::include.adoc[]
 ----
 
 インクルードするファイルのレベルは「leveloffset」を利用して以下の記載をすると揃えることができます。
 
 [.accordion.source]
 ----
-include::include.adoc[leveloffset=+2]
+\include::include.adoc[leveloffset=+2]
 ----
 
 == 出力設定について
@@ -112,7 +112,7 @@ target-analog:::
 
 === 作成方法
 
-作成方法は各画像の格納先を参照して下さい。
+作成方法は各画像の格納先を参照してください。
 ifdef::target-release[]
 (参照 : <<IMAGE-MANAGEMENT>>)
 endif::[]
@@ -183,7 +183,7 @@ endif::[]
 .複雑な表の扱い
 [%header,cols="1,2,3"]
 |===
-|TH　サイズ1 |TH　サイズ2 |TH　サイズ3
+|TH サイズ1 |TH サイズ2 |TH サイズ3
 
 <|<で左寄せ R1C1
 ^|^で中央寄せ R1C2
@@ -218,7 +218,8 @@ h|hで個別のヘッダ
 ^![.cellsfont]#1#
 ![.cellsfont]#ただしセパレータを\!にかえる#
 !===
-　 +
+// 隙間が足りない事があるので隠し文字をいれる
+{zwsp}
 |===
 
 [.accordion.source]
@@ -226,7 +227,7 @@ h|hで個別のヘッダ
 .複雑な表の扱い
 [%header,cols="1,2,3"]
 |===
-|TH　サイズ1 |TH　サイズ2 |TH　サイズ3
+|TH サイズ1 |TH サイズ2 |TH サイズ3
 
 <|<で左寄せ R1C1
 ^|^で中央寄せ R1C2
@@ -261,7 +262,8 @@ h|hで個別のヘッダ
 ^![.cellsfont]#1#
 ![.cellsfont]#ただしセパレータを\!にかえる#
 !===
-　 +
+// 隙間が足りない事があるので隠し文字をいれる
+{zwsp}
 |===
 ----
 
@@ -304,6 +306,65 @@ include::table.csv[]
 * [.cellsfont.red]#テーブル内の赤字#
 ----
 
+=== 特殊なAttributeの利用
+
+==== リンクの定義
+
+:link-site-preview: https://ashy-coast-0be90a600.azurestaticapps.net[リリース作業中マニュアルが閲覧できるAzure static web appsサイト]
+
+本ドキュメントは{zwsp}{link-site-preview}で閲覧できます。 +
+\{zwsp}は日本語との結合時に必要です。
+
+[.accordion.source]
+----
+:link-site-preview: https://ashy-coast-0be90a600.azurestaticapps.net[リリース作業中マニュアルが閲覧できるAzure static web appsサイト]
+
+本ドキュメントは{zwsp}{link-site-preview}で閲覧できます。 +
+\{zwsp}は日本語との結合時に必要です。
+----
+
+==== 定義の途中で色指定
+
+:name-button-test: 【テスト】ボタン
+:name-button-test-red-name: pass:quotes[[.red]#【テスト】#]
+:name-button-test-red: {name-button-test-red-name}{zwsp}ボタン
+
+通常の記載は『{name-button-test}』で、一部のみ赤字は『{name-button-test-red}』です。
+/{zwsp}がpassでそのまま出力されるために2行に分けています。
+
+[.accordion.source]
+----
+:name-button-test: 【テスト】ボタン
+:name-button-test-red-name: pass:quotes[[.red]#【テスト】#]
+:name-button-test-red: {name-button-test-red-name}{zwsp}ボタン
+
+通常の記載は『{name-button-test}』で、一部のみ赤字は『{name-button-test-red}』です。
+/{zwsp}がpassでそのまま出力されるために2行に分けています。
+----
+
+==== 定義内で改行
+
+:sentence-no-newline: 定義内で改行はしても \
+表示では改行しません。
+
+:sentence-newline: 定義内で改行して + \
+表示でも改行します。
+
+{sentence-no-newline} +
+{sentence-newline}
+
+[.accordion.source]
+----
+:sentence-no-newline: 定義内で改行はしても \
+表示では改行しません。
+
+:sentence-newline: 定義内で改行して + \
+表示でも改行します。
+
+{sentence-no-newline} +
+{sentence-newline}
+----
+
 === 注釈等
 
 注釈はアイコンが左側に表示されるスタイルです。
@@ -313,7 +374,7 @@ include::table.csv[]
 .[.navy.big]#*NOTE*#
 ====
 インフォメーションマークが出力されます。 +
-補足となる内容を記載してください。
+補足となる内容や追加の情報が必要な場合に記載してください。
 ====
 
 [.accordion.source]
@@ -330,7 +391,8 @@ include::table.csv[]
 .[.big]#*TIP*#
 ====
 電球マークが出力されます。 +
-少し高度な利用方法などを記載してください。
+少し高度な利用方法などを記載してください。 +
+ユーザーが行う解決策などを提示する場合に利用してください。
 ====
 
 [.accordion.source]
@@ -366,7 +428,7 @@ include::table.csv[]
 .[.red.big]#*IMPORTANT*#
 ====
 丸い赤の警告マークが出力されます +
-システムを利用する上でセキュリティーリスクなどを記載してください。
+システムを利用する上でセキュリティリスクなどを記載してください。
 ====
 
 [.accordion.source]
@@ -375,7 +437,7 @@ include::table.csv[]
 .[.red.big]#*IMPORTANT*#
 ====
 丸い赤の警告マークが出力されます +
-システムを利用する上でセキュリティーリスクなどを記載してください。
+システムを利用する上でセキュリティリスクなどを記載してください。
 ====
 ----
 
@@ -430,7 +492,7 @@ include::table.csv[]
 
 ==== チェックリスト
 
-リーフレットなどを作成する場合はご利用ください。
+リーフレットなどを作成する場合に利用してください。
 
 - [*] チェック済みの要素
 - [x] これもチェック済みの要素
@@ -444,7 +506,39 @@ include::table.csv[]
 ----
 
 
-ifdef::backend-pdf[]
+=== カウンター
+
+{counter2:sequence-count-sample-no:0}カウンターは型を定義することができる。 +
+{counter:sequence-count-sample-no}.{nbsp}カウンターの利用方法 +
+{counter:sequence-count-sample-no}.{nbsp}自動的にインクリメント +
+{counter2:sequence-count-sample-no}見せずにインクリメント +
+{counter:sequence-count-sample-no}.{nbsp}飛んでるはず
+
+:sequence-count-sample-no: 0
+
+{counter:sequence-count-sample-no}.{nbsp}リセットは普通のAttributeと同じ
+
+{counter:sequence-count-sample-alphabet:a}.{nbsp}カウンターは型を定義することができる。 +
+{counter:sequence-count-sample-alphabet}.{nbsp}インクリメントができればいい
+
+[.accordion.source]
+----
+{counter2:sequence-count-sample-no:0}カウンターは型を定義することができる。 +
+{counter:sequence-count-sample-no}.{nbsp}カウンターの利用方法 +
+{counter:sequence-count-sample-no}.{nbsp}自動的にインクリメント +
+{counter2:sequence-count-sample-no}見せずにインクリメント +
+{counter:sequence-count-sample-no}.{nbsp}飛んでるはず
+
+:sequence-count-sample-no: 0
+
+{counter:sequence-count-sample-no}.{nbsp}リセットは普通Attributeと同じ
+
+{counter:sequence-count-sample-alphabet:a}.{nbsp}カウンターは型を定義することができる。 +
+{counter:sequence-count-sample-alphabet}.{nbsp}インクリメントができればいい
+
+----
+
+
 === 改ページ
 
 ==== 改ページ前
@@ -457,7 +551,6 @@ ifdef::backend-pdf[]
 
 ==== 改ページ後
 
-endif::[]
 
 === コメントアウト
 
@@ -648,33 +741,29 @@ e|single space
 
 
 ^[1]^ いくつかの置換はUnicode文字ですが、他の置換は数値の文字参照です(例えば、\&#34;)。
-これらの文字参照は、Unicode文字の使用がAsciiDocの構文に干渉したり、レンダラー（すなわちブラウザ）を混乱させる可能性がある場合に使用されます。
-参照をレンダラーが理解できるものに変換するのはコンバータ次第です（マニュアルページとPDFコンバータの両方が処理するもの）。
+これらの文字参照は、Unicode文字の使用がAsciiDocの構文に干渉したり、レンダラー(すなわちブラウザ)を混乱させる可能性がある場合に使用されます。
+参照をレンダラーが理解できるものに変換するのはコンバータ次第です(マニュアルページとPDFコンバータの両方が処理するもの)。
 
 ^[2]^ Asciidoctor は、定義済みの属性を再割り当てすることを妨げるものではありません。
 しかし、出力形式が異なるエンコーディング方式の使用を必要としない限り、それらを読み取り専用として扱うのが最善です。
 これらの属性は、コンテンツとプレゼンテーションを切り離すための効果的なツールです。
 
-^[3]^ Asciidoctorでは、HTMLで定義されている名前付き文字参照（別名：名前付き実体）のいずれかを使用することができます（例：\&euro; resolves to &euro;）。
+^[3]^ Asciidoctorでは、HTMLで定義されている名前付き文字参照(別名：名前付き実体)のいずれかを使用することができます。
 しかし、名前付き文字参照を使用すると、PDFなどの非HTML出力を生成する際に問題が発生することがあります。
-こ れ ら の名前を解決するために必要な参照テーブルが定義されていない可能性があるからです。私たちの推奨事項は、XML で定義されているもの（すなわち lt ・ gt ・ amp ・ quot ・ apos）を除いて、名前付き文字参照の使用を避けることです。
+これらの名前を解決するために必要な参照テーブルが定義されていない可能性があるからです。私たちの推奨事項は、XMLで定義されているもの(すなわち lt ・ gt ・ amp ・ quot ・ apos)を除いて、名前付き文字参照の使用を避けることです。
 その代わりに、数値の文字参照を使用してください。
 
 ^[4]^ ゼロ幅空間(ZWSP)は、必要に応じて長い単語を分割できる場所を示すUnicodeのコードポイントです。
 
-^[5]^ ワードジョイナー（WJ）は、その位置での改行を防ぐUnicodeのコードポイントです。
+^[5]^ ワードジョイナー(WJ)は、その位置での改行を防ぐUnicodeのコードポイントです。
 ====
 
 === ダイアグラム
 Asciidoctorではダイアグラムを記載することができますが、生成画像はプレビューできません。
 
-
+[.accordion]
 ==== ditaaで記述するダイアグラム
 
-アスキーアートのような表現で記載が可能です。
-
-[.accordion]
-====
 [ditaa, diagram-sample, svg]
 ....
                    +-------------+
@@ -739,12 +828,13 @@ Asciidoctorではダイアグラムを記載することができますが、生
 ....
 ====
 
+[.accordion]
 ==== PlantUMLで記述するダイアグラム
 
 UMLを記述する場合はPlantUMLがおすすめ。 +
 多彩なUMLを気軽に記述できる。
 
-[.accordion]
+
 ====
 [plantuml, diagram-classes, svg]
 ....
@@ -777,3 +867,231 @@ Bob->L: Log transaction
 Alice->Alice: This is a signal to self.\nIt also demonstrates\nmultiline \ntext
 ....
 ====
+
+
+=== 細かな記載ルール
+
+
+==== システムやその画面上に表現ゆれが存在する場合
+
+基本的には画面上の文言を尊重しますが、それでも表現にゆれがある場合は、
+最終的な行為に対する文言を優先してください。
+
+==== 文中のカッコの扱いについて
+
+本画面の参照のうち、表外の項目については【項目名】(選択肢ではない)を利用します。 +
+多画面の項目を参照する場合は「項目名」を利用します。
+
+ボタン、画面、ロールなど原則として用語定義を利用するものは「」を利用しません。
+
+==== 「をする場合」など場合を利用する記載について
+
+場合は選択の余地や、ケースによって実施するかしないか異なるフローについて利用します。
+
+
+==== OR条件AND条件を日本語で記載する場合
+
+===== OR条件
+
+----
+[α]または[β]
+[A]、[B]、[C]、もしくは[D]等の[α]、または[E]、[F]、[G]、もしくは[H]などの[β]
+----
+は
+----
+α or β
+α[A or B or C or D (or etc.)] or β[E or F or G or H (or etc.)]
+----
+となります。
+
+===== AND条件
+
+----
+[α]および[β]
+[A]、[B]、[C]、および[D]等の[α]、並びに[E]、[F]、[G]、および[H]などの[β]
+----
+は
+----
+α and β
+α[A and B and C and D (and etc.)] and β[E and F and G and H (and etc.)]
+----
+となります。
+
+==== 長音記号の有無
+
+
+===== 主に長音記号を用いるもの
+
+[.accordion]
+====
+[cols="2,7"]
+.主に長音記号を用いるもの
+|===
+|英単語|カナ
+|adapter|アダプター
+|administrator|アドミニストレーター
+|advisor|アドバイザー
+|anchor|アンカー
+|behavior|ビヘイビアー
+|binder|バインダー
+|browser|ブラウザー
+|buffer|バッファー
+|calendar|カレンダー
+|cellular|セルラー
+|chapter|チャプター
+|condenser|コンデンサー
+|constructor|コンストラクター
+|consumer|コンシューマー
+|container|コンテナー
+|controller|コントローラー
+|counter|カウンター
+|customer|カスタマー
+|customizer|カスタマイザー
+|cyber|サイバー
+|debugger|デバッガー
+|decoder|デコーダー
+|designer|デザイナー
+|developer|デベロッパー
+|downloader|ダウンローダー
+|driver|ドライバー
+|encoder|エンコーダー
+|enterprise|エンタープライズ
+|error|エラー
+|exchanger|エクスチェンジャー
+|expander|エキスパンダー
+|explorer|エクスプローラー
+|extender|エクステンダー
+|fiber|ファイバー
+|filter|フィルター
+|finder|ファインダー
+|flow|フロー
+|folder|フォルダー
+|free|フリー
+|gatekeeper|ゲートキーパー
+|glow|グロー
+|header|ヘッダー
+|how-to|ハウツー
+|installer|インストーラー
+|interceptor|インターセプター
+|interpreter|インタープリター
+|launcher|ランチャー
+|layer|レイヤー
+|licensor|ライセンサー
+|maker|メーカー
+|master|マスター
+|member|メンバー
+|membership|メンバーシップ
+|menu|メニュー
+|messenger|メッセンジャー
+|meter|メーター
+|minor|マイナー
+|modular|モジュラー
+|monitor|モニター
+|number|ナンバー
+|officer|オフィサー
+|operator|オペレーター
+|organizer|オーガナイザー
+|owner|オーナー
+|parameter|パラメーター
+|partner|パートナー
+|placeholder|プレースホルダー
+|player|プレーヤー
+|power|パワー
+|presenter|プレゼンター
+|printer|プリンター
+|protector|プロテクター
+|publisher|パブリッシャー
+|resolver|リゾルバー
+|router|ルーター
+|scanner|スキャナー
+|selector|セレクター
+|seminar|セミナー
+|sensor|センサー
+|separator|セパレーター
+|sequencer|シーケンサー
+|serializer|シリアライザー
+|server|サーバー
+|sidebar|サイドバー
+|slow|スロー
+|spacer|スペーサー
+|splitter|スプリッター
+|summary|サマリー
+|supervisor|スーパーバイザー
+|through|スルー
+|toner|トナー
+|transfer|トランスファー
+|transformer|トランスフォーマー
+|translator|トランスレーター
+|transponder|トランスポンダー
+|tree|ツリー
+|trigger|トリガー
+|underbar|アンダーバー
+|updater|アップデーター
+|uploader|アップローダー
+|user|ユーザー
+|validator|バリデーター
+|vector|ベクター
+|viewer|ビューアー
+|workflow|ワークフロー
+|writer|ライター
+|===
+====
+
+===== 主に長音記号を用い無いもの
+
+[.accordion]
+====
+[cols="2,7"]
+.慣例に基づき変更しないもの
+|===
+|英単語 | カナ
+|accelerator|アクセラレータ
+|barrier|バリア
+|bazaar|バザール
+|bear|ベア
+|beer|ビール
+|carrier|キャリア
+|centimeter|センチメートル
+|clear|クリア
+|compiler|コンパイラ
+|connector|コネクタ
+|conveyor|コンベヤ
+|dollar|ドル
+|door|ドア
+|engineer|エンジニア
+|exterior|エクステリア
+|floor|フロア
+|formatter|フォーマッタ
+|frontier|フロンティア
+|gear|ギア
+|humor|ユーモア
+|indoor|インドア
+|interior|インテリア
+|junior|ジュニア
+|linear|リニア
+|meter|メートル
+|millimeter|ミリメートル
+|outdoor|アウトドア
+|polyester|ポリエステル
+|premier|プレミア
+|processor|プロセッサ
+|programmer|プログラマ
+|propeller|プロペラ
+|radiator|ラジエータ
+|rear|リア
+|register|レジスタ
+|scheduler|スケジューラ
+|security|セキュリティ
+|senior|シニア
+|slipper|スリッパ
+|stellar|ステラ
+|terminator|ターミネータ
+|transistor|トランジスタ
+|volunteer|ボランティア
+|===
+====
+
+その他の記載については以下を参照のこと
+
+link:https://www.microsoft.com/ja-jp/language/styleguides[Microsoft ローカリゼーション スタイル ガイド +
+https://www.microsoft.com/ja-jp/language/styleguides]
