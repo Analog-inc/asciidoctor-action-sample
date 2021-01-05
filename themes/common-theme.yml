@@ -32,12 +32,17 @@ font:
       bold: GenShinGothic/GenShinGothic-P-Bold.ttf
       italic: GenShinGothic/GenShinGothic-P-ExtraLight.ttf
       bold_italic: GenShinGothic/GenShinGothic-P-Medium.ttf
+    Monospace:
+      normal: GenShinGothic/GenShinGothic-Monospace-Regular.ttf
+      bold: GenShinGothic/GenShinGothic-Monospace-Bold.ttf
+      italic: GenShinGothic/GenShinGothic-Monospace-ExtraLight.ttf
+      bold_italic: GenShinGothic/GenShinGothic-Monospace-Medium.ttf
     Noto Emoji:
       normal: NotoEmoji/NotoEmoji-Regular.ttf
       bold: NotoEmoji/NotoEmoji-Regular.ttf
       italic: NotoEmoji/NotoEmoji-Regular.ttf
       bold_italic: NotoEmoji/NotoEmoji-Regular.ttf
-  fallbacks: [GenShinGothic, Noto Emoji]
+  fallbacks: [GenShinGothic, GenYoMin, Noto Emoji]
 
 base:
   align: left
@@ -120,17 +125,21 @@ title_page:
   logo-image: image:../images/title/title-user-template.svg[align=center]
   background-image: image:../images/title/title-background.svg[align=center]
 
+code:
+  font_family: Monospace
+
 toc:
   line_height: 1.7
 
 header:
   height: 0.75in
   line-height: 1.4
+  font-color: #FEFEFE
   recto:
     left:
       content:
     center:
-      content: '{section-or-chapter-title}'
+      content: '{docdatetime}'
     right:
       content:
   verso:
