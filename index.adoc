@@ -1,6 +1,6 @@
 = Asciidoctor action sample
-v1.0, 2020-04-18
 :toc: left
+:revnumber: 1.0
 :docname: Asciidoctor action sample
 :author: Analog inc.
 :organization: Analog inc.
