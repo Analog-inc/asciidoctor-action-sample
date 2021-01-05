@@ -13,8 +13,8 @@
 :encoding: utf-8
 :backend: html5
 :docinfo: shared
-// 画像を埋め込み
-//:data-uri:
+// 画像を埋め込み コマンドから指定
+// :data-uri:
 // 目次
 :toclevels: 3
 // セクションにアンカーを作成
@@ -33,6 +33,8 @@
 // :pdf-style: ./themes/sample-theme.yml
 // 親テーマをasciidoctor-pdfの物を使う
 // :pdf-styledir: ./themes
+// ダイアグラム生成のフォントを指定
+:plantumlconfig: configs/plantuml.cfg
 
 include::define-common.adoc[]
 include::define-literal.adoc[]

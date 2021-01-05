@@ -1,20 +1,22 @@
 = Analog-inc/asciidoctor-action-sampleについて
-// ドキュメント仕様
-:asciidoctor:
-:docname: Analog-inc/asciidoctor-action-sampleについて
-:author: Analog inc.
+
 :revnumber: 1.0
+:docname: Asciidoctor action sample
+:author: Analog inc.
 :organization: Analog inc.
 :homepage: https://analog-inc.com/
-:revremark:
-:version-label:
-:last-update-label:
+// ドキュメント仕様
+:asciidoctor:
 :doctype: book
 :lang: ja
 :icons: font
 :encoding: utf-8
 :backend: html5
 :docinfo: shared
+// 画像を埋め込み コマンドから指定
+// :data-uri:
+// 目次
+:toclevels: 3
 // セクションにアンカーを作成
 :sectanchors:
 // セクションにリンクを作成
@@ -23,6 +25,14 @@
 :sectnums:
 // ソースコードをハイライトする。
 :source-highlighter: coderay
+// 画像やビデオリソース(videoは個別に出力先にコピーが必要)
+// 直リンクの方が編集時に扱いやすいため、コメントアウト
+// :imagesdir: ./images
+// PDF周り(コマンドで指定するためコメントアウト)
+// :pdf-fontsdir: ./fonts
+// :pdf-style: ./themes/sample-theme.yml
+// 親テーマをasciidoctor-pdfの物を使う
+// :pdf-styledir: ./themes
 // ダイアグラム生成のフォントを指定
 :plantumlconfig: configs/plantuml.cfg
 
