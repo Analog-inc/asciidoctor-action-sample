@@ -5,7 +5,8 @@ name: CI
 
 on:
   push:
-
+    branches:
+      - output-artifact/**
     # events but only for the master branch
     # branches: [ master ]
 
