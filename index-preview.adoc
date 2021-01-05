@@ -1,5 +1,4 @@
 = Analog-inc/asciidoctor-action-sampleについて
-
 :revnumber: 1.0
 :docname: Asciidoctor action sample
 :author: Analog inc.
