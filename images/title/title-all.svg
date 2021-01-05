@@ -10,7 +10,7 @@
 	(〇〇編)
 		</text>
 		<text x="50%" y="550" dominant-baseline="middle" text-anchor="middle" font-family="sans-serif" font-size="18" fill="#222222">
-	第1.5版
+	第{%revnumber%}版
 		</text>
 	</g>
 	<g >
