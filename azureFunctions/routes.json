@@ -23,7 +23,7 @@
     },
     {
       "route": "/README.html",
-      "allowedRoles": ["reader"]
+      "allowedRoles": ["authenticated"]
     },
     {
       "route": "/*",
