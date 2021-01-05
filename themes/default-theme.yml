@@ -12,6 +12,11 @@ font:
       bold: GenShinGothic/GenShinGothic-P-Bold.ttf
       italic: GenShinGothic/GenShinGothic-P-ExtraLight.ttf
       bold_italic: GenShinGothic/GenShinGothic-P-Medium.ttf
+
+# ここからは以下のファイルをそのまま利用。たまに更新することをお勧め。
+# https://github.com/asciidoctor/asciidoctor-pdf/blob/master/data/themes/default-theme.yml
+
+
 page:
   background_color: FFFFFF
   layout: portrait
@@ -70,8 +75,6 @@ role:
 # correct line height for Noto Serif metrics (comes with built-in line height)
 vertical_rhythm: $base_line_height_length
 horizontal_rhythm: $base_line_height_length
-# QUESTION should vertical_spacing be block_spacing instead?
-vertical_spacing: $vertical_rhythm
 link:
   font_color: 428BCA
 # literal is currently used for inline monospaced in prose and table cells
@@ -93,7 +96,7 @@ mark:
   background_color: FFFF00
   border_offset: 1
 menu:
-  caret_content: " <font size=\"1.15em\"><color rgb=\"b12146\">\u203a</color></font> "
+  caret_content: " <font size=\"1.15em\" color=\"#B12146\">\u203a</font> "
 heading:
   align: left
   font_color: $base_font_color
@@ -119,7 +122,7 @@ title_page:
   title:
     top: 55%
     font_size: $heading_h1_font_size
-    font_color: 999999
+    font_color: $role_subtitle_font_color
     line_height: 0.9
   subtitle:
     font_size: $heading_h3_font_size
@@ -132,7 +135,6 @@ title_page:
   revision:
     margin_top: $base_font_size * 1.25
 block:
-  margin_top: 0
   margin_bottom: $vertical_rhythm
 caption:
   align: left
@@ -175,16 +177,18 @@ blockquote:
   border_left_width: 5
   # FIXME disable negative padding bottom once margin collapsing is implemented
   padding: [0, $horizontal_rhythm, $block_margin_bottom * -0.75, $horizontal_rhythm + $blockquote_border_left_width / 2]
-  cite_font_size: $base_font_size_small
-  cite_font_color: 999999
+  cite:
+    font_size: $base_font_size_small
+    font_color: $role_subtitle_font_color
 verse:
   font_size: $blockquote_font_size
   border_color: $blockquote_border_color
   border_width: $blockquote_border_width
   border_left_width: $blockquote_border_left_width
   padding: $blockquote_padding
-  cite_font_size: $blockquote_cite_font_size
-  cite_font_color: $blockquote_cite_font_color
+  cite:
+    font_size: $blockquote_cite_font_size
+    font_color: $blockquote_cite_font_color
 # code is used for source blocks (perhaps change to source or listing?)
 code:
   font_color: $base_font_color
@@ -214,7 +218,6 @@ example:
 image:
   align: left
 prose:
-  margin_top: $block_margin_top
   margin_bottom: $block_margin_bottom
 sidebar:
   background_color: EEEEEE
