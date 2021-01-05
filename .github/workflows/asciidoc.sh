@@ -66,7 +66,7 @@ DATA_URI=""
 if "${is_web}"; then
   mkdir -p ./outputs/html/images/pages/
   mkdir -p ./outputs/html/images/SvgBadges
-＝  cp -rf ${CURRENT_PATH}/images/SvgBadges/badges ./outputs/html/images/SvgBadges
+  cp -rf ${CURRENT_PATH}/images/SvgBadges/badges ./outputs/html/images/SvgBadges
   cp -rf ${CURRENT_PATH}/images/video ./outputs/html/images
   cp -rf ${CURRENT_PATH}/js ./outputs/html
   cp -rf ${CURRENT_PATH}/css ./outputs/html
