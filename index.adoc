@@ -1,69 +1,46 @@
 = Asciidoctor action sample
+// 目次
 :toc: left
+:toclevels: 5
+:toc-title: 目次
 // このバージョンはPDFでも利用しています。
-:revnumber: 1.3
-:revremark:
-// PDFと共通化するためdocinfo内のCSSで定義
-:version-label:
-:last-update-label:
-:docname: Asciidoctor action sample
+:revnumber: 1.0.0
+:revdate: 2021-01-01
 :author: Analog inc.
 :organization: Analog inc.
 :homepage: https://analog-inc.com/
-// ドキュメント仕様
-:asciidoctor:
-:doctype: book
-:lang: ja
-:icons: font
-:encoding: utf-8
-:backend: html5
-:docinfo: shared
-// 画像を埋め込み コマンドから指定
-// :data-uri:
-// 目次
-:toclevels: 3
-// セクションにアンカーを作成
-:sectanchors:
-// セクションにリンクを作成
-:sectlinks:
-// 章番号を付けるか。属性を定義しておくだけで章番号が付けられる。
-:sectnums:
-// ソースコードをハイライトする。
-:source-highlighter: coderay
-// 画像やビデオリソース(videoは個別に出力先にコピーが必要)
-// 直リンクの方が編集時に扱いやすいため、コメントアウト
-// :imagesdir: ./images
-// PDF周り(コマンドで指定するためコメントアウト)
-// :pdf-fontsdir: ./fonts
-// :pdf-style: ./themes/sample-theme.yml
-// 親テーマをasciidoctor-pdfの物を使う
-// :pdf-styledir: ./themes
-// ダイアグラム生成のフォントを指定
-:plantumlconfig: diagram-configs/plantuml.cfg
-
-include::define-common.adoc[]
+// ソースハイライター設定
+:source-highlighter: rouge
+:rouge-style: github
+:rouge-linenums-mode: inline
 include::define-literal.adoc[]
-
+// ここまで空行禁止(無駄な改行があると設定が有効になりません）
 
 toc::[]
 
+[[ABOUT-ASCIIDOC]]
+== AsciiDocについて
 
-//
-[[README]]
-include::README.adoc[leveloffset=+1]
+include::about-asciidoc.adoc[leveloffset=+1]
 
 <<<
 
-
 ifdef::target-sample[]
-[[GLOSSARY]]
-== 用語集
-include::glossary.adoc[]
+[[DESCRIPTION-GUIDELINES]]
+== 表現の統一について
+
+include::guideline-description.adoc[leveloffset=+1]
 
 <<<
 endif::[]
 
-//
+[[ASCIIDOC-SYNTAX-REFERENCE]]
+== AsciiDocの記載方法
+
+include::asciidoc-syntax-reference.adoc[leveloffset=+1]
+
+<<<
+
 [[license]]
 == ライセンスについて
 include::LICENSE.adoc[leveloffset=+1]
