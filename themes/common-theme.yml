@@ -22,6 +22,11 @@ font:
       bold: GenShinGothic/GenShinGothic-P-Bold.ttf
       italic: GenShinGothic/GenShinGothic-P-ExtraLight.ttf
       bold_italic: GenShinGothic/GenShinGothic-P-Medium.ttf
+    sans-serif:
+      normal: GenShinGothic/GenShinGothic-P-Regular.ttf
+      bold: GenShinGothic/GenShinGothic-P-Bold.ttf
+      italic: GenShinGothic/GenShinGothic-P-ExtraLight.ttf
+      bold_italic: GenShinGothic/GenShinGothic-P-Medium.ttf
     Noto Serif:
       normal: GenYoMinJP/GenYoMinJP-Regular.ttf
       bold: GenYoMinJP/GenYoMinJP-Bold.ttf
@@ -33,6 +38,11 @@ font:
       italic: GenShinGothic/GenShinGothic-P-ExtraLight.ttf
       bold_italic: GenShinGothic/GenShinGothic-P-Medium.ttf
     Monospace:
+      normal: GenShinGothic/GenShinGothic-Monospace-Regular.ttf
+      bold: GenShinGothic/GenShinGothic-Monospace-Bold.ttf
+      italic: GenShinGothic/GenShinGothic-Monospace-ExtraLight.ttf
+      bold_italic: GenShinGothic/GenShinGothic-Monospace-Medium.ttf
+    monospace:
       normal: GenShinGothic/GenShinGothic-Monospace-Regular.ttf
       bold: GenShinGothic/GenShinGothic-Monospace-Bold.ttf
       italic: GenShinGothic/GenShinGothic-Monospace-ExtraLight.ttf
@@ -67,6 +77,8 @@ heading:
 
 role:
   # Custom roles only apply to inline phrases.
+  white:
+    font_color: ffffff
   red:
     font_color: ff0000
   blue:
@@ -75,6 +87,10 @@ role:
     font_color: 696969
   green:
     font_color: 008000
+  lime:
+    font_color: 00ff00
+  darkgreen:
+    font_color: 006400
   orange:
     font_color: ff8c00
   navy:
@@ -141,14 +157,14 @@ header:
     center:
       content: '{docdatetime}'
     right:
-      content:
+      content: '{revnumber} - {revdate}'
   verso:
     left:
-      content: $header_recto_right_content
+      content: $header_recto_left_content
     center:
       content: $header_recto_center_content
     right:
-      content: $header_recto_left_content
+      content: $header_recto_right_content
 
 footer:
   recto:
@@ -186,17 +202,19 @@ table:
     style: inherit
 
 
-ulist-marker:
-  line-height: 1.2
+# リスト全体の設定
+outline-list:
+  item-spacing: 4
 
 admonition:
   font_color: 333333
   font_family: $heading_font_family
   icon:
     tip:
-      stroke-color: $role_gold_font_color
+      stroke-color: $role_orange_font_color
     caution:
-      stroke-color: $role_crimson_font_color
+      name: fas-hand-point-up
+      stroke-color: $role_darkgreen_font_color
     important:
       stroke-color: $role_red_font_color
     note:
@@ -218,3 +236,6 @@ lead:
   font_size: $base_font_size
   line_height: 1.4
   font_color: $heading_font_color
+
+svg:
+  fallback_font_family: $heading_font_family
