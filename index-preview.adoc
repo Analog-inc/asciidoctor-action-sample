@@ -19,8 +19,8 @@ include::define-literal.adoc[]
 // プレビュー特有の対策として作成時の表示を許可
 // ここだけ「.github/workflows/asciidoc.sh」内部の値を利用して出力制御
 ifndef::target-release[]
-:is_i_h:
-:is_i_p:
+:is_s_h:
+:is_s_p:
 :is_r_h:
 :is_r_p:
 endif::[]
@@ -35,7 +35,7 @@ toc::[]
 
 ### HTML版
 
-ifdef::is_i_h[]
+ifdef::is_s_h[]
 * **link:./html/index.html[メイン]**
 endif::[]
 
@@ -45,7 +45,7 @@ endif::[]
 
 ### PDF版
 
-ifdef::is_i_p[]
+ifdef::is_s_p[]
 * **link:./pdf/sample.pdf[メイン]**
 endif::[]
 
