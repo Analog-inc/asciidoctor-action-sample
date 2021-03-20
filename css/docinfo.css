@@ -70,6 +70,7 @@ h6 {
 
 table thead tr th,
 table thead tr td,
+table tbody tr th,
 table tfoot tr th,
 table tfoot tr td,
 table tr td p,
@@ -77,8 +78,13 @@ table tr td p,
 	font-family: "Open Sans", "DejaVu Sans", sans-serif
 }
 
-table thead tr th {
+table thead tr th,
+table tbody tr th {
 	background: #005CA2;
+	color: #FFFFFF
+}
+
+table tr th p {
 	color: #FFFFFF
 }
 
@@ -99,6 +105,10 @@ table.grid-all>tbody>tr>.tableblock {
 	border-width: 1px 1px 1px 1px;
 }
 
+.white {
+	color: #ffffff
+}
+
 .red {
 	color: #ff0000
 }
@@ -113,6 +123,14 @@ table.grid-all>tbody>tr>.tableblock {
 
 .green {
 	color: #008000
+}
+
+.lime {
+	color: #00ff00
+}
+
+.darkgreen {
+	color: #006400
 }
 
 .orange {
@@ -150,11 +168,12 @@ a>em {
 }
 
 .admonitionblock td.icon .icon-tip::before {
-	color: #FFD700
+	color: #ff8c00
 }
 
 .admonitionblock td.icon .icon-caution::before {
-	color: #dc143c
+	content: "\f0a6";
+	color: #006400
 }
 
 .admonitionblock td.icon .icon-important::before {
