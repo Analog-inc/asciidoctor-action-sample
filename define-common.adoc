@@ -14,7 +14,7 @@
 // 画像を埋め込み コマンドから指定
 // :data-uri:
 // キャッシュを許容
-:cache-uri:
+// :cache-uri:
 // 各ラベルの日本語定義
 // :chapter-label:
 :chapter-label!:
