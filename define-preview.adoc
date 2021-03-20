@@ -1,0 +1,12 @@
+// コンバート処理の時以外の表示方法
+ifndef::target-release[]
+// ローカル環境でのプレビューに利用してください。
+
+// サンプル表示
+:target-sample:
+
+// README表示
+:target-readme:
+
+
+endif::[]

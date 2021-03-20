@@ -1,126 +1,81 @@
-// ドキュメント仕様
-:asciidoctor:
-:doctype: book
-:lang: ja
-:icons: font
-:encoding: utf-8
-:backend: html5
-:docinfo: shared
-// 画像を埋め込み
-// :data-uri:
-// セクションにアンカーを作成
-:sectanchors:
-// セクションにリンクを作成
-:sectlinks:
-// 章番号を付けるか。属性を定義しておくだけで章番号が付けられる。
-:sectnums:
-// セクションのナンバリングレベルを設定
-:sectnumlevels: 6
-// ソースコードをハイライトする。
-:source-highlighter: coderay
-:target-sample:
-
 ifndef::target-release[]
 include::define-literal.adoc[]
 endif::[]
 
+[[ASCIIDOC-SYNTAX-DEFINE]]
+== 文言や画像、リンク等の定義と利用
 
-= 本ドキュメント記載のルール
-
-== 統一した文言と正しい定義について
-
-define-literal.adocに定義ずみの項目については、本文中に直書きすることなく定義を参照して利用するようお願いします。
+Asciidocでは定義済み項目を本文中に直書きすることなく簡単に利用することができます。
 
 define-literal.adocに定義された情報は「\{name-role-sample}」のように記載することで「{name-role-sample}」と出力したり、
 定義された画像として「\{icon-sample-user}」のように記載することで「{icon-sample-user}」と出力することができます。
 
-
-[.accordion.source]
+[.accordion.source,asciidoc,linenums]
 ----
 define-literal.adocに定義された情報は「\{name-role-sample}」のように記載することで「{name-role-sample}」と出力したり、
 定義された画像として「\{icon-sample-user}」のように記載することで「{icon-sample-user}」と出力することができます。
 ----
 
-[IMPORTANT]
-.[.red.big]#*用語定義のお願い*#
-====
-過去の例では表現ゆれの修正に数週間かかるなど、マニュアルのリリースに対して大きなコストがかかることがありました。 +
-AscciDocの便利な機能を利用してコスト削減と品質の向上への協力をお願いします。
-====
 
+[[ASCIIDOC-SYNTAX-SECTION-LEVEL]]
 == セクションタイトルのレベルについて
 
 asciidocはヘッダー(見出し)の扱いが厳格な文書形式です。 +
 また多くの人が同時に修正しやすくGitでのマージ等が低コストで行えるように、
-レベル2のヘッダーごとにインクルードによるファイルの分割を行ってください。 +
+レベル2のヘッダーごとにインクルードによるファイルの分割してください。 +
 また、分割したファイルでは原則レベル3以降のヘッダーを利用し文書の構造化に努めてください。
 
-[.accordion.source]
+[.accordion.source,asciidoc,linenums]
 ----
 [[include]]
-=== 参照先の章の名称
+= 参照先の章の名称
 \include::include.adoc[]
 ----
 
 インクルードするファイルのレベルは「leveloffset」を利用して以下の記載をすると揃えることができます。
 
-[.accordion.source]
+[.accordion.source,asciidoc,linenums]
 ----
 \include::include.adoc[leveloffset=+2]
 ----
 
+
 == 出力設定について
 
-AsciiDocではifdefディレクティブを利用した簡易的な出力制御が可能です。 +
+AsciiDocではifdef(ifndef)ディレクティブを利用した簡易的な出力制御が可能です。 +
 本ドキュメントでは主に以下の定義を利用して状況や対象者によって以下のように出力を切り替えています。
 
-[.accordion.source]
+[.accordion.source,asciidoc,linenums]
 ----
 \ifdef::backend-html5[]
-出力内容
+HTMLのみの出力内容
 \endif::[]
+
+\ifndef::backend-pdf[]
+PDFでは出力されない内容
+\endif::[]
+
+\ifndef::target-readme[]
+自動化した出力では利用しない内容
+(「target-readme」は本サンプルで定義している項目)
+\endif::[]
+
+\ifdef::target-sample[]
+明示的にendifを記載する場合。
+(「target-sample」は本サンプルで定義している項目)
+\endif::target-sample[]
 ----
 
-出力フォーマットによる定義::
-本項目は出力対象のフォーマットによって異なる値を利用する場合に利用しています。 +
-本項目はAsciidocterにて定義されている項目となります。
-backend-html5:::
-HTML出力時に有効になります。
-backend-pdf:::
-PDF出力時に有効になります。
-プレビューとビルドを分離する定義::
-本項目はドキュメント記載時のプレビューと実際のコンバート処理を分離する場合に利用しています。 +
-主に、定義を記載したインクルードをかくファイルで行うかの判定に利用しています。 +
-本項目は独自定義項目です。
-target-release:::
-自動での出力時に有効になります。「.github/workflows/asciidoc.sh」内で指定されます。
-権限に関する定義::
-本項目は各ユーザーに適した内容を出力するために利用しています。 +
-自動での出力時に有効になります。「.github/workflows/asciidoc.sh」内で指定されます。 +
-本項目は独自定義項目です。
-target-sample:::
-{name-role-h}向けの出力を行うときに利用します。 +
-「.github/workflows/asciidoc.sh」内で出力ファイル毎に指定されます。
-target-analog:::
-{name-role-p}向けの出力を行うときに利用します。 +
-「.github/workflows/asciidoc.sh」内で出力ファイル毎に指定されます。
+その他、本ナレッジで定義している項目の詳細は「<<README-GITHUB-WORKFLOWS-TARGET>>」を参照してください。
 
-
+[[ASCIIDOC-SYNTAX-IMAGES]]
 == 画像について
 
-画像はその対象やフォーマット毎のルールや、利用時のルールがあります。
+ここでは利用方法を記載します。 +
+作成方法は各画像の格納先「<<IMAGE-MANAGEMENT>>」を参照してください。
 
-=== 作成方法
-
-作成方法は各画像の格納先を参照してください。
-ifdef::target-release[]
-(参照 : <<IMAGE-MANAGEMENT>>)
-endif::[]
-
-
-=== 記述方法
-
-==== ブロック
+[[ASCIIDOC-SYNTAX-IMAGE-BLOCK]]
+=== ブロックでの記述
 
 .ブロック画像
 image::images/Logo/analog-logo.svg[pageTop,{full-page}]
@@ -147,34 +102,20 @@ image::images/Logo/analog-logo.svg[Logo,{half-size}]
 |===
 ====
 
-==== インライン
+[[ASCIIDOC-SYNTAX-IMAGE-INLINE]]
+=== インラインでの記述
 
-インライン {icon-analog-write} で表示
+インライン {icon-h-write} で表示
+image:images/SvgBadges/badges/badge-user-analog-check.svg[]
 
-[.accordion.source]
+[.accordion.source,asciidoc,linenums]
 ----
-インライン {icon-analog-write} で表示
-----
-
-ifdef::backend-html5[]
-==== VIDEO
-ビデオも利用できますが、PDFに埋め込むことはできません。 +
-また、ビデオはHTMLファイル中にファイルを埋め込むことができないため1HTMLファイルでの提供はできなくなります。
-
-.ビデオサンプル
-video::images/video/sample.mp4[Video,{half-width}]
-
-[.accordion.source]
-----
-.ビデオサンプル
-video::images/video/sample.mp4[Video,{half-width}]
+インライン {icon-h-write} で表示
+image:images/SvgBadges/badges/badge-user-analog-check.svg[]
 ----
 
-endif::[]
 
-== AsciiDoc記述方法と本ドキュメント推奨の記載方法
-
-=== 表の書き方
+== 表の書き方
 
 普段の利用でMarkdownより大きな利便性を感じる場面は表の扱いです。 +
 ここでは本ドキュメントで利用している記載法を紹介します。
@@ -202,15 +143,22 @@ h|hで個別のヘッダ
 * [.cellsfont]#[.cellsfont]#内容#にてフォントをテーブルと合わせる#
 
 .3+|.n+縦に結合 +
-|TD
-|TD
+| {set:cellbgcolor:#00ccff} TD +
+色の指定
+| {set:cellbgcolor:#transparent} TD +
+色の指定(継承)
 
 2+|n+横に結合
 
-|TD
-|結合されたカラムの定義はしません
+| {set:cellbgcolor:#00ccff} TD +
+色の指定
+| ↑ 結合されたカラムの定義はしません +
+色の指定は連続する
 
-3+a|
+3+a| {set:cellbgcolor:#transparent}
+
+[.cellsfont]#結合時など色の指定の影響(継承の扱いは微妙)#
+
 [.cellsfont]#aで内部にテーブル#
 [%header,cols="1,3"]
 !===
@@ -221,8 +169,10 @@ h|hで個別のヘッダ
 // 隙間が足りない事があるので隠し文字をいれる
 {zwsp}
 |===
+//最終セルのカラーをリセットして他のテーブルに影響しない様にする
+{set:cellbgcolor!}
 
-[.accordion.source]
+[.accordion.source,asciidoc,linenums]
 ----
 .複雑な表の扱い
 [%header,cols="1,2,3"]
@@ -246,15 +196,22 @@ h|hで個別のヘッダ
 * [.cellsfont]#[.cellsfont]#内容#にてフォントをテーブルと合わせる#
 
 .3+|.n+縦に結合 +
-|TD
-|TD
+| {set:cellbgcolor:#00ccff} TD +
+色の指定
+| {set:cellbgcolor:#transparent} TD +
+色の指定(継承)
 
 2+|n+横に結合
 
-|TD
-|結合されたカラムの定義はしません
+| {set:cellbgcolor:#00ccff} TD +
+色の指定
+| ↑ 結合されたカラムの定義はしません +
+色の指定は連続する
 
-3+a|
+3+a| {set:cellbgcolor:#transparent}
+
+[.cellsfont]#結合時など色の指定の影響(継承の扱いは微妙)#
+
 [.cellsfont]#aで内部にテーブル#
 [%header,cols="1,3"]
 !===
@@ -265,25 +222,13 @@ h|hで個別のヘッダ
 // 隙間が足りない事があるので隠し文字をいれる
 {zwsp}
 |===
+//最終セルのカラーをリセットして他のテーブルに影響しない様にする
+{set:cellbgcolor!}
 ----
 
-.外部CSVファイルを利用したテーブル
-[format="csv", options="header,footer" cols=",,"]
-|===
-include::table.csv[]
-|===
+== ロール指定による文字のスタイル指定
 
-[.accordion.source]
-----
-.外部CSVファイルを利用したテーブル
-[format="csv", options="header,footer" cols=",,"]
-|===
-\include::table.csv[]
-|===
-----
-=== ロール指定による文字のスタイル指定
-
-以下のようにロールを利用してスタイルを適用することができます。
+以下のようにロールを利用してスタイルを適用できます。
 
 * 指定なし
 * *強調によるボールド*
@@ -294,7 +239,7 @@ include::table.csv[]
 * [.cellsfont]#テーブル内と同じ文字#
 * [.cellsfont.red]#テーブル内の赤字#
 
-[.accordion.source]
+[.accordion.source,asciidoc,linenums]
 ----
 * 指定なし
 * *強調によるボールド*
@@ -306,24 +251,24 @@ include::table.csv[]
 * [.cellsfont.red]#テーブル内の赤字#
 ----
 
-=== 特殊なAttributeの利用
+== 特殊なAttributeの利用
 
-==== リンクの定義
+=== リンクの定義
 
-:link-site-preview: https://ashy-coast-0be90a600.azurestaticapps.net[リリース作業中マニュアルが閲覧できるAzure static web appsサイト]
-
-本ドキュメントは{zwsp}{link-site-preview}で閲覧できます。 +
-\{zwsp}は日本語との結合時に必要です。
-
-[.accordion.source]
-----
-:link-site-preview: https://ashy-coast-0be90a600.azurestaticapps.net[リリース作業中マニュアルが閲覧できるAzure static web appsサイト]
+:link:https://sample.asciidoc.analog-inc.com[サンプルを閲覧できるAzure static web appsサイト]
 
 本ドキュメントは{zwsp}{link-site-preview}で閲覧できます。 +
 \{zwsp}は日本語との結合時に必要です。
+
+[.accordion.source,asciidoc,linenums]
+----
+:link:https://sample.asciidoc.analog-inc.com[サンプルを閲覧できるAzure static web appsサイト]
+
+本ドキュメントは{zwsp}{link-site-preview}で閲覧できます。 +
+\{zwsp}は日本語との結合時に必要です。
 ----
 
-==== 定義の途中で色指定
+=== 定義の途中で色指定
 
 :name-button-test: 【テスト】ボタン
 :name-button-test-red-name: pass:quotes[[.red]#【テスト】#]
@@ -332,7 +277,7 @@ include::table.csv[]
 通常の記載は『{name-button-test}』で、一部のみ赤字は『{name-button-test-red}』です。
 /{zwsp}がpassでそのまま出力されるために2行に分けています。
 
-[.accordion.source]
+[.accordion.source,asciidoc,linenums]
 ----
 :name-button-test: 【テスト】ボタン
 :name-button-test-red-name: pass:quotes[[.red]#【テスト】#]
@@ -342,7 +287,7 @@ include::table.csv[]
 /{zwsp}がpassでそのまま出力されるために2行に分けています。
 ----
 
-==== 定義内で改行
+=== 定義内で改行
 
 :sentence-no-newline: 定義内で改行はしても \
 表示では改行しません。
@@ -353,7 +298,7 @@ include::table.csv[]
 {sentence-no-newline} +
 {sentence-newline}
 
-[.accordion.source]
+[.accordion.source,asciidoc,linenums]
 ----
 :sentence-no-newline: 定義内で改行はしても \
 表示では改行しません。
@@ -365,9 +310,9 @@ include::table.csv[]
 {sentence-newline}
 ----
 
-=== 注釈等
+== 脚注
 
-注釈はアイコンが左側に表示されるスタイルです。
+脚注はアイコンが左側に表示されるスタイルです。
 変更容易性や表現の幅を考慮しブロック形式で記載することをお勧めします。
 
 [NOTE]
@@ -377,7 +322,7 @@ include::table.csv[]
 補足となる内容や追加の情報が必要な場合に記載してください。
 ====
 
-[.accordion.source]
+[.accordion.source,asciidoc,linenums]
 ----
 [NOTE]
 .[.navy.big]#*NOTE*#
@@ -395,7 +340,7 @@ include::table.csv[]
 ユーザーが行う解決策などを提示する場合に利用してください。
 ====
 
-[.accordion.source]
+[.accordion.source,asciidoc,linenums]
 ----
 [TIP]
 .[.big]#*TIP*#
@@ -413,7 +358,7 @@ include::table.csv[]
 問題を回避する方法を記載してください。
 ====
 
-[.accordion.source]
+[.accordion.source,asciidoc,linenums]
 ----
 [WARNING]
 .[.orange.big]#*WARNING*#
@@ -431,7 +376,7 @@ include::table.csv[]
 システムを利用する上でセキュリティリスクなどを記載してください。
 ====
 
-[.accordion.source]
+[.accordion.source,asciidoc,linenums]
 ----
 [IMPORTANT]
 .[.red.big]#*IMPORTANT*#
@@ -441,31 +386,261 @@ include::table.csv[]
 ====
 ----
 
+
 [CAUTION]
-.[.crimson.big]#*CAUTION*#
+.[.darkgreen.big]#*CAUTION*#
 ====
 現在ある不具合やバグ、明らかな矛盾点など記載してください。
 ====
 
-[.accordion.source]
+
+[.accordion.source,asciidoc,linenums]
 ----
 [CAUTION]
-.[.crimson.big]#*CAUTION*#
+.[.darkgreen.big]#*CAUTION*#
 ====
 現在ある不具合やバグ、明らかな矛盾点など記載してください。
 ====
+
 ----
 
-=== リスト
+== ブロック
 
-==== 順序無しリストのネスト
+=== Example block (例示)
+
+.〇〇について
+[example]
+====
+例示的な内容を指定するか、 +
+または勧告ブロックを定義します。
+
+. リスト
+. リスト
+====
+
+[.accordion.source,asciidoc,linenums]
+----
+.〇〇について
+[example]
+====
+例示的な内容を指定するか、 +
+または勧告ブロックを定義します。
+
+. リスト
+. リスト
+====
+----
+
+=== Listing block
+
+.〇〇について
+[listing, javascript]
+----
+// 入力されたソースコードやキーボード入力が表示されます
+
+ただし +
+吹き出し機能が使えます。<!--1-->
+
+document.write("Hello world!!");
+
+----
+<1> 吹き出しの内容をここで定義します。
+
+[.accordion.source,asciidoc,linenums]
+----
+.〇〇について
+[listing, javascript]
+\----
+// 入力されたソースコードやキーボード入力が表示されます
+
+ただし +
+吹き出し機能が使えます。<!--1-->
+
+document.write("Hello world!!");
+
+\----
+<1> 吹き出しの内容をここで定義します。
+----
+
+=== Fenced
+
+
+.〇〇について
+```
+// 入力されたソースコードまたはキーボード入力が表示されます。
+ドキュメントで有効になっていて、言語が設定されている場合は、 +
+ソース・ハイライターで色付けされます。
+
+document.write("Hello world!!");
+```
+
+
+[.accordion.source,asciidoc,linenums]
+----
+.〇〇について
+```
+// 入力されたソースコードまたはキーボード入力が表示されます。
+ドキュメントで有効になっていて、言語が設定されている場合は、 +
+ソース・ハイライターで色付けされます。
+
+document.write("Hello world!!");
+```
+----
+
+=== Literal block
+
+.〇〇について
+[literal]
+....
+入力された通りに +
+出力テキストが表示されます
+吹き出し機能が使えます。<!--1-->
+....
+<1> 吹き出しの内容をここで定義します。
+
+ スペースを開けた一行が同じ表示になるので注意
+
+[.accordion.source,asciidoc,linenums]
+----
+.〇〇について
+[literal]
+....
+入力された通りに +
+出力テキストが表示されます
+吹き出し機能が使えます。<!--1-->
+....
+<1> 吹き出しの内容をここで定義します。
+
+ スペースを開けた一行が同じ表示になるので注意
+----
+
+=== Passthrough block
+
+.〇〇について
+[pass]
+++++
+出力に直接送られる +
+未処理のコンテンツ
+++++
+
+[.accordion.source,asciidoc,linenums]
+----
+.〇〇について
+[pass]
+++++
+出力に直接送られる +
+未処理のコンテンツ
+++++
+----
+
+=== Blockquotes(引用)
+
+.〇〇について
+[quote, Albert Einstein,proverb,]
+----
+ミスをしたことのない人は、 +
+新しいことに挑戦したことがありません。
+吹き出し機能が使えます。<!--1-->
+----
+<1> 吹き出しの内容をここで定義します。
+
+[.accordion.source,asciidoc,linenums]
+----
+.〇〇について
+[quote, Albert Einstein,proverb,]
+\----
+ミスをしたことのない人は、 +
+新しいことに挑戦したことがありません。
+吹き出し機能が使えます。<!--1-->
+\----
+<1> 吹き出しの内容をここで定義します。
+----
+
+=== Sidebar
+
+.〇〇について
+[sidebar]
+****
+文書の流れの外に表示される +
+テキストやコンテンツを
+非表示にする
+
+. リスト
+. リスト
+****
+
+[.accordion.source,asciidoc,linenums]
+----
+.〇〇について
+[sidebar]
+****
+文書の流れの外に表示される +
+テキストやコンテンツを
+非表示にする
+
+. リスト
+. リスト
+****
+----
+
+=== Source
+
+.〇〇について
+[source,javascript]
+----
+// 入力されたとおりに表示されるソースコードまたはキーボード入力。
+ドキュメントで有効になっていて、言語が設定されている場合は、 +
+ソース・ハイライターで色付けされます。
+吹き出し機能が使えます。<!--1-->
+
+document.write("Hello world!!");
+
+----
+<1> 吹き出しの内容をここで定義します。
+
+[.accordion.source,asciidoc,linenums]
+----
+.〇〇について
+[source,Java]
+/----
+// 入力されたとおりに表示されるソースコードまたはキーボード入力。
+ドキュメントで有効になっていて、言語が設定されている場合は、 +
+ソース・ハイライターで色付けされます。
+吹き出し機能が使えます。<!--1-->
+
+document.write("Hello world!!");
+
+/----
+<1> 吹き出しの内容をここで定義します。
+----
+
+=== Stem
+
+.〇〇について
+[stem]
+++++
+インタプリタに直接送られる未処理のコンテンツ (AsciiMath や LaTeX math など)
+++++
+
+[.accordion.source,asciidoc,linenums]
+----
+.〇〇について
+[stem]
+++++
+インタプリタに直接送られる未処理のコンテンツ (AsciiMath や LaTeX math など)
+++++
+----
+
+== リスト
+
+=== 順序無しリストのネスト
 
 * レベル１
 ** レベル２
 *** レベル３
 ** レベル２
 
-[.accordion.source]
+[.accordion.source,asciidoc,linenums]
 ----
 * レベル１
 ** レベル２
@@ -473,7 +648,7 @@ include::table.csv[]
 ** レベル２
 ----
 
-==== 順序ありリストのネスト
+=== 順序ありリストのネスト
 
 . 手順１
 . 手順２
@@ -481,7 +656,7 @@ include::table.csv[]
 .. 手順２b
 . 手順３
 
-[.accordion.source]
+[.accordion.source,asciidoc,linenums]
 ----
 . 手順１
 . 手順２
@@ -490,7 +665,7 @@ include::table.csv[]
 . 手順３
 ----
 
-==== チェックリスト
+=== チェックリスト
 
 リーフレットなどを作成する場合に利用してください。
 
@@ -498,7 +673,7 @@ include::table.csv[]
 - [x] これもチェック済みの要素
 - [ ] 未チェックの要素
 
-[.accordion.source]
+[.accordion.source,asciidoc,linenums]
 ----
 - [*] チェック済みの要素
 - [x] これもチェック済みの要素
@@ -506,7 +681,7 @@ include::table.csv[]
 ----
 
 
-=== カウンター
+== カウンター
 
 {counter2:sequence-count-sample-no:0}カウンターは型を定義することができる。 +
 {counter:sequence-count-sample-no}.{nbsp}カウンターの利用方法 +
@@ -521,7 +696,7 @@ include::table.csv[]
 {counter:sequence-count-sample-alphabet:a}.{nbsp}カウンターは型を定義することができる。 +
 {counter:sequence-count-sample-alphabet}.{nbsp}インクリメントができればいい
 
-[.accordion.source]
+[.accordion.source,asciidoc,linenums]
 ----
 {counter2:sequence-count-sample-no:0}カウンターは型を定義することができる。 +
 {counter:sequence-count-sample-no}.{nbsp}カウンターの利用方法 +
@@ -539,22 +714,15 @@ include::table.csv[]
 ----
 
 
-=== 改ページ
-
-==== 改ページ前
-
-<<<
-
+== 改ページ
 ----
 <<<
 ----
 
-==== 改ページ後
 
+== コメントアウト
 
-=== コメントアウト
-
-==== インライン
+=== インライン
 
 //はコメントアウトになり出力されません。
 ----
@@ -562,7 +730,7 @@ include::table.csv[]
 ----
 
 
-==== ブロック
+=== ブロック
 
 ////
 ここにコメント
@@ -574,7 +742,7 @@ include::table.csv[]
 ////
 ----
 
-=== ラベル
+== ラベル
 
 辞書形式に利用します。
 
@@ -582,32 +750,55 @@ include::table.csv[]
 二条::: 第一項二条の定義
 第二項:: 第二項の定義
 
-[.accordion.source]
+[.accordion.source,asciidoc,linenums]
 ----
 第一項:: 第一項の定義
 第一項二条::: 第一項二条の定義
 第二項:: 第二項の定義
 ----
 
-=== 水平罫線
+
+== 水平罫線
 
 水平罫線は以下のように記載します。
 
 '''
 
-[.accordion.source]
+[.accordion.source,asciidoc,linenums]
 ----
 '''
 ----
 
-=== 記号の記載
+== インラインマクロ
+
+=== Inline image macro
+
+「image:」で始まるインライン画像はインラインマクロの一つです。 +
+詳しくは「<<ASCIIDOC-SYNTAX-IMAGE-INLINE>>」を参照してください。
+
+=== Inline pass macro
+
+「pass:」を利用するとAsciiDocの文法などが無視され未処理でそのまま出力されます。
+
+=== Inline Macro Processor Extension
+
+Inline Macro Processor Extensionは自分で処理を記載して利用するAsciidoctor Extensionsの1種類です。
+
+// Inline Macro Processor Extensionの詳細はサンプルを配置してください。
+
+==== datetimeformat
+
+include::lib/datetimeformat-InlineMacroProcessor/sample.adoc[leveloffset=+4]
+
+
+== 記号の記載
 
 一部の記号は記載時にリプレースやエスケープを行う必要があります。
 
 例えば「{vbar}」はリプレースとして「\{vbar}」と記載を行います。
 また、テーブル内で別のセパレーターとして「!」と利用する場合などはエスケープとして「/!」とすることで出力できます。
 
-[.accordion.source]
+[.accordion.source,asciidoc,linenums]
 ----
 例えば「{vbar}」はリプレースとして「\{vbar}」と記載を行います。
 また、テーブル内で別のセパレーターとして「!」と利用する場合などはエスケープとして「/!」とすることで出力できます。
@@ -748,7 +939,7 @@ e|single space
 しかし、出力形式が異なるエンコーディング方式の使用を必要としない限り、それらを読み取り専用として扱うのが最善です。
 これらの属性は、コンテンツとプレゼンテーションを切り離すための効果的なツールです。
 
-^[3]^ Asciidoctorでは、HTMLで定義されている名前付き文字参照(別名：名前付き実体)のいずれかを使用することができます。
+^[3]^ Asciidoctorでは、HTMLで定義されている名前付き文字参照(別名：名前付き実体)のいずれかを使用できます。
 しかし、名前付き文字参照を使用すると、PDFなどの非HTML出力を生成する際に問題が発生することがあります。
 これらの名前を解決するために必要な参照テーブルが定義されていない可能性があるからです。私たちの推奨事項は、XMLで定義されているもの(すなわち lt ・ gt ・ amp ・ quot ・ apos)を除いて、名前付き文字参照の使用を避けることです。
 その代わりに、数値の文字参照を使用してください。
@@ -758,13 +949,17 @@ e|single space
 ^[5]^ ワードジョイナー(WJ)は、その位置での改行を防ぐUnicodeのコードポイントです。
 ====
 
-=== ダイアグラム
-Asciidoctorではダイアグラムを記載することができますが、生成画像はプレビューできません。
+== ダイアグラム
+Asciidoctorではダイアグラムを記載できますが、生成画像はプレビューできません。 +
+ダイアグラムの名称は必ず一意のものを設定してください。
+
+
+=== ditaaで記述するダイアグラム
 
 [.accordion]
-==== ditaaで記述するダイアグラム
+====
 
-[ditaa, diagram-sample, svg]
+[ditaa, asciidoc-syntax-diagram-ditaa-sample, svg]
 ....
                    +-------------+
                    | Asciidoctor |-------+
@@ -786,7 +981,7 @@ Asciidoctorではダイアグラムを記載することができますが、生
 
 
 
-[ditaa, diagram-format, svg]
+[ditaa, asciidoc-syntax-diagram-ditaa-sample-format, svg]
 ....
 
           +-----+
@@ -827,16 +1022,18 @@ Asciidoctorではダイアグラムを記載することができますが、生
 
 ....
 
+====
 
-[.accordion]
-==== PlantUMLで記述するダイアグラム
+
+=== PlantUMLで記述するダイアグラム
 
 UMLを記述する場合はPlantUMLがおすすめ。 +
 多彩なUMLを気軽に記述できる。
 
+[.accordion]
+====
 
-
-[plantuml, diagram-classes, svg]
+[plantuml, asciidoc-syntax-diagram-plantuml-classes, svg]
 ....
 class BlockProcessor
 class DiagramBlock
@@ -848,7 +1045,7 @@ DiagramBlock <|-- DitaaBlock
 DiagramBlock <|-- PlantUmlBlock
 ....
 
-[plantuml, diagram-sequence, svg]
+[plantuml, asciidoc-syntax-diagram-plantuml-sequence, svg]
 ....
 actor Bob #red
 ' The only difference between actor
@@ -867,231 +1064,4 @@ Bob->L: Log transaction
 Alice->Alice: This is a signal to self.\nIt also demonstrates\nmultiline \ntext
 ....
 
-
-
-=== 細かな記載ルール
-
-
-==== システムやその画面上に表現ゆれが存在する場合
-
-基本的には画面上の文言を尊重しますが、それでも表現にゆれがある場合は、
-最終的な行為に対する文言を優先してください。
-
-==== 文中のカッコの扱いについて
-
-本画面の参照のうち、表外の項目については【項目名】(選択肢ではない)を利用します。 +
-多画面の項目を参照する場合は「項目名」を利用します。
-
-ボタン、画面、ロールなど原則として用語定義を利用するものは「」を利用しません。
-
-==== 「をする場合」など場合を利用する記載について
-
-場合は選択の余地や、ケースによって実施するかしないか異なるフローについて利用します。
-
-
-==== OR条件AND条件を日本語で記載する場合
-
-===== OR条件
-
-----
-[α]または[β]
-[A]、[B]、[C]、もしくは[D]等の[α]、または[E]、[F]、[G]、もしくは[H]などの[β]
-----
-は
-----
-α or β
-α[A or B or C or D (or etc.)] or β[E or F or G or H (or etc.)]
-----
-となります。
-
-===== AND条件
-
-----
-[α]および[β]
-[A]、[B]、[C]、および[D]等の[α]、並びに[E]、[F]、[G]、および[H]などの[β]
-----
-は
-----
-α and β
-α[A and B and C and D (and etc.)] and β[E and F and G and H (and etc.)]
-----
-となります。
-
-==== 長音記号の有無
-
-
-===== 主に長音記号を用いるもの
-
-[.accordion]
 ====
-[cols="2,7"]
-.主に長音記号を用いるもの
-|===
-|英単語|カナ
-|adapter|アダプター
-|administrator|アドミニストレーター
-|advisor|アドバイザー
-|anchor|アンカー
-|behavior|ビヘイビアー
-|binder|バインダー
-|browser|ブラウザー
-|buffer|バッファー
-|calendar|カレンダー
-|cellular|セルラー
-|chapter|チャプター
-|condenser|コンデンサー
-|constructor|コンストラクター
-|consumer|コンシューマー
-|container|コンテナー
-|controller|コントローラー
-|counter|カウンター
-|customer|カスタマー
-|customizer|カスタマイザー
-|cyber|サイバー
-|debugger|デバッガー
-|decoder|デコーダー
-|designer|デザイナー
-|developer|デベロッパー
-|downloader|ダウンローダー
-|driver|ドライバー
-|encoder|エンコーダー
-|enterprise|エンタープライズ
-|error|エラー
-|exchanger|エクスチェンジャー
-|expander|エキスパンダー
-|explorer|エクスプローラー
-|extender|エクステンダー
-|fiber|ファイバー
-|filter|フィルター
-|finder|ファインダー
-|flow|フロー
-|folder|フォルダー
-|free|フリー
-|gatekeeper|ゲートキーパー
-|glow|グロー
-|header|ヘッダー
-|how-to|ハウツー
-|installer|インストーラー
-|interceptor|インターセプター
-|interpreter|インタープリター
-|launcher|ランチャー
-|layer|レイヤー
-|licensor|ライセンサー
-|maker|メーカー
-|master|マスター
-|member|メンバー
-|membership|メンバーシップ
-|menu|メニュー
-|messenger|メッセンジャー
-|meter|メーター
-|minor|マイナー
-|modular|モジュラー
-|monitor|モニター
-|number|ナンバー
-|officer|オフィサー
-|operator|オペレーター
-|organizer|オーガナイザー
-|owner|オーナー
-|parameter|パラメーター
-|partner|パートナー
-|placeholder|プレースホルダー
-|player|プレーヤー
-|power|パワー
-|presenter|プレゼンター
-|printer|プリンター
-|protector|プロテクター
-|publisher|パブリッシャー
-|resolver|リゾルバー
-|router|ルーター
-|scanner|スキャナー
-|selector|セレクター
-|seminar|セミナー
-|sensor|センサー
-|separator|セパレーター
-|sequencer|シーケンサー
-|serializer|シリアライザー
-|server|サーバー
-|sidebar|サイドバー
-|slow|スロー
-|spacer|スペーサー
-|splitter|スプリッター
-|summary|サマリー
-|supervisor|スーパーバイザー
-|through|スルー
-|toner|トナー
-|transfer|トランスファー
-|transformer|トランスフォーマー
-|translator|トランスレーター
-|transponder|トランスポンダー
-|tree|ツリー
-|trigger|トリガー
-|underbar|アンダーバー
-|updater|アップデーター
-|uploader|アップローダー
-|user|ユーザー
-|validator|バリデーター
-|vector|ベクター
-|viewer|ビューアー
-|workflow|ワークフロー
-|writer|ライター
-|===
-====
-
-===== 主に長音記号を用い無いもの
-
-[.accordion]
-====
-[cols="2,7"]
-.慣例に基づき変更しないもの
-|===
-|英単語 | カナ
-|accelerator|アクセラレータ
-|barrier|バリア
-|bazaar|バザール
-|bear|ベア
-|beer|ビール
-|carrier|キャリア
-|centimeter|センチメートル
-|clear|クリア
-|compiler|コンパイラ
-|connector|コネクタ
-|conveyor|コンベヤ
-|dollar|ドル
-|door|ドア
-|engineer|エンジニア
-|exterior|エクステリア
-|floor|フロア
-|formatter|フォーマッタ
-|frontier|フロンティア
-|gear|ギア
-|humor|ユーモア
-|indoor|インドア
-|interior|インテリア
-|junior|ジュニア
-|linear|リニア
-|meter|メートル
-|millimeter|ミリメートル
-|outdoor|アウトドア
-|polyester|ポリエステル
-|premier|プレミア
-|processor|プロセッサ
-|programmer|プログラマ
-|propeller|プロペラ
-|radiator|ラジエータ
-|rear|リア
-|register|レジスタ
-|scheduler|スケジューラ
-|security|セキュリティ
-|senior|シニア
-|slipper|スリッパ
-|stellar|ステラ
-|terminator|ターミネータ
-|transistor|トランジスタ
-|volunteer|ボランティア
-|===
-====
-
-その他の記載については以下を参照のこと
-
-link:https://www.microsoft.com/ja-jp/language/styleguides[Microsoft ローカリゼーション スタイル ガイド +
-https://www.microsoft.com/ja-jp/language/styleguides]
