@@ -1,0 +1,45 @@
+= datetimeformat-InlineMacroProcessor sample
+:revnumber: 1.0.0
+:revdate: 2020-01-01
+
+
+本ドキュメントは{zwsp}datetimeformat:revdate[/]{zwsp}版です。 +
+datetimeformat:docdate[年月日] +
+datetimeformat:localdate[-] +
+本ドキュメントは{zwsp}datetimeformat:docdatetime[年月日時分秒]{zwsp}に更新されました。 +
+datetimeformat:docdatetime[年月日時分] +
+datetimeformat:docdatetime[時分] +
+datetimeformat:docdatetime[/:ss] +
+datetimeformat:docdatetime[/:] +
+datetimeformat:docdatetime[:] +
+datetimeformat:localdatetime[T] +
+datetimeformat:doctime[時分秒] +
+datetimeformat:localtime[:ss] +
+datetimeformat:docdatetime[httpdate] +
+datetimeformat:docdatetime[iso8601] +
+datetimeformat:docdatetime[rfc2822] +
+datetimeformat:docdatetime[rfc822] +
+datetimeformat:docdatetime[xmlschema] +
+datetimeformat:docdatetime[%D %T %Z]
+
+[.accordion.source,asciidoc,linenums]
+----
+本ドキュメントは{zwsp}datetimeformat:revdate[/]{zwsp}版です。 +
+datetimeformat:docdate[年月日] +
+datetimeformat:localdate[-] +
+本ドキュメントは{zwsp}datetimeformat:docdatetime[年月日時分秒]{zwsp}に更新されました。 +
+datetimeformat:docdatetime[年月日時分] +
+datetimeformat:docdatetime[時分] +
+datetimeformat:docdatetime[/:ss] +
+datetimeformat:docdatetime[/:] +
+datetimeformat:docdatetime[:] +
+datetimeformat:localdatetime[T] +
+datetimeformat:doctime[時分秒] +
+datetimeformat:localtime[:ss] +
+datetimeformat:docdatetime[httpdate] +
+datetimeformat:docdatetime[iso8601] +
+datetimeformat:docdatetime[rfc2822] +
+datetimeformat:docdatetime[rfc822] +
+datetimeformat:docdatetime[xmlschema] +
+datetimeformat:docdatetime[%D %T %Z]
+----
