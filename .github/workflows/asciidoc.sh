@@ -145,22 +145,22 @@ PREVIEW_TARGET_ATTRIBUTES=""
 set -x
 
 # Output HTML
-if "${is_h_h}"; then
+if "${is_s_h}"; then
   asciidoctor ${COMMON_PARAMETERS} ${HTML_PARAMETERS} -o "index.html" -a target-sample index.adoc
   PREVIEW_TARGET_ATTRIBUTES+=" -a is_s_h"
 fi
-if "${is_g_h}"; then
+if "${is_r_h}"; then
   asciidoctor ${COMMON_PARAMETERS} ${HTML_PARAMETERS} -o "README.html" -a target-readme README.adoc
   PREVIEW_TARGET_ATTRIBUTES+=" -a is_r_h"
 fi
 
 
 # Output PDF
-if "${is_h_p}"; then
+if "${is_s_p}"; then
   asciidoctor-pdf ${COMMON_PARAMETERS} ${PDF_PARAMETERS} -o "sample.pdf" -a target-sample -a pdf-style=${CURRENT_PATH}/themes/user-sample-theme.yml index.adoc
   PREVIEW_TARGET_ATTRIBUTES+=" -a is_s_p"
 fi
-if "${is_g_p}"; then
+if "${is_r_p}"; then
   asciidoctor-pdf ${COMMON_PARAMETERS} ${PDF_PARAMETERS} -o "README.pdf" -a target-readme -a pdf-style=${CURRENT_PATH}/themes/user-analog-theme.yml README.adoc
   PREVIEW_TARGET_ATTRIBUTES+=" -a is_r_p"
 fi
