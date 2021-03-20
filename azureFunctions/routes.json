@@ -40,6 +40,13 @@
       "statusCode": "302",
       "serve": "/login"
     }
-  ]
-
+  ],
+  "defaultHeaders": {
+    "content-security-policy": "default-src https: 'unsafe-eval' 'unsafe-inline'; object-src https: 'self'",
+    "cache-control": "must-revalidate, max-age=14400"
+  },
+  "mimeTypes": {
+      "html": "text/html",
+      "pdf": "application/pdf"
+  }
 }
