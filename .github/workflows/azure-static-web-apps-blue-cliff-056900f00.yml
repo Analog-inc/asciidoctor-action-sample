@@ -27,7 +27,7 @@ jobs:
           shellcommand: "./.github/workflows/asciidoc.sh"
       # Use the output from the documents step  #本ドキュメント固有
       - name: Save AsciiDoc step
-        if: ${{ contains(github.ref, 'output/') }}
+        if: contains(github.head_ref, 'output/')
         uses: actions/upload-artifact@v1
         with:
           name: Output-document
