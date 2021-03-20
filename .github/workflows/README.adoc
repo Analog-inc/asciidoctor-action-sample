@@ -1,25 +1,3 @@
-// ドキュメント仕様
-:asciidoctor:
-:doctype: book
-:lang: ja
-:icons: font
-:encoding: utf-8
-:backend: html5
-:docinfo: shared
-// 画像を埋め込み
-:data-uri:
-// セクションにアンカーを作成
-:sectanchors:
-// セクションにリンクを作成
-:sectlinks:
-// 章番号を付けるか。属性を定義しておくだけで章番号が付けられる。
-:sectnums:
-// セクションのナンバリングレベルを設定
-:sectnumlevels: 5
-// ソースコードをハイライトする。
-:source-highlighter: coderay
-
-= /.github/workflowsディレクトリの内容について
 
 Github Actionsのワークフローの処理を配置するディレクトリです。
 
@@ -28,24 +6,28 @@ asciidoc.sh:: HTML・PDF・ePubを同時に出力するためのシェルスク�
 asciidoc.yml:: Github Actionsで実行するワークフローを記述したファイルです。 +
 現在は一部のブランチでしか機能しないように制限しています。
 azure-static-web-apps-{.*}.yml:: Github Actionsで実行するAzure static web apps向けのワークフローを記述したファイルです。 +
-利用するAzure static web appが変更される場合は、Azure static web appsがpushした新たなファイルに本処理をコピーする必要があります。
+利用するAzure static web appの追加・変更する場合は、Azure static web appsがpushした新たなファイルに本処理をコピーする必要があります。 +
 
+ifdef::target-release[詳しくは「<<README-AZURE-STATIC-WEB-APPS-ROLES>>」を参照してください。]
+ifndef::target-release[詳しくは「azureFunctions/README.adoc」を参照してください。]
 
 == branch名による出力制御
 
 workflowsでいつでも好きなドキュメントを出力できるように、branch名による出力制御を行っています。
 
 /master:: masterブランチがpushされると全てのドキュメントをコンバートしAzure static web appsにデプロイします。また画像をHTMLに含まず外部ファイルにします。
-/release/:: releaseブランチがpushされるとヘルプデスク向け、h向け、p向けおよびm向けドキュメントをコンバートしAzure static web appsにデプロイします。また画像をHTMLに含まず外部ファイルにします。
-/output/:: artifact出力されるようにします。複合的な条件を合わせて利用してください。
+/outputs/:: artifact出力されるようにします。複合的な条件を合わせて利用してください。
 /output-artifact/:: PullRequestを行わなくてもartifact出力されるようにします。複合的な条件を合わせて利用してください。
 
-=== 複合的な条件
+=== 複合的な条件(出力形式)
 /html/:: /html/が含まれるbranchにpushされると別途複合条件のドキュメントをコンバートします。
 /pdf/:: /pdf/が含まれるbranchにpushされると別途複合条件のドキュメントをコンバートします。
 /web/:: /web/が含まれるbranchにがpushされるとコンバート時に画像をHTMLに含まず外部ファイルにします。
-/target-h/:: /target-h/が含まれるbranchにpushされるとh向けドキュメントをコンバートします。
 
+[[README-GITHUB-WORKFLOWS-TARGET]]
+=== 複合的な条件(出力対象)
+/target-sample/:: /target-sample/が含まれるbranchにpushされるとsampleをコンバートします。
+/target-readme/:: /target-readme/が含まれるbranchにpushされるとREADMEをコンバートします。
 
 == イベントによる出力制御
 
@@ -54,3 +36,19 @@ pull_request:: Azure static web appsステージング向けの出力が行わ�
 
 Azure static web appsについては
 link:https://docs.microsoft.com/ja-jp/azure/static-web-apps/[詳しくはこちら]
+
+[[CHECKING-LOG-GITHUB-ACTIONS]]
+== Github Actionsの結果確認について
+
+link:https://github.com/fixer-github/FIXER.MHLW.helpdesk.knowledge/actions/[Github Actionsの結果やログ]はレビュー時に必ず確認してください。 +
+Actionsのログを確認し、「Build and Deploy Job」内部のログ「Build AsciiDoc step」に、WARNINGやINFOMATIONが出ないことを確認してください。 +
+ただし、以下のフォントに関するログ「WARNING: Could not locate the character」のうち
+「ゼロ幅スペース:U+200B」「改行コード」「目に見えないセパレータ:U+2063」など非文字については無視してください。
+
+[.accordion.source,log,linenums]
+----
+asciidoctor: WARNING: Could not locate the character `​' in the following fonts: GenShinGothic, GenShinGothic, GenYoMin, Noto Emoji
+asciidoctor: WARNING: Could not locate the character `
+' in the following fonts: GenYoMin, GenShinGothic, GenYoMin, Noto Emoji
+asciidoctor: WARNING: Could not locate the character `⁣' in the following fonts: GenYoMin, GenShinGothic, GenYoMin, Noto Emoji
+----
