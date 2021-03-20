@@ -9,7 +9,6 @@ FILE_ARRAY=()
 # 以下にに定義した値を 「literal-list.adoc」として出力します
 ##############################
 FILE_ARRAY+=("${INDEX_DIR}/define-literal.adoc")
-FILE_ARRAY+=("${INDEX_DIR}/define-document.adoc")
 
 ##############################
 # 以下に出力します
