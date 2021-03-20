@@ -102,6 +102,8 @@ if "${is_master}"; then
   is_r_p=true
   is_s_h=true
   is_s_p=true
+  # masterはweb公開
+  is_web=true
 fi
 
 # バッジを最新化
