@@ -1,6 +1,0 @@
-ifndef::target-release[]
-include::define-literal.adoc[]
-endif::[]
-
-
-=== 技術用語
