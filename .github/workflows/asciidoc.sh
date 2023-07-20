@@ -141,7 +141,7 @@ fi
 COMMON_PARAMETERS=" -B ${CURRENT_PATH}/ -a target-release -r asciidoctor-diagram -v --failure-level=ERROR --trace -r ${CURRENT_PATH}/lib/common-extensions.rb "
 HTML_PARAMETERS=" -D ${CURRENT_PATH}/outputs/html/ -a docinfodir=${CURRENT_PATH}/docinfo ${DATA_URI} -a nofooter "
 DEPLOY_INDEX_PARAMETERS=" -D ${CURRENT_PATH}/outputs/ -a docinfodir=${CURRENT_PATH}/docinfo ${DATA_URI} -a nofooter "
-PDF_PARAMETERS=" -D ${CURRENT_PATH}/outputs/pdf/ -a chapter-label= -r ${CURRENT_PATH}/diagram-configs/config.rb -a pdf-styledir=${CURRENT_PATH}/themes -a pdf-fontsdir=${CURRENT_PATH}/fonts -a scripts=cjk -a allow-uri-read "
+PDF_PARAMETERS=" -D ${CURRENT_PATH}/outputs/pdf/ -a chapter-label= -r ${CURRENT_PATH}/diagram-configs/config.rb -a pdf-themesdir=${CURRENT_PATH}/themes -a pdf-fontsdir=${CURRENT_PATH}/fonts -a scripts=cjk -a allow-uri-read "
 PREVIEW_TARGET_ATTRIBUTES=""
 
 set -x
