@@ -22,7 +22,7 @@ jobs:
       # Output command using asciidoctor-action #本ドキュメント固有
       - name: Build AsciiDoc step
         id: documents
-        uses: Analog-inc/asciidoctor-action@v1
+        uses: Analog-inc/asciidoctor-action@v1.3
         with:
           shellcommand: "./.github/workflows/asciidoc.sh"
       # Use the output from the documents step  #本ドキュメント固有

@@ -159,11 +159,11 @@ fi
 
 # Output PDF
 if "${is_s_p}"; then
-  asciidoctor-pdf ${COMMON_PARAMETERS} ${PDF_PARAMETERS} -o "sample.pdf" -a target-sample -a pdf-style=${CURRENT_PATH}/themes/user-sample-theme.yml index.adoc
+  asciidoctor-pdf ${COMMON_PARAMETERS} ${PDF_PARAMETERS} -o "sample.pdf" -a target-sample -a pdf-theme=${CURRENT_PATH}/themes/user-sample-theme.yml index.adoc
   PREVIEW_TARGET_ATTRIBUTES+=" -a is_s_p"
 fi
 if "${is_r_p}"; then
-  asciidoctor-pdf ${COMMON_PARAMETERS} ${PDF_PARAMETERS} -o "README.pdf" -a target-readme -a pdf-style=${CURRENT_PATH}/themes/user-analog-theme.yml README.adoc
+  asciidoctor-pdf ${COMMON_PARAMETERS} ${PDF_PARAMETERS} -o "README.pdf" -a target-readme -a pdf-theme=${CURRENT_PATH}/themes/user-analog-theme.yml README.adoc
   PREVIEW_TARGET_ATTRIBUTES+=" -a is_r_p"
 fi
 
