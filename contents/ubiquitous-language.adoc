@@ -1,0 +1,32 @@
+= ユビキタス言語
+ifndef::includedir[]
+:includedir: ../
+include::{includedir}contents/defines/define-all-include.adoc[]
+endif::includedir[]
+ifndef::imagesdir[]
+:imagesdir: ../
+endif::imagesdir[]
+
+.ユビキタス言語
+[%header,cols="2,2,2,2,6,5"]
+|===
+|単語 
+|画面文言 
+|英名 
+|プロパティ +
+モデル +
+クラス +
+|意味 
+|よくある間違い 
+
+|単語 
+|画面文言 
+|英名 
+|プロパティ +
+モデル +
+クラス +
+|意味 
+|よくある間違い 
+
+
+|===

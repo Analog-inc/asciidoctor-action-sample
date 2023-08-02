@@ -1,4 +1,4 @@
-= Asciidoctor action sample
+= サンプルドキュメント
 // このバージョンはPDFでも利用しています。
 :revdate: 2021-01-01
 :revnumber: 1.0.0
@@ -7,13 +7,3 @@
 // 定義の一括include
 include::./contents/defines/define-all-include.adoc[]
 // ここまで空行禁止(無駄な改行があると設定が有効になりません）
-
-
-
-link:./html/index-contents.html[ライティングガイド web版]
-
-link:./html/index-writing-guide.html[ライティングガイド web版]
-
-link:./pdf/index-contents.pdf[ライティングガイド pdf版]
-
-link:./pdf/index-writing-guide.pdf[ライティングガイド pdf版]
