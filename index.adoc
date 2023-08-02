@@ -8,7 +8,7 @@
 include::./contents/defines/define-all-include.adoc[]
 // ここまで空行禁止(無駄な改行があると設定が有効になりません）
 
-
+// このページは他のファイルを参照するためのリンクのみ記載します
 
 link:./html/index-contents.html[ライティングガイド web版]
 
