@@ -1,46 +1,12 @@
 = Asciidoctor action sample
-// 目次
-:toc: left
-:toclevels: 5
-:toc-title: 目次
-// このバージョンはPDFでも利用しています。
-:revnumber: 1.0.0
-:revdate: 2021-01-01
-:author: Analog inc.
-:organization: Analog inc.
-:homepage: https://analog-inc.com/
-// ソースハイライター設定
-:source-highlighter: rouge
-:rouge-style: github
-:rouge-linenums-mode: inline
-include::define-literal.adoc[]
 // ここまで空行禁止(無駄な改行があると設定が有効になりません）
 
-toc::[]
+// このページは他のファイルを参照するためのリンクのみ記載します
 
-[[ABOUT-ASCIIDOC]]
-== AsciiDocについて
+link:./html/index-contents.html[コンテンツサンプル web版]
 
-include::about-asciidoc.adoc[leveloffset=+1]
+link:./html/index-writing-guide.html[ライティングガイド web版]
 
-<<<
+link:./pdf/index-contents.pdf[コンテンツサンプル pdf版]
 
-ifdef::target-sample[]
-[[DESCRIPTION-GUIDELINES]]
-== 表現の統一について
-
-include::guideline-description.adoc[leveloffset=+1]
-
-<<<
-endif::[]
-
-[[ASCIIDOC-SYNTAX-REFERENCE]]
-== AsciiDocの記載方法
-
-include::asciidoc-syntax-reference.adoc[leveloffset=+1]
-
-<<<
-
-[[license]]
-== ライセンスについて
-include::LICENSE.adoc[leveloffset=+1]
+link:./pdf/index-writing-guide.pdf[ライティングガイド pdf版]

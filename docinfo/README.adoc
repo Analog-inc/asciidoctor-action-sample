@@ -1,8 +1,0 @@
-ifndef::target-release[]
-include::/define-literal.adoc[]
-endif::[]
-
-このディレクトリはHTML出力時にヘッダーやフッターに必要な情報を挿入するdocinfoファイルを配置しています。
-
-docinfo.html:: ヘッダーに出力する内容です。主にCSSの挿入を行っています。
-docinfo-footer.html:: フッター出力する内容です。主にJavaScriptの挿入を行っています。

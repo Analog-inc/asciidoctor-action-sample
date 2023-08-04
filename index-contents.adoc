@@ -1,0 +1,19 @@
+= サンプルドキュメント
+// このバージョンはPDFでも利用しています。
+:revdate: 2021-01-01
+:revnumber: 1.0.0
+// VS Code用のディレクトリ設定
+:imagesdir:
+// 定義の一括include
+include::./contents/defines/define-all-include.adoc[]
+// ここまで空行禁止(無駄な改行があると設定が有効になりません）
+
+include::./contents/function-list.adoc[leveloffset=+1]
+
+include::./contents/ubiquitous-language.adoc[leveloffset=+1]
+
+include::./contents/pages/index/sample.adoc[leveloffset=+1]
+
+== コンポーネント
+
+include::./contents/components/sample/sample.adoc[leveloffset=+2]

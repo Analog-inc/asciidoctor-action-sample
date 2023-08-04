@@ -3,7 +3,8 @@ Github Actionsのワークフローの処理を配置するディレクトリで
 
 asciidoc.sh:: HTML・PDF・ePubを同時に出力するためのシェルスクリプトです。 +
 このファイルには実行権限が必要です。コピーして利用される際はパーミッションの設定を行なった上でリポジトリにPushしてください。
-asciidoc.yml:: Github Actionsで実行するワークフローを記述したファイルです。 +
+asciidoc.yml:: Github Actionsで実行するワークフローを記述したファイルです。 
+utilitys.yml:: 各種シェルスクリプトの実行環境がない方のためにGithub Actionsで便利系シェルスクリプトを実行するワークフローを記述したファイルです。 +
 現在は一部のブランチでしか機能しないように制限しています。
 azure-static-web-apps-{.*}.yml:: Github Actionsで実行するAzure static web apps向けのワークフローを記述したファイルです。 +
 利用するAzure static web appの追加・変更する場合は、Azure static web appsがpushした新たなファイルに本処理をコピーする必要があります。 +
@@ -11,28 +12,6 @@ azure-static-web-apps-{.*}.yml:: Github Actionsで実行するAzure static web a
 ifdef::target-release[詳しくは「<<README-AZURE-STATIC-WEB-APPS-ROLES>>」を参照してください。]
 ifndef::target-release[詳しくは「azureFunctions/README.adoc」を参照してください。]
 
-== branch名による出力制御
-
-workflowsでいつでも好きなドキュメントを出力できるように、branch名による出力制御を行っています。
-
-/master:: masterブランチがpushされると全てのドキュメントをコンバートしAzure static web appsにデプロイします。また画像をHTMLに含まず外部ファイルにします。
-/outputs/:: artifact出力されるようにします。複合的な条件を合わせて利用してください。
-/output-artifact/:: PullRequestを行わなくてもartifact出力されるようにします。複合的な条件を合わせて利用してください。
-
-=== 複合的な条件(出力形式)
-/html/:: /html/が含まれるbranchにpushされると別途複合条件のドキュメントをコンバートします。
-/pdf/:: /pdf/が含まれるbranchにpushされると別途複合条件のドキュメントをコンバートします。
-/web/:: /web/が含まれるbranchにがpushされるとコンバート時に画像をHTMLに含まず外部ファイルにします。
-
-[[README-GITHUB-WORKFLOWS-TARGET]]
-=== 複合的な条件(出力対象)
-/target-sample/:: /target-sample/が含まれるbranchにpushされるとsampleをコンバートします。
-/target-readme/:: /target-readme/が含まれるbranchにpushされるとREADMEをコンバートします。
-
-== イベントによる出力制御
-
-push:: 上記のbranch名による出力制御が働きます。PullRequestを出した後はsynchronizeイベントとしてでpull_requestビルドを実行します。
-pull_request:: Azure static web appsステージング向けの出力が行われます。この際に対象となるのはベースブランチ名です。
 
 Azure static web appsについては
 link:https://docs.microsoft.com/ja-jp/azure/static-web-apps/[詳しくはこちら]

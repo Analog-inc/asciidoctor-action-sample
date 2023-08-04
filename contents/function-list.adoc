@@ -1,0 +1,25 @@
+= 機能一覧
+ifndef::includedir[]
+:includedir: ../
+include::{includedir}contents/defines/define-all-include.adoc[]
+endif::includedir[]
+ifndef::imagesdir[]
+:imagesdir: ../
+endif::imagesdir[]
+
+
+.機能一覧
+[%header,cols="2,2,6,6,3"]
+|===
+|機能名 
+|英名 
+|目的
+|得られる結果
+|利用画面
+
+|機能名 
+|英名 
+|目的
+|得られる結果
+|利用画面
+|===

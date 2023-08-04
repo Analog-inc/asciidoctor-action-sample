@@ -1,0 +1,21 @@
+////
+このファイルは定義済リストとして出力されます。
+ラインのコメントは表のブロック区切りとして出力します。
+////
+
+:analog-inc: analog inc.
+:link-analog-inc-url: https://analog-inc.com/
+:link-github-repository: https://github.com/kkhs/hakari-manual/
+
+
+:analog-inc-url-link: link:{analog-inc-url}[{analog-inc}]
+:github-repository-link: link:{github-repository}[Github repository]
+
+
+// ロール名称
+:name-role-sample: サンプルロール
+:name-role-analog: analogロール
+
+// 固有名詞と指示詞
+:name-role-sample-user: {name-role-sample}のユーザー
+:name-role-analog-user: {name-role-analog}のメンバー
