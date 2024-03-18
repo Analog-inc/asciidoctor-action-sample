@@ -1,11 +1,11 @@
 = 機能一覧
-ifndef::includedir[]
 :includedir: ../
 include::{includedir}contents/defines/define-all-include.adoc[]
-endif::includedir[]
+ifeval::[{env} == vscode]
 ifndef::imagesdir[]
 :imagesdir: ../
 endif::imagesdir[]
+endif::[]
 
 
 .機能一覧
@@ -23,3 +23,5 @@ endif::imagesdir[]
 |得られる結果
 |利用画面
 |===
+
+{icon-sample-user}

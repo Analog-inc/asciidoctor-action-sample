@@ -1,11 +1,11 @@
 = ユビキタス言語
-ifndef::includedir[]
 :includedir: ../
 include::{includedir}contents/defines/define-all-include.adoc[]
-endif::includedir[]
+ifeval::[{env} == vscode]
 ifndef::imagesdir[]
 :imagesdir: ../
 endif::imagesdir[]
+endif::[]
 
 .ユビキタス言語
 [%header,cols="2,2,2,2,6,5"]
@@ -30,3 +30,7 @@ endif::imagesdir[]
 
 
 |===
+
+
+
+{icon-sample-user}
