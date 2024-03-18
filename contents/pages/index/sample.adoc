@@ -3,7 +3,7 @@
 include::{includedir}contents/defines/define-all-include.adoc[]
 ifeval::[{env} == vscode]
 ifndef::imagesdir[]
-:imagesdir: ../../
+:imagesdir: ../../../
 endif::imagesdir[]
 endif::[]
 
@@ -12,3 +12,6 @@ endif::[]
 コンポーネントを利用しています。
 
 * <<COMPONENTS-COMPONENT-A>>
+
+
+{icon-sample-user}

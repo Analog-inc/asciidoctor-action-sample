@@ -3,7 +3,7 @@
 include::{includedir}contents/defines/define-all-include.adoc[]
 ifeval::[{env} == vscode]
 ifndef::imagesdir[]
-:imagesdir: ../../
+:imagesdir: ../../../
 endif::imagesdir[]
 endif::[]
 
