@@ -60,15 +60,15 @@ HTMLのみの出力内容
 PDFでは出力されない内容
 \endif::[]
 
-\ifndef::convert-index[]
+\ifndef::convert-for-readers[]
 自動化した出力では利用しない内容
-(「convert-index」は本サンプルで定義している項目)
+(「convert-for-writers」は本サンプルで定義している項目)
 \endif::[]
 
-\ifdef::convert-index[]
+\ifdef::convert-for-writers[]
 明示的にendifを記載する場合。
 (「convert-index」は本サンプルで定義している項目)
-\endif::convert-index[]
+\endif::convert-for-writers[]
 ----
 
 [[ASCIIDOC-SYNTAX-IMAGES]]
