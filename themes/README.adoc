@@ -1,5 +1,9 @@
-ifndef::target-release[]
-include::/define-literal.adoc[]
+:includedir: ../
+include::{includedir}contents/defines/define-all-include.adoc[]
+ifeval::[{env} == vscode]
+ifndef::imagesdir[]
+:imagesdir: ../
+endif::imagesdir[]
 endif::[]
 
 PDF出力の際に日本語環境に合わせてフォントを指定したり、
