@@ -6,28 +6,13 @@ asciidoc.sh:: HTML・PDF・ePubを同時に出力するためのシェルスク�
 asciidoc.yml:: Github Actionsで実行するワークフローを記述したファイルです。 
 utilitys.yml:: 各種シェルスクリプトの実行環境がない方のためにGithub Actionsで便利系シェルスクリプトを実行するワークフローを記述したファイルです。 +
 現在は一部のブランチでしか機能しないように制限しています。
-azure-static-web-apps-{.*}.yml:: Github Actionsで実行するAzure static web apps向けのワークフローを記述したファイルです。 +
-利用するAzure static web appの追加・変更する場合は、Azure static web appsがpushした新たなファイルに本処理をコピーする必要があります。 +
-
-ifdef::target-release[詳しくは「<<README-AZURE-STATIC-WEB-APPS-ROLES>>」を参照してください。]
-ifndef::target-release[詳しくは「azureFunctions/README.adoc」を参照してください。]
 
 
-Azure static web appsについては
-link:https://docs.microsoft.com/ja-jp/azure/static-web-apps/[詳しくはこちら]
 
 [[CHECKING-LOG-GITHUB-ACTIONS]]
 == Github Actionsの結果確認について
 
 link:https://github.com/fixer-github/FIXER.MHLW.helpdesk.knowledge/actions/[Github Actionsの結果やログ]はレビュー時に必ず確認してください。 +
-Actionsのログを確認し、「Build and Deploy Job」内部のログ「Build AsciiDoc step」に、WARNINGやINFOMATIONが出ないことを確認してください。 +
-ただし、以下のフォントに関するログ「WARNING: Could not locate the character」のうち
-「ゼロ幅スペース:U+200B」「改行コード」「目に見えないセパレータ:U+2063」など非文字については無視してください。
+Actionsのログを確認し、「Build and Deploy Job」内部のログ「Build AsciiDoc step」に、WARNINGやINFOMATIONが出ないことを確認してください。 
 
-[.accordion.source,log,linenums]
-----
-asciidoctor: WARNING: Could not locate the character `​' in the following fonts: GenShinGothic, GenShinGothic, GenYoMin, Noto Emoji
-asciidoctor: WARNING: Could not locate the character `
-' in the following fonts: GenYoMin, GenShinGothic, GenYoMin, Noto Emoji
-asciidoctor: WARNING: Could not locate the character `⁣' in the following fonts: GenYoMin, GenShinGothic, GenYoMin, Noto Emoji
-----
+

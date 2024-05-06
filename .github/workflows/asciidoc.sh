@@ -59,7 +59,7 @@ PDF_PARTS_PATH=${CURRENT_PATH}/customs/pdf
 # parameters & Attributes
 PDF_PARAMETERS=" -D ${PDF_OUTPUT_PATH}/ -a imagesdir=${CURRENT_PATH}/ -a imagesoutdir=${PDF_OUTPUT_PATH}/images/ -a pdf-themesdir=${PDF_PARTS_PATH}/themes -a pdf-fontsdir=${PDF_PARTS_PATH}/fonts -r ${PDF_PARTS_PATH}/diagram-configs/config.rb "
 # convert
-asciidoctor-pdf ${COMMON_PARAMETERS} ${PDF_PARAMETERS}  -a convert-for-all -a pdf-theme=${PDF_PARTS_PATH}/themes/user-analog-theme.yml 'index-*.adoc'
+asciidoctor-pdf ${COMMON_PARAMETERS} ${PDF_PARAMETERS}  -a convert-for-all -a pdf-theme=${PDF_PARTS_PATH}/themes/user-analog-theme.yml 'index*.adoc'
 
 ########################
 ##### Output HTML  #####
@@ -73,5 +73,3 @@ HTML_PARTS_PATH=${CURRENT_PATH}/customs/html
 HTML_PARAMETERS=" -D ${HTML_OUTPUT_PATH}/ -a imagesdir=images/ -a imagesoutdir=${HTML_OUTPUT_PATH}/images/ -a docinfodir=${HTML_PARTS_PATH}/docinfo -a nofooter "
 # convert
 asciidoctor ${COMMON_PARAMETERS} ${HTML_PARAMETERS} -a convert-for-all 'index*.adoc'
-# サイト表示用の階層のためにコピー
-cp -rf ./public/html/index.html ./public/index.html
