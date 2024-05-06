@@ -18,15 +18,6 @@ include::define-literal.adoc[]
 
 toc::[]
 
-ifndef::target-release[]
-
-[[CI-SITE]]
-== CIの状態と閲覧サイト
-
-link:https://github.com/Analog-inc/asciidoctor-action-sample/actions?query=workflow%3A%22Azure+Static+Web+Apps+CI%2FCD%22[image:https://github.com/Analog-inc/asciidoctor-action-sample/workflows/Azure%20Static%20Web%20Apps%20CI/CD/badge.svg[StatusBatch,role="right"]]
-: link:https://sample.asciidoc.analog-inc.com[サンプルを閲覧できるAzure static web appsサイト]
-
-endif::[]
 
 
 [[PURPOSE]]
